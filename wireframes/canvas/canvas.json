@@ -7,48 +7,48 @@
       "h": 900,
       "title": "/darbinieki — slēpta lapa",
       "w": 1440,
-      "x": 6080,
-      "y": 9900
+      "x": 7600,
+      "y": 3631
     },
     "Darbs-pie-mums.dc.html": {
       "expand": "fill",
       "h": 7167,
       "title": "Darbs pie mums — skelets",
       "w": 1440,
-      "x": 3040,
-      "y": 9900
+      "x": 4560,
+      "y": 3631
     },
     "Koncepts-A.dc.html": {
       "expand": "fill",
       "h": 7309,
-      "title": "Koncepts A — Plakāts (drosmīgs)",
+      "title": "Koncepts A — Bold",
       "w": 1440,
-      "x": 1520,
-      "y": 1780
+      "x": 0,
+      "y": 14527
     },
     "Koncepts-B.dc.html": {
       "expand": "fill",
-      "h": 7397,
+      "h": 7330,
       "title": "Koncepts B — Gada pārskats (cēls)",
       "w": 1440,
-      "x": 3040,
-      "y": 1780
+      "x": 1520,
+      "y": 14527
     },
     "Koncepts-C.dc.html": {
       "expand": "fill",
       "h": 6718,
       "title": "Koncepts C — Maršruts (mūsdienīgs)",
       "w": 1440,
-      "x": 4560,
-      "y": 1780
+      "x": 3040,
+      "y": 14527
     },
     "Kontakti.dc.html": {
       "expand": "fill",
       "h": 3165,
       "title": "Kontakti — skelets",
       "w": 1440,
-      "x": 4560,
-      "y": 9900
+      "x": 6080,
+      "y": 3631
     },
     "Lapu-karte.dc.html": {
       "h": 1360,
@@ -63,23 +63,23 @@
       "title": "Sākums — skelets",
       "w": 1440,
       "x": 0,
-      "y": 1780
+      "y": 3623
     },
     "Pakalpojumi-uznemumiem.dc.html": {
       "expand": "fill",
       "h": 7231,
       "title": "Pakalpojumi uzņēmumiem — skelets",
       "w": 1440,
-      "x": 0,
-      "y": 9900
+      "x": 1520,
+      "y": 3631
     },
     "Parvaksanas.dc.html": {
       "expand": "fill",
       "h": 7220,
       "title": "Pārvākšanās — skelets",
       "w": 1440,
-      "x": 1520,
-      "y": 9900
+      "x": 3040,
+      "y": 3631
     }
   },
   "createdOnFiles": {
@@ -91,21 +91,13 @@
     "view": "canvas"
   },
   "notes": {
-    "t-home": {
-      "kind": "title1",
-      "maxW": 6000,
-      "text": "Sākumlapa — skelets un 3 dizaina koncepti",
-      "w": 240,
-      "x": 0,
-      "y": 1480
-    },
     "t-pages": {
       "kind": "title1",
       "maxW": 7520,
       "text": "Apakšlapas — skelets",
       "w": 240,
-      "x": 0,
-      "y": 9600
+      "x": 1520,
+      "y": 3331
     },
     "t-sitemap": {
       "kind": "title1",

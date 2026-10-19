@@ -95,6 +95,9 @@ body{margin:0;background:#ffffff}
 .b-svc-grid{display:grid;grid-template-columns:repeat(2,1fr);grid-template-rows:repeat(5,auto);column-gap:8px}
 .b-svc{display:grid;grid-row:span 5;grid-template-rows:subgrid;row-gap:0;background:var(--tone)}
 .b-svc_img{aspect-ratio:2 / 1;overflow:hidden}
+/* orange overlay, as on postline.lv */
+.b-tint{position:relative;isolation:isolate;background:var(--orange)}
+.b-root .b-tint img{filter:grayscale(1) contrast(1.1);mix-blend-mode:luminosity;opacity:.7}
 .b-svc .b-h3{padding:28px 28px 0}
 .b-svc_for{padding:12px 28px 0;font-size:1.0625rem}
 .b-svc_inc{padding:24px 28px 0}
@@ -316,7 +319,7 @@ body{margin:0;background:#ffffff}
 <div class="b-name_actions"><a href="#piedavajums" class="b-btn">Saņemt piedāvājumu</a><p class="b-note">Pieprasījums neuzliek saistības.</p></div>
 </div>
 <figure class="b-tile b-photo-1"><img src="/_blob/f6748b43c6d80b311f0e4f45dd2165c3" alt="Balti kravas busiņi stāvvietā rindā" width="716" height="384"></figure>
-<figure class="b-tile b-photo-2"><img src="/_blob/a58c9cca10f7a375d691f9b996815462" alt="Arhīva telpa ar kartona kastēm plauktos" width="716" height="384" style="object-position:50% 45%"></figure>
+<figure class="b-tile b-photo-2 b-tint"><img src="/_blob/a58c9cca10f7a375d691f9b996815462" alt="Arhīva telpa ar kartona kastēm plauktos" width="716" height="384" style="object-position:50% 45%"></figure>
 <nav class="b-index" aria-label="Izvēlieties, kas jums vajadzīgs">
 <a href="#" class="is-ink"><span><span class="b-index_name">Kurjerpasts uzņēmumiem</span><span class="b-index_line">Regulāras un specializētas piegādes</span></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6"></path></svg></a>
 <a href="#" class="is-tone"><span><span class="b-index_name">Pārvākšanās</span><span class="b-index_line">Biroji, arhīvi un mājas</span></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6"></path></svg></a>
@@ -335,14 +338,14 @@ body{margin:0;background:#ffffff}
 </div>
 <div class="b-svc-grid">
 <article class="b-svc">
-<figure class="b-svc_img"><img src="/_blob/c4c5874aa61767603375ad24004cb36b" alt="Kurjers nodod kartona kasti klientam" width="420" height="262" style="object-position:50% 55%"></figure>
+<figure class="b-svc_img b-tint"><img src="/_blob/c4c5874aa61767603375ad24004cb36b" alt="Kurjers nodod kartona kasti klientam" width="420" height="262" style="object-position:50% 55%"></figure>
 <h3 class="b-h3">Kurjerpasts uzņēmumiem</h3>
 <p class="b-svc_for"><span class="b-mini">Kam</span>Uzņēmumiem ar regulāru sūtījumu plūsmu un iepirkumu organizētājiem</p>
 <div class="b-svc_inc"><p class="b-mini">Iekļauts</p><ul class="b-bullets"><li>Regulāras piegādes pēc grafika</li><li>Specializētas piegādes</li><li>Dalība iepirkumos</li></ul></div>
 <a href="#" class="b-arrow-link">Pieprasīt piedāvājumu <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"></path></svg></a>
 </article>
 <article class="b-svc">
-<figure class="b-svc_img"><img src="/_blob/fcaf8c42b901509cfc836bb25094f776" alt="Darbinieks ar ratiņiem ved kastes pa bruģētu ielu" width="420" height="262" style="object-position:50% 72%"></figure>
+<figure class="b-svc_img b-tint"><img src="/_blob/fcaf8c42b901509cfc836bb25094f776" alt="Darbinieks ar ratiņiem ved kastes pa bruģētu ielu" width="420" height="262" style="object-position:50% 72%"></figure>
 <h3 class="b-h3">Pārvākšanās</h3>
 <p class="b-svc_for"><span class="b-mini">Kam</span>Birojiem, arhīviem, mazajiem uzņēmumiem un mājām</p>
 <div class="b-svc_inc"><p class="b-mini">Iekļauts</p><ul class="b-bullets"><li>Iekraušana un pārvešana</li><li>Mēbeļu demontāža un montāža</li><li>Arhīvu pārvešana</li></ul></div>

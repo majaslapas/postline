@@ -140,6 +140,8 @@ How they were made:
 
 Contrast note: white text on #F05223 is only 3.5:1, so every orange or coral button uses dark text.
 
+Orange photo overlay, taken from postline.lv (its hero video sits under a flat #F05223 film at 70%): the image wrapper gets background #F05223, and the image is greyscale with blend mode Luminosity at 70% opacity. The photo keeps its light and shade, takes the orange hue, and 30% solid orange shows through. Used on the service photos in all three concepts and on the boxes photo in B's hero. In Webflow this is the wrapper's background colour plus the image's Effects settings (blending, opacity, filter), so no custom code is needed.
+
 Motion is described rather than built into the canvas: hover lifts, tab changes and accordion openings, all respecting `prefers-reduced-motion`.
 
 ## Images
