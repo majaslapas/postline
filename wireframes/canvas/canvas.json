@@ -12,7 +12,7 @@
     },
     "Darbs-pie-mums.dc.html": {
       "expand": "fill",
-      "h": 7167,
+      "h": 6482,
       "title": "Darbs pie mums — skelets",
       "w": 1440,
       "x": 4560,
@@ -29,7 +29,7 @@
     "Koncepts-B.dc.html": {
       "expand": "fill",
       "h": 7330,
-      "title": "Koncepts B — Gada pārskats (cēls)",
+      "title": "Koncepts B — Pragmātisks",
       "w": 1440,
       "x": 1520,
       "y": 14527
@@ -44,7 +44,7 @@
     },
     "Kontakti.dc.html": {
       "expand": "fill",
-      "h": 3165,
+      "h": 2598,
       "title": "Kontakti — skelets",
       "w": 1440,
       "x": 6080,
@@ -67,7 +67,7 @@
     },
     "Pakalpojumi-uznemumiem.dc.html": {
       "expand": "fill",
-      "h": 7231,
+      "h": 7942,
       "title": "Pakalpojumi uzņēmumiem — skelets",
       "w": 1440,
       "x": 1520,
@@ -75,7 +75,7 @@
     },
     "Parvaksanas.dc.html": {
       "expand": "fill",
-      "h": 7220,
+      "h": 7075,
       "title": "Pārvākšanās — skelets",
       "w": 1440,
       "x": 3040,

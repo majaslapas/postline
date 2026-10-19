@@ -26,17 +26,17 @@ page-wrapper
 - Classes prefixed `wf-` in the canvas CSS exist only for the wireframe view. Do not recreate them in Webflow.
 - The wireframe artboards have one toggle (Tweaks → Anotācijas): `showSpecs` shows the blue component chips. Turn it off to present a clean skeleton.
 - The canvas shows a page board at most 8000 px tall and gives the page a viewport as tall as the board. Every page is kept under 8000 px at 1440 wide, and no section uses `vh` units (a `60vh` block would grow with the board).
-- There is no section of completed project examples anywhere (dropped on 19.10). Pārvākšanās keeps its experience block (Layout 216: offices up to 300 workplaces).
+- There is no section of completed project examples anywhere (dropped on 19.10). Pārvākšanās keeps its experience block (Stats 8 on a dark band: offices up to 300 workplaces).
 
 ## Sitemap
 
 | Page | Slug | Sections (Relume) |
 | --- | --- | --- |
 | Sākums | `/` | Navbar 1 · Header 1 · Layout 618 · Stats 13 · Layout 231 · Layout 645 (`#par-mums`) · Testimonial 17 · CTA 1 · FAQ 3 · Contact 5 (`#piedavajums`) · Footer 3 |
-| Pakalpojumi uzņēmumiem | `/pakalpojumi-uznemumiem` | Navbar 1 · Header 50 · Stats 8 · Layout 42 · Layout 623 · Layout 231 · Layout 647 · Testimonial 17 · FAQ 3 · Contact 6 (`#pieprasijums`) · Footer 3 |
-| Pārvākšanās | `/parvaksanas` | Navbar 1 · Header 1 · Layout 216 · Layout 629 · Layout 671 · Timeline 17 · Testimonial 17 · FAQ 3 · Multi Form 17 (`#pieteikums`) · Banner 3 · Footer 3 |
-| Darbs pie mums | `/darbs` | Navbar 1 · Header 5 · Layout 620 · Layout 645 · Career 12 (`#vakances`) · Layout 231 · Testimonial 17 · FAQ 3 · Contact 9 (`#pieteikties`) · Banner 3 · Footer 3 |
-| Kontakti | `/kontakti` | Navbar 1 · Contact 14 · Layout 232 · Contact 5 · Footer 3 |
+| Pakalpojumi uzņēmumiem | `/pakalpojumi-uznemumiem` | Navbar 1 · Header 50 with a short form · Stats 8 · Comparison 13 · Layout 236 · Layout 231 · Layout 647 · Testimonial 17 · Contact 6 (`#pieprasijums`) · FAQ 3 · Footer 3 |
+| Pārvākšanās | `/parvaksanas` | Navbar 1 · Header 1 with a short form · Layout 629 · Stats 8 (dark) · Layout 671 · Timeline 17 · Testimonial 17 · FAQ 3 · Multi Form 17 (`#pieteikums`) · Banner 3 · Footer 3 |
+| Darbs pie mums | `/darbs` | Navbar 1 · Header 5 with the application form (`#pieteikties`) · Career 12 (`#vakances`) · Layout 645 · Layout 620 · Timeline 17 · Testimonial 17 · FAQ 3 · Banner 3 · Footer 3 |
+| Kontakti | `/kontakti` | Navbar 1 · Contact 14 · Contact 5 · Footer 3 |
 | Darbinieku sadaļa (hidden) | `/darbinieki` | Links 1 only, with no Navbar or Footer: one button that opens the daily report. Set `noindex, nofollow` and leave it out of the menu and of `sitemap.xml` (see below). |
 
 Postline shows two services: Kurjerpasts uzņēmumiem and Pārvākšanās. Transport rental ("Transporta noma") came only from the old site; the brief marked it "ja paliek" and no call confirmed it, so it is not on any page, form or menu.
@@ -54,7 +54,9 @@ Small deviations from the stock Relume components (all noted on the canvas):
 
 - Layout 618: two service cards, each with its own action link (stock Layout 618 has one shared button row under the cards).
 - Layout 231: used for the 3-step "how it works", with "1. solis" as the tagline.
-- Timeline 17: step numbers instead of dates, 4 items.
+- Header 50, Header 1 and Header 5 on the subpages: the right column holds a form card instead of an image. On Pakalpojumi uzņēmumiem and Pārvākšanās it is a short version (4–5 fields) of the full form lower on the page; on Darbs pie mums it is the only application form.
+- Comparison 13: used for problem → solution ("Bez pastāvīga partnera" against "Ar Postline").
+- Timeline 17: step numbers instead of dates, 4 items (3 on Darbs pie mums).
 - Banner 3: fixed to the bottom of the screen on phones only (under 768px), shown after the hero.
 - Contact 5 on `/`: a service radio (Kurjerpasts uzņēmumam / Pārvākšanās) in place of a plain contact form.
 - Contact 5 on `/kontakti`: an added radio "Uzņēmums / Privātpersona" and a topic select.
@@ -67,10 +69,10 @@ The pages follow the landing-page-design skill (github.com/elayadesign/ai-design
 | Page | Audience | One primary action | Proof next to it | Objection handling |
 | --- | --- | --- | --- | --- |
 | Sākums | All three: companies, movers, drivers | Saņemt piedāvājumu (form with a service choice). Drivers get a text link to vacancies, not a competing button. | 300-workplace move under the button; Stats 13 with 2011 / ~20 / ~20 / 300 right after the services | 6-question FAQ, "Pieprasījums neuzliek saistības" under the form |
-| Pakalpojumi uzņēmumiem | Companies with regular shipments, tender organisers | Pieprasīt piedāvājumu | Stats 8 straight after the hero, company testimonials just before the form | Problem → solution section (Layout 42), 7-question FAQ, private parcels filtered out |
-| Pārvākšanās | Offices, archives, small businesses, homes | Saņemt pārvākšanās cenu (4-step form) | The 300-workplace project moved up to second place | FAQ moved above the form (high-friction offer), "no obligation" next to the button, sticky mobile button |
-| Darbs pie mums | Drivers arriving from agency job ads on a phone | Pieteikties darbam | Team since 2011, team quotes | Shorter form (one name field, experience optional, CV optional), 6 driver questions, sticky mobile button |
-| Kontakti | Anyone | Call or write | Company details | Three shortcuts to the right form (Layout 232) |
+| Pakalpojumi uzņēmumiem | Companies with regular shipments, tender organisers | Pieprasīt piedāvājumu | Short form in the hero, Stats 8 straight after it, company testimonials just before the full form | Problem → solution comparison (Comparison 13), 7-question FAQ after the form, private parcels filtered out |
+| Pārvākšanās | Offices, archives, small businesses, homes | Saņemt pārvākšanās cenu (short form in the hero, full 4-step form at the end) | 300-workplace proof line in the hero; experience in numbers right before what is included | FAQ above the full form (high-friction offer), "no obligation" next to the button, sticky mobile button |
+| Darbs pie mums | Drivers arriving from agency job ads on a phone | Pieteikties darbam (form in the hero) | Open vacancies right after the hero, team since 2011, team quotes | Short form (one name field, CV optional), 6 driver questions, sticky mobile button |
+| Kontakti | Anyone | Call or write | Company details | One contact form with a topic select |
 
 Rules applied everywhere:
 
@@ -86,9 +88,11 @@ Rules applied everywhere:
 | --- | --- | --- |
 | Pieprasījums (Contact 5) | `/#piedavajums` | pakalpojums (radio: Kurjerpasts uzņēmumam / Pārvākšanās), vārds, tālrunis, e-pasts, īsi par darbu. The service choice decides the GHL pipeline. |
 | Pārvākšanās pieteikums (Multi Form 17) | `/parvaksanas#pieteikums` | 1) Privātpersona / Uzņēmums · 2) no adreses, uz adresi, vēlamais datums · 3) apjoms un apraksts, stāvs un lifts abās vietās, foto augšupielāde · 4) vārds, tālrunis, e-pasts (+ uzņēmums). After sending: automatic confirmation to the client. |
-| B2B pieprasījums (Contact 6) | `/pakalpojumi-uznemumiem#pieprasijums` | uzņēmums, kontaktpersona, e-pasts, tālrunis, pakalpojums (select), aptuvenais apjoms (radio), papildu informācija |
+| B2B pieprasījums, short (Header 50) | `/pakalpojumi-uznemumiem` hero | uzņēmums, kontaktpersona, tālrunis, e-pasts |
+| B2B pieprasījums, full (Contact 6) | `/pakalpojumi-uznemumiem#pieprasijums` | uzņēmums, kontaktpersona, e-pasts, tālrunis, pakalpojums (select), aptuvenais apjoms (radio), papildu informācija |
+| Pārvākšanās pieteikums, short (Header 1) | `/parvaksanas` hero | Privātpersona / Uzņēmums, no (pilsēta), uz (pilsēta), vārds, tālrunis |
 | Kontaktforma (Contact 5) | `/kontakti` | vārds, e-pasts, Uzņēmums / Privātpersona, tēma, ziņa |
-| Darba pieteikums (Contact 9) | `/darbs#pieteikties` | vārds un uzvārds, tālrunis, vakance, autovadītāja apliecība, pieredze (optional), CV (optional) |
+| Darba pieteikums (Header 5 form) | `/darbs#pieteikties` | vārds un uzvārds, tālrunis, vakance, autovadītāja apliecība, CV (optional) |
 
 There is no price calculator (removed on 29.09.). Testimonial 17 reads from a CMS collection fed by GHL review requests and stays hidden until the first reviews come in.
 
@@ -195,13 +199,13 @@ What each block needs, in the order the sections appear on the page. Square brac
 
 **Pakalpojumi uzņēmumiem**
 - Stats 8: 1–2 sentences on why companies choose Postline.
-- Layout 42: 1–2 sentences on how the regular route and one contact work in practice.
-- Layout 623: 1–2 sentences each on regular deliveries, specialised deliveries, and tenders with long-term contracts.
+- Comparison 13: check the three problems and three answers; confirm whether there is one contact person.
+- Layout 236: 1–2 sentences each on regular deliveries, specialised deliveries, and tenders with long-term contracts, plus a photo for each.
 - Layout 647: regions, volumes, vehicle types and form of cooperation, 1 line each.
 - FAQ 3: answers to the 7 questions.
 
 **Pārvākšanās**
-- Layout 216: 2 sentences on the largest projects (what, when, how fast) and photos from them.
+- Stats 8: 2 sentences on the largest projects (what, when, how fast).
 - Layout 629: 1 sentence per client group.
 - Layout 671: what is included in the price, what costs extra, and which vehicles are available.
 - FAQ 3: answers to the 7 questions.
@@ -209,7 +213,7 @@ What each block needs, in the order the sections appear on the page. Square brac
 **Darbs pie mums**
 - Layout 620: 1 sentence about working with the company vans.
 - Layout 645: pay, schedule, place of work, training.
-- Career 12: current vacancies with title, duties, requirements and workload.
+- Career 12: confirm the three draft vacancies (Kurjers-šoferis, Sezonas kurjers, Krāvējs pārvākšanās darbos): duties, place, workload and licence.
 - Testimonial 17: two short quotes from drivers or couriers, with the year they joined.
 - FAQ 3: answers to the 6 driver questions.
 
