@@ -25,12 +25,14 @@ page-wrapper
 - Navbar 1 and Footer 3 become Webflow Components shared by all public pages.
 - Classes prefixed `wf-` in the canvas CSS exist only for the wireframe view. Do not recreate them in Webflow.
 - The wireframe artboards have one toggle (Tweaks → Anotācijas): `showSpecs` shows the blue component chips. Turn it off to present a clean skeleton.
+- The canvas shows a page board at most 8000 px tall and gives the page a viewport as tall as the board. Every page is kept under 8000 px at 1440 wide, and no section uses `vh` units (a `60vh` block would grow with the board).
+- There is no section of completed project examples anywhere (dropped on 19.10). Pārvākšanās keeps its experience block (Layout 216: offices up to 300 workplaces).
 
 ## Sitemap
 
 | Page | Slug | Sections (Relume) |
 | --- | --- | --- |
-| Sākums | `/` | Navbar 1 · Header 1 · Layout 251 · Stats 13 · Layout 231 · Portfolio 11 · Layout 424 · Layout 645 (`#par-mums`) · Testimonial 17 · CTA 1 · FAQ 3 · Contact 5 (`#piedavajums`) · Footer 3 |
+| Sākums | `/` | Navbar 1 · Header 1 · Layout 251 · Stats 13 · Layout 231 · Layout 645 (`#par-mums`) · Testimonial 17 · CTA 1 · FAQ 3 · Contact 5 (`#piedavajums`) · Footer 3 |
 | Pakalpojumi uzņēmumiem | `/pakalpojumi-uznemumiem` | Navbar 1 · Header 50 · Stats 8 · Layout 42 · Layout 623 · Layout 231 · Layout 647 · Testimonial 17 · FAQ 3 · Contact 6 (`#pieprasijums`) · Footer 3 |
 | Pārvākšanās | `/parvaksanas` | Navbar 1 · Header 1 · Layout 216 · Layout 629 · Layout 671 · Timeline 17 · Testimonial 17 · FAQ 3 · Multi Form 17 (`#pieteikums`) · Banner 3 · Footer 3 |
 | Darbs pie mums | `/darbs` | Navbar 1 · Header 5 · Layout 620 · Layout 645 · Career 12 (`#vakances`) · Layout 231 · Testimonial 17 · FAQ 3 · Contact 9 (`#pieteikties`) · Banner 3 · Footer 3 |
@@ -50,7 +52,6 @@ Small deviations from the stock Relume components (all noted on the canvas):
 
 - Layout 251: each service card has its own action link.
 - Layout 231: used for the 3-step "how it works", with "1. solis" as the tagline.
-- Layout 424: the scroll-pinned statement ("Kopš 2011. gada." / "Savi ~20 busiņi." / "Sava komanda." / "Darbs izdarīts.").
 - Timeline 17: step numbers instead of dates, 4 items.
 - Banner 3: fixed to the bottom of the screen on phones only (under 768px), shown after the hero.
 - Contact 5 on `/`: a service radio (Kurjerpasts uzņēmumam / Pārvākšanās / Transports ar šoferi) in place of a plain contact form.
@@ -161,7 +162,6 @@ What each block needs, in the order the sections appear on the page. Square brac
 **Sākums**
 - Header 1: check the headline and the one-line description (we can propose alternatives).
 - Layout 251: 1–2 sentences per service, saying who it is for and what is included.
-- Portfolio 11: 3 projects (what, when, how big; 1–2 sentences each) and photos from them.
 - Layout 645 (`#par-mums`): 3 values in one line each. Courier partners are mentioned only neutrally.
 - FAQ 3: answers to the 6 questions, 1–3 sentences each.
 
