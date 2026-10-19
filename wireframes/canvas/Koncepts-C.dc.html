@@ -71,13 +71,13 @@ body{margin:0;background:#263238}
 .c-hero_head .c-intro{margin:24px auto 0;font-size:1.25rem;color:var(--mist);max-width:50ch}
 .c-switch{position:relative;margin-top:56px}
 .c-switch > input{position:absolute;opacity:0;width:1px;height:1px;pointer-events:none}
-.c-tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.c-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
 .c-tab{display:flex;align-items:center;justify-content:center;gap:12px;height:64px;padding:0 16px;border-radius:var(--r) var(--r) 0 0;background:var(--slate-2);color:var(--mist);font-weight:600;font-size:1rem;line-height:1.2;cursor:pointer;transition:background-color 200ms ease-out,color 200ms ease-out}
 .c-tab:hover{background:var(--slate-3);color:var(--white)}
-#c-f1:checked ~ .c-tabs .t1,#c-f2:checked ~ .c-tabs .t2,#c-f3:checked ~ .c-tabs .t3,#c-f4:checked ~ .c-tabs .t4{background:var(--white);color:var(--ink)}
-#c-f1:focus-visible ~ .c-tabs .t1,#c-f2:focus-visible ~ .c-tabs .t2,#c-f3:focus-visible ~ .c-tabs .t3,#c-f4:focus-visible ~ .c-tabs .t4{outline:3px solid var(--coral);outline-offset:-3px}
+#c-f1:checked ~ .c-tabs .t1,#c-f2:checked ~ .c-tabs .t2,#c-f3:checked ~ .c-tabs .t3{background:var(--white);color:var(--ink)}
+#c-f1:focus-visible ~ .c-tabs .t1,#c-f2:focus-visible ~ .c-tabs .t2,#c-f3:focus-visible ~ .c-tabs .t3{outline:3px solid var(--coral);outline-offset:-3px}
 .c-panel{display:none;grid-template-columns:5fr 6fr;gap:48px;align-items:center;padding:48px;background:var(--white);color:var(--ink);border-radius:0 0 var(--r) var(--r)}
-#c-f1:checked ~ .c-panels .p1,#c-f2:checked ~ .c-panels .p2,#c-f3:checked ~ .c-panels .p3,#c-f4:checked ~ .c-panels .p4{display:grid}
+#c-f1:checked ~ .c-panels .p1,#c-f2:checked ~ .c-panels .p2,#c-f3:checked ~ .c-panels .p3{display:grid}
 .c-panel .c-label{margin-bottom:12px}
 .c-panel .c-h2{font-size:2.75rem;margin-bottom:16px}
 .c-panel_text > p{font-size:1.1875rem;color:var(--muted);max-width:36ch}
@@ -232,8 +232,8 @@ body{margin:0;background:#263238}
   .c-hero_head{padding-top:40px;text-align:left}
   .c-hero_head .c-intro{margin-left:0;font-size:1.0625rem}
   .c-switch{margin-top:40px}
-  .c-tabs{grid-template-columns:1fr 1fr}
-  .c-tab{height:56px;border-radius:12px;justify-content:flex-start;gap:10px;padding:0 12px;font-size:0.875rem}
+  .c-tabs{grid-template-columns:repeat(3,1fr)}
+  .c-tab{height:auto;min-height:76px;flex-direction:column;justify-content:center;gap:6px;padding:10px 6px;border-radius:12px;font-size:0.8125rem;text-align:center}
   .c-tab .c-ico{width:20px;height:20px}
   .c-panel{margin-top:8px;border-radius:var(--r);padding:24px;gap:24px}
   .c-panel .c-h2{font-size:2rem}
@@ -279,16 +279,15 @@ body{margin:0;background:#263238}
 <button class="c-menu" type="button">Izvēlne</button>
 </header>
 <div class="c-hero_head">
-<h1 class="c-h1">Mēs to aizvedīsim.</h1>
-<p class="c-intro">Kurjerpasts uzņēmumiem, pārvākšana un transports ar šoferi. Savs autoparks un sava komanda kopš 2011. gada.</p>
+<h1 class="c-h1">Mēs aizvedīsim!</h1>
+<p class="c-intro">Kurjerpasts uzņēmumiem un pārvākšana birojiem un mājām. Savs autoparks un sava komanda kopš 2011. gada.</p>
 </div>
 <div class="c-switch">
-<input type="radio" name="c-service" id="c-f1" checked><input type="radio" name="c-service" id="c-f2"><input type="radio" name="c-service" id="c-f3"><input type="radio" name="c-service" id="c-f4">
+<input type="radio" name="c-service" id="c-f1" checked><input type="radio" name="c-service" id="c-f2"><input type="radio" name="c-service" id="c-f3">
 <div class="c-tabs">
 <label class="c-tab t1" for="c-f1"><svg class="c-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l8.5 4.75v9.5L12 21.5l-8.5-4.75v-9.5L12 2.5z"></path><path d="M3.5 7.25L12 12l8.5-4.75M12 12v9.5"></path></svg><span>Kurjerpasts uzņēmumiem</span></label>
 <label class="c-tab t2" for="c-f2"><svg class="c-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 11L12 4.5l8.5 6.5"></path><path d="M5.5 9.5v10h13v-10"></path><path d="M9.5 19.5v-5h5v5"></path></svg><span>Pārvākšanās</span></label>
-<label class="c-tab t3" for="c-f3"><svg class="c-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 6.5h11v9h-11z"></path><path d="M13.5 9.5h4l3 3.2v2.8h-7"></path><circle cx="6.5" cy="17.5" r="1.8"></circle><circle cx="17" cy="17.5" r="1.8"></circle></svg><span>Transports ar šoferi</span></label>
-<label class="c-tab t4" for="c-f4"><svg class="c-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"></circle><path d="M5 20c1.2-3.6 4-5.5 7-5.5s5.8 1.9 7 5.5"></path></svg><span>Darbs pie mums</span></label>
+<label class="c-tab t3" for="c-f3"><svg class="c-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"></circle><path d="M5 20c1.2-3.6 4-5.5 7-5.5s5.8 1.9 7 5.5"></path></svg><span>Darbs pie mums</span></label>
 </div>
 <div class="c-panels">
 <article class="c-panel p1">
@@ -320,20 +319,6 @@ body{margin:0;background:#263238}
 <figure><img src="/_blob/fcaf8c42b901509cfc836bb25094f776" alt="Darbinieks ar ratiņiem ved kastes" width="620" height="388" style="object-position:50% 70%"></figure>
 </article>
 <article class="c-panel p3">
-<div class="c-panel_text">
-<p class="c-label">Pakalpojums</p>
-<h2 class="c-h2">Busiņš ar šoferi, kad vajag</h2>
-<p>Jūsu kravai un jūsu maršrutam, ar mūsu šoferi pie stūres.</p>
-<ul class="c-checks">
-<li><span class="c-check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>Busiņš kopā ar mūsu šoferi</li>
-<li><span class="c-check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>Jūsu maršruts un laiks</li>
-<li><span class="c-check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>Vienreizēji vai regulāri pārvadājumi</li>
-</ul>
-<div class="c-actions"><a href="#piedavajums" class="c-btn">Pieteikt transportu</a><a href="#" class="c-textlink">Zvanīt +371 29 443 359</a></div>
-</div>
-<figure><img src="/_blob/ce96ee8fea786550be4ea36b388d354c" alt="Balts kravas busiņš pie ķieģeļu ēkas" width="620" height="388"></figure>
-</article>
-<article class="c-panel p4">
 <div class="c-panel_text">
 <p class="c-label">Darbs pie mums</p>
 <h2 class="c-h2">Meklējam kurjerus un šoferus</h2>
@@ -473,7 +458,6 @@ body{margin:0;background:#263238}
 <div class="c-pills">
 <label class="c-pill"><input type="radio" name="c-svc" checked><span>Kurjerpasts uzņēmumam</span></label>
 <label class="c-pill"><input type="radio" name="c-svc"><span>Pārvākšanās</span></label>
-<label class="c-pill"><input type="radio" name="c-svc"><span>Transports ar šoferi</span></label>
 </div>
 </fieldset>
 <div class="c-row"><div class="c-field"><label for="c-name">Vārds</label><input id="c-name" type="text" autocomplete="name"></div><div class="c-field"><label for="c-phone">Tālrunis</label><input id="c-phone" type="tel" autocomplete="tel"></div></div>
@@ -491,7 +475,7 @@ body{margin:0;background:#263238}
 <div class="c-container">
 <div class="c-footer_top">
 <div><h2>Postline. Kurjerpasts un pārvākšana kopš 2011. gada.</h2></div>
-<div><b>Pakalpojumi</b><ul><li><a href="#">Kurjerpasts uzņēmumiem</a></li><li><a href="#">Pārvākšanās</a></li><li><a href="#">Transporta noma</a></li></ul></div>
+<div><b>Pakalpojumi</b><ul><li><a href="#">Kurjerpasts uzņēmumiem</a></li><li><a href="#">Pārvākšanās</a></li></ul></div>
 <div><b>Uzņēmums</b><ul><li><a href="#par-mums">Par mums</a></li><li><a href="#">Darbs pie mums</a></li><li><a href="#">Kontakti</a></li></ul></div>
 <div><b>Kontakti</b><ul><li><a href="#">+371 29 443 359</a></li><li><a href="#">info@postline.lv</a></li><li>[Biroja adrese]</li></ul></div>
 </div>

@@ -85,11 +85,10 @@ body{margin:0;background:#161615}
 
 /* services */
 .a-services{background:var(--sky)}
-.a-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(5,auto);column-gap:24px}
+.a-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(5,auto);column-gap:32px}
 .a-card{grid-row:span 5;display:grid;grid-template-rows:subgrid;row-gap:0}
 .a-card.is-lime{background:var(--lime)}
 .a-card.is-orange{background:var(--orange)}
-.a-card.is-white{background:var(--paper)}
 .a-card figure{aspect-ratio:16/10;overflow:hidden}
 .a-card_title{padding:28px 28px 0}
 .a-card_for{padding:12px 28px 0;font-size:17px;line-height:1.5}
@@ -306,9 +305,9 @@ body{margin:0;background:#161615}
 <section class="a-hero section_header1" aria-labelledby="a-hero-h">
 <div class="a-container a-grid">
 <div class="a-hero_text">
-<nav class="a-chips" aria-label="Pakalpojumi"><a href="#" class="a-chip">Kurjerpasts uzņēmumiem</a><a href="#" class="a-chip">Pārvākšanās</a><a href="#" class="a-chip">Transports ar šoferi</a></nav>
+<nav class="a-chips" aria-label="Pakalpojumi"><a href="#" class="a-chip">Kurjerpasts uzņēmumiem</a><a href="#" class="a-chip">Pārvākšanās</a></nav>
 <h1 id="a-hero-h" class="a-h1"><span>Kurjerpasts</span><span>un pārvākšana</span></h1>
-<p class="a-sub">Uzņēmumu sūtījumi, biroju un mājokļu pārvākšana un busiņš ar šoferi. Savs autoparks un sava komanda kopš 2011. gada.</p>
+<p class="a-sub">Regulāras piegādes uzņēmumiem un biroju, arhīvu un mājokļu pārvākšana. Savs autoparks un sava komanda kopš 2011. gada.</p>
 <div class="a-hero_actions">
 <a href="#piedavajums" class="a-btn">Saņemt piedāvājumu</a>
 <a href="#" class="a-link">vai zvaniet +371 29 443 359</a>
@@ -322,12 +321,12 @@ body{margin:0;background:#161615}
 </div>
 </section>
 
-<section class="a-services a-section section_layout251" aria-labelledby="a-svc-h">
+<section class="a-services a-section section_layout618" aria-labelledby="a-svc-h">
 <div class="a-container">
 <div class="a-head">
 <p class="a-label">Pakalpojumi</p>
-<h2 id="a-svc-h" class="a-h2">Trīs pakalpojumi</h2>
-<p class="a-intro">Kurjerpasts ir mūsu pamatdarbs. Kad busiņi nav maršrutā, tie pārvāc birojus un vadā kravas.</p>
+<h2 id="a-svc-h" class="a-h2">Divi pakalpojumi</h2>
+<p class="a-intro">Kurjerpasts ir mūsu pamatdarbs. Kad busiņi nav maršrutā, tie pārvāc birojus, arhīvus un mājas.</p>
 </div>
 <div class="a-cards">
 <article class="a-card is-lime">
@@ -343,13 +342,6 @@ body{margin:0;background:#161615}
 <p class="a-card_for"><b>Kam:</b> birojiem, arhīviem, mazajiem uzņēmumiem un mājām.</p>
 <ul class="a-card_list"><li>Iekraušana un pārvešana</li><li>Mēbeļu demontāža un montāža</li><li>Arhīvu pārvešana</li></ul>
 <div class="a-card_cta"><a href="#piedavajums" class="a-link">Saņemt pārvākšanās cenu <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.5"></path></svg></a></div>
-</article>
-<article class="a-card is-white">
-<figure><img src="/_blob/304b2b2903f8736fafa13c68c0f9d8f3" alt="Balts kravas auto brauc pa ielu krēslā" width="410" height="256" style="object-position:60% 55%"></figure>
-<h3 class="a-h3 a-card_title">Transports ar šoferi</h3>
-<p class="a-card_for"><b>Kam:</b> kad kravai vajag busiņu un šoferi.</p>
-<ul class="a-card_list"><li>Busiņš ar šoferi</li><li>Jūsu maršruts un laiks</li><li>Vienreizēji vai regulāri</li></ul>
-<div class="a-card_cta"><a href="#piedavajums" class="a-link">Pieteikt transportu <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.5"></path></svg></a></div>
 </article>
 </div>
 </div>
@@ -502,7 +494,6 @@ body{margin:0;background:#161615}
 <div class="a-radios">
 <label class="a-radio"><input type="radio" name="a-svc" checked><span>Kurjerpasts uzņēmumam</span></label>
 <label class="a-radio"><input type="radio" name="a-svc"><span>Pārvākšanās</span></label>
-<label class="a-radio"><input type="radio" name="a-svc"><span>Transports ar šoferi</span></label>
 </div>
 </fieldset>
 <div class="a-row">
@@ -523,7 +514,7 @@ body{margin:0;background:#161615}
 <div class="a-footer_photo"><img src="/_blob/f6748b43c6d80b311f0e4f45dd2165c3" alt="Balti kravas busiņi stāvvietā rindā" width="720" height="480" style="object-position:40% 60%"></div>
 <div class="a-footer_menu">
 <a href="#" class="a-logo" aria-label="Postline, uz sākumu"><svg viewBox="0 0 400 235" aria-hidden="true"><rect width="400" height="235" fill="#f05223"></rect><path d="M82 52 H312 V119 H88 V188" fill="none" stroke="#ffffff" stroke-width="13"></path></svg><span>Postline</span></a>
-<nav class="a-footer_links" aria-label="Kājenes izvēlne"><a href="#">Kurjerpasts uzņēmumiem</a><a href="#">Pārvākšanās</a><a href="#">Transporta noma</a><a href="#">Darbs pie mums</a><a href="#">Kontakti</a></nav>
+<nav class="a-footer_links" aria-label="Kājenes izvēlne"><a href="#">Kurjerpasts uzņēmumiem</a><a href="#">Pārvākšanās</a><a href="#">Darbs pie mums</a><a href="#">Kontakti</a></nav>
 <div class="a-footer_info"><p><a href="#">+371 29 443 359</a><br><a href="#">info@postline.lv</a></p><p>SIA Postline<br>Reģ. nr. LV40103468518</p></div>
 <div class="a-footer_legal"><span>© 2026 SIA Postline</span><a href="#">Privātuma politika</a><a href="#">Sīkdatņu iestatījumi</a></div>
 </div>
@@ -531,7 +522,7 @@ body{margin:0;background:#161615}
 
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":7201}}'>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":7309}}'>
 class Component extends DCLogic {
   renderVals() { return {}; }
 }

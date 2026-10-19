@@ -32,14 +32,16 @@ page-wrapper
 
 | Page | Slug | Sections (Relume) |
 | --- | --- | --- |
-| Sākums | `/` | Navbar 1 · Header 1 · Layout 251 · Stats 13 · Layout 231 · Layout 645 (`#par-mums`) · Testimonial 17 · CTA 1 · FAQ 3 · Contact 5 (`#piedavajums`) · Footer 3 |
+| Sākums | `/` | Navbar 1 · Header 1 · Layout 618 · Stats 13 · Layout 231 · Layout 645 (`#par-mums`) · Testimonial 17 · CTA 1 · FAQ 3 · Contact 5 (`#piedavajums`) · Footer 3 |
 | Pakalpojumi uzņēmumiem | `/pakalpojumi-uznemumiem` | Navbar 1 · Header 50 · Stats 8 · Layout 42 · Layout 623 · Layout 231 · Layout 647 · Testimonial 17 · FAQ 3 · Contact 6 (`#pieprasijums`) · Footer 3 |
 | Pārvākšanās | `/parvaksanas` | Navbar 1 · Header 1 · Layout 216 · Layout 629 · Layout 671 · Timeline 17 · Testimonial 17 · FAQ 3 · Multi Form 17 (`#pieteikums`) · Banner 3 · Footer 3 |
 | Darbs pie mums | `/darbs` | Navbar 1 · Header 5 · Layout 620 · Layout 645 · Career 12 (`#vakances`) · Layout 231 · Testimonial 17 · FAQ 3 · Contact 9 (`#pieteikties`) · Banner 3 · Footer 3 |
 | Kontakti | `/kontakti` | Navbar 1 · Contact 14 · Layout 232 · Contact 5 · Footer 3 |
 | Darbinieku sadaļa (hidden) | `/darbinieki` | Links 1 only, with no Navbar or Footer: one button that opens the daily report. Set `noindex, nofollow` and leave it out of the menu and of `sitemap.xml` (see below). |
 
-Navbar: Pakalpojumi ▾ (Kurjerpasts uzņēmumiem · Pārvākšanās · Transporta noma) · Par mums · Darbs pie mums · Kontakti, plus one primary button. The button's text and link are component properties, so each page points it at its own form:
+Postline shows two services: Kurjerpasts uzņēmumiem and Pārvākšanās. Transport rental ("Transporta noma") came only from the old site; the brief marked it "ja paliek" and no call confirmed it, so it is not on any page, form or menu.
+
+Navbar: Pakalpojumi ▾ (Kurjerpasts uzņēmumiem · Pārvākšanās) · Par mums · Darbs pie mums · Kontakti, plus one primary button. The button's text and link are component properties, so each page points it at its own form:
 
 | Page | Navbar button | Goes to |
 | --- | --- | --- |
@@ -50,11 +52,11 @@ Navbar: Pakalpojumi ▾ (Kurjerpasts uzņēmumiem · Pārvākšanās · Transpor
 
 Small deviations from the stock Relume components (all noted on the canvas):
 
-- Layout 251: each service card has its own action link.
+- Layout 618: two service cards, each with its own action link (stock Layout 618 has one shared button row under the cards).
 - Layout 231: used for the 3-step "how it works", with "1. solis" as the tagline.
 - Timeline 17: step numbers instead of dates, 4 items.
 - Banner 3: fixed to the bottom of the screen on phones only (under 768px), shown after the hero.
-- Contact 5 on `/`: a service radio (Kurjerpasts uzņēmumam / Pārvākšanās / Transports ar šoferi) in place of a plain contact form.
+- Contact 5 on `/`: a service radio (Kurjerpasts uzņēmumam / Pārvākšanās) in place of a plain contact form.
 - Contact 5 on `/kontakti`: an added radio "Uzņēmums / Privātpersona" and a topic select.
 - Multi Form 17: Postline's 4 steps (below) replace the stock fields.
 
@@ -82,7 +84,7 @@ Rules applied everywhere:
 
 | Form | Where | Fields |
 | --- | --- | --- |
-| Pieprasījums (Contact 5) | `/#piedavajums` | pakalpojums (radio: Kurjerpasts uzņēmumam / Pārvākšanās / Transports ar šoferi), vārds, tālrunis, e-pasts, īsi par darbu. The service choice decides the GHL pipeline. |
+| Pieprasījums (Contact 5) | `/#piedavajums` | pakalpojums (radio: Kurjerpasts uzņēmumam / Pārvākšanās), vārds, tālrunis, e-pasts, īsi par darbu. The service choice decides the GHL pipeline. |
 | Pārvākšanās pieteikums (Multi Form 17) | `/parvaksanas#pieteikums` | 1) Privātpersona / Uzņēmums · 2) no adreses, uz adresi, vēlamais datums · 3) apjoms un apraksts, stāvs un lifts abās vietās, foto augšupielāde · 4) vārds, tālrunis, e-pasts (+ uzņēmums). After sending: automatic confirmation to the client. |
 | B2B pieprasījums (Contact 6) | `/pakalpojumi-uznemumiem#pieprasijums` | uzņēmums, kontaktpersona, e-pasts, tālrunis, pakalpojums (select), aptuvenais apjoms (radio), papildu informācija |
 | Kontaktforma (Contact 5) | `/kontakti` | vārds, e-pasts, Uzņēmums / Privātpersona, tēma, ziņa |
@@ -123,8 +125,8 @@ How they were made:
 | --- | --- | --- | --- |
 | Idea | A street poster: flat fields of colour, heavy uppercase type, tilted photo stickers | A printed annual report: greyscale photos, black ink, Postline orange as the only colour, square tiles with 8 px gaps | Clean and modern; the line of the Postline "P" returns as the footer mark |
 | Taken from postline.lv | Signal orange #F05223 as the whole hero field | Raleway, the current site's typeface | Blue grey #263238 and coral #FF8A65 from the old site |
-| Hero | Three service chips, "Kurjerpasts un pārvākšana", subhead, black button, 300-workplace proof line, van photo as a sticker | Tile board: "Postline" with what it does and the button, two photos, and an index of the three services as link tiles | "Mēs to aizvedīsim." over four equal tabs (three services + jobs); every tab opens a panel with the same structure |
-| Services | Three equal cards (lime, orange, white): photo, title, "Kam", three bullets, link | Three aligned columns: photo, title, "Kam", "Iekļauts" list, link | Inside the hero tabs |
+| Hero | Two service chips, "Kurjerpasts un pārvākšana", subhead, black button, 300-workplace proof line, van photo as a sticker | Tile board: "Postline" with what it does and the button, two photos, and link tiles for the two services and the jobs page | "Mēs aizvedīsim!" over three equal tabs (two services + jobs); every tab opens a panel with the same structure |
+| Services | Two equal cards (lime, orange): photo, title, "Kam", three bullets, link | Two aligned columns: photo, title, "Kam", "Iekļauts" list, link | Inside the hero tabs |
 | Numbers | Giant "300" with a "Ko tas nozīmē" panel and four stats below | Ink section: intro on the left, 2×2 stat tiles on the right, 300 in orange | Four equal stat cards, 300 in coral |
 | How it works | Three coloured panels with step numbers and time labels | Horizontal stepper with orange numbered circles | Horizontal stepper with numbered circles on a coral line |
 | About | Paragraph with highlighted facts | Photo with a "Kopš 2011. gada" badge, lead text and three fact tiles | Paragraph with small photos inside the words, three fact cards |
@@ -134,7 +136,7 @@ How they were made:
 | Colours | #F05223, sky #4DB3FF, lime #C5F53D, near-black #161615, text #111111 | white, tone #F1F1EE, ink #121212, Postline orange | #263238, #37474F, #CFD8DC, #ECEFF1, coral #FF8A65, pale coral #FFE0D6 |
 | Type | Unbounded 800 (uppercase display) + Onest | Raleway 500/600 + Source Sans 3 | Geist |
 | Shapes | Square, panels edge to edge | Square tiles, 8 px gaps | 16 px radius, pill buttons |
-| Height at 1440 | 7,201 px | 7,316 px | 6,718 px |
+| Height at 1440 | 7,309 px | 7,397 px | 6,718 px |
 
 Contrast note: white text on #F05223 is only 3.5:1, so every orange or coral button uses dark text.
 
@@ -185,14 +187,14 @@ What each block needs, in the order the sections appear on the page. Square brac
 
 **Sākums**
 - Header 1: check the headline and the one-line description (we can propose alternatives).
-- Layout 251: 1–2 sentences per service, saying who it is for and what is included.
+- Layout 618: 1–2 sentences per service, saying who it is for and what is included.
 - Layout 645 (`#par-mums`): 3 values in one line each. Courier partners are mentioned only neutrally.
 - FAQ 3: answers to the 6 questions, 1–3 sentences each.
 
 **Pakalpojumi uzņēmumiem**
 - Stats 8: 1–2 sentences on why companies choose Postline.
 - Layout 42: 1–2 sentences on how the regular route and one contact work in practice.
-- Layout 623: the 3 services for companies, 1–2 sentences each.
+- Layout 623: 1–2 sentences each on regular deliveries, specialised deliveries, and tenders with long-term contracts.
 - Layout 647: regions, volumes, vehicle types and form of cooperation, 1 line each.
 - FAQ 3: answers to the 7 questions.
 
