@@ -2,311 +2,381 @@
 <html lang="lv">
 <head>
 <meta charset="utf-8">
-<title>Postline — Koncepts A: Signāllīnija</title>
+<title>Postline — Koncepts A: Plakāts</title>
 <script src="./support.js"></script>
-<link rel="stylesheet" href="./concepts.css">
 </head>
 <body>
 <x-dc>
 <helmet>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&amp;family=Raleway:wght@600;700;800&amp;display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@700;800&amp;family=Onest:wght@400;500;600&amp;display=swap" rel="stylesheet">
 <style>
-body{margin:0}
-a{color:#161616}a:hover{color:#c43c12}
-.theme-a .c-cta{background:#f05223;--c-brand:#161616;--c-ink:#161616;--c-muted:#2a1810;--c-btn-bg:#161616;--c-btn-ink:#ffffff;--c-btn-line:#161616;--c-btn2-ink:#161616;--c-btn2-line:#161616;--c-tag-color:#161616}
-.theme-a .c-alt .c-stat_number{color:#c43c12}
+/* Koncepts A · Plakāts — bold. Taste-skill direction "Loud and flat" (seed 11), palette taken from Postline's own signal orange. */
+body{margin:0;background:#f05223}
+.a-root{--orange:#f05223;--sky:#4db3ff;--lime:#c5f53d;--black:#161615;--paper:#ffffff;--ink:#111111;--ink-soft:#3a3a38;--m:28px;
+  --f-display:"Unbounded","Arial Black",system-ui,sans-serif;--f-text:"Onest","Segoe UI",system-ui,sans-serif;
+  font-family:var(--f-text);font-size:18px;line-height:1.5;color:var(--ink);overflow-x:clip}
+.a-root *{box-sizing:border-box}
+.a-root :where(h1,h2,h3,p,ul,ol,figure){margin:0}
+.a-root :where(ul,ol){padding:0;list-style:none}
+.a-root :where(a){color:inherit}
+.a-root :where(img){display:block;width:100%;height:100%;object-fit:cover}
+.a-display{font-family:var(--f-display);font-weight:800;text-transform:uppercase;letter-spacing:-0.03em;line-height:1}
+.a-h2{font-family:var(--f-display);font-weight:800;text-transform:uppercase;letter-spacing:-0.03em;line-height:1;font-size:clamp(2rem,3.6vw,3.5rem);text-wrap:balance}
+.a-h3{font-family:var(--f-display);font-weight:700;text-transform:uppercase;letter-spacing:-0.02em;line-height:1.1;font-size:1.375rem}
+.a-lead{font-size:1.375rem;line-height:1.4}
+.a-small{font-size:0.875rem}
+.a-wrap{padding-left:var(--m);padding-right:var(--m)}
+
+/* buttons: one shape, square */
+.a-btn{display:inline-flex;align-items:center;justify-content:center;gap:0.625rem;min-height:3.5rem;padding:0 1.75rem;background:var(--ink);color:#ffffff !important;font-family:var(--f-text);font-weight:600;font-size:1.0625rem;text-decoration:none;border:0;cursor:pointer;transition:transform 160ms cubic-bezier(0.32,0.72,0,1),background-color 160ms ease-out}
+.a-btn:hover{transform:translateY(-2px)}
+.a-btn:active{transform:translateY(1px)}
+.a-btn:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.a-btn.is-orange{background:var(--orange);color:var(--ink) !important}
+.a-btn.is-small{min-height:2.75rem;padding:0 1.25rem;font-size:0.9375rem}
+.a-link{font-weight:600;text-decoration:underline;text-underline-offset:0.2em;text-decoration-thickness:2px}
+
+/* nav */
+.a-nav{display:flex;align-items:center;gap:2rem;height:72px;background:var(--black);color:#ffffff}
+.a-logo{display:flex;align-items:center;gap:0.75rem;text-decoration:none;color:#ffffff}
+.a-logo svg{width:52px;height:31px;display:block}
+.a-logo span{font-family:var(--f-display);font-weight:800;font-size:1.125rem;letter-spacing:-0.02em}
+.a-nav_links{display:flex;gap:1.75rem;margin-left:auto;font-weight:500;font-size:0.9375rem}
+.a-nav_links a{text-decoration:none}
+.a-nav_links a:hover{text-decoration:underline;text-underline-offset:0.3em}
+.a-menu{display:none;margin-left:auto;background:none;border:0;color:#ffffff;font:600 0.9375rem var(--f-text)}
+
+/* hero */
+.a-hero{position:relative;background:var(--orange);padding-top:7.5rem;padding-bottom:9rem;min-height:860px;z-index:2}
+.a-hero_title{font-size:clamp(3rem,10.9vw,11rem);line-height:1.04}
+.a-hero_title .a-line{display:block;overflow:hidden;padding-top:0.06em;padding-bottom:0.02em}
+.a-hero_title .a-line > span{display:block;animation:a-rise 900ms cubic-bezier(0.16,1,0.3,1) both}
+.a-hero_title .is-right{text-align:right}
+.a-hero_title .is-right > span{animation-delay:110ms}
+@keyframes a-rise{from{transform:translateY(105%)}to{transform:translateY(0)}}
+.a-hero_bottom{display:flex;align-items:flex-end;gap:3rem;margin-top:6.5rem;max-width:62%}
+.a-hero_lead{max-width:26ch;font-size:1.375rem;line-height:1.35;font-weight:500}
+.a-hero_action{display:grid;gap:0.875rem;flex:none}
+.a-hero_meta{font-size:0.9375rem;font-weight:500}
+.a-hero_photo{position:absolute;right:4%;bottom:-150px;width:31vw;max-width:460px;height:auto !important;aspect-ratio:4/3;transform:rotate(4deg);clip-path:polygon(3% 0,100% 4%,97% 100%,0 96%);z-index:3}
+
+/* services mosaic */
+.a-services{background:var(--sky);padding-top:13rem;padding-bottom:7rem}
+.a-mosaic{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:96px;gap:8px;grid-template-areas:
+ "h h h h h h p p p p p p" "h h h h h h p p p p p p" "h h h h h h p p p p p p"
+ "a a a b b b p p p p p p" "a a a b b b p p p p p p" "a a a b b b f f f c c c"
+ "q q q q q q f f f c c c" "q q q q q q f f f c c c"}
+.a-tile{position:relative;padding:24px;overflow:hidden}
+.a-tile.is-h{grid-area:h;background:#3ea5f0;display:flex;flex-direction:column;justify-content:space-between}
+.a-tile.is-p{grid-area:p;padding:0}
+.a-tile.is-q{grid-area:q;padding:0}
+.a-tile.is-a{grid-area:a;background:var(--lime)}
+.a-tile.is-b{grid-area:b;background:var(--orange)}
+.a-tile.is-c{grid-area:c;background:var(--paper)}
+.a-tile.is-f{grid-area:f;background:var(--black);color:#ffffff;display:flex;flex-direction:column;justify-content:space-between}
+.a-tile .a-h3{margin-bottom:0.875rem}
+.a-tile p + .a-link{display:inline-block;margin-top:1rem}
+.a-tile_cap{position:absolute;left:0;bottom:0;padding:0.75rem 1.25rem;background:var(--black);color:#ffffff;font-weight:600;font-size:0.9375rem}
+.a-figure{font-family:var(--f-display);font-weight:800;font-size:clamp(4rem,6vw,6rem);line-height:0.9;letter-spacing:-0.04em}
+
+/* one figure */
+.a-figure-screen{background:var(--lime);padding-top:6rem;padding-bottom:6rem;min-height:860px;display:flex;flex-direction:column}
+.a-figure-screen_claim{font-family:var(--f-display);font-weight:800;text-transform:uppercase;font-size:clamp(1.75rem,2.8vw,2.75rem);line-height:1.05;letter-spacing:-0.03em;max-width:16ch}
+.a-figure-screen_row{display:flex;align-items:flex-end;justify-content:space-between;gap:3rem;margin-top:auto}
+.a-big{font-family:var(--f-display);font-weight:800;font-size:clamp(9rem,23vw,23.75rem);line-height:0.8;letter-spacing:-0.06em}
+.a-big_cap{margin-top:1.75rem;max-width:32ch;font-size:1.0625rem}
+.a-facts{display:grid;gap:1.75rem;min-width:300px;padding-bottom:0.5rem}
+.a-facts li{display:grid;grid-template-columns:7.5rem 1fr;align-items:baseline;gap:1rem}
+.a-facts b{font-family:var(--f-display);font-weight:800;font-size:2.5rem;letter-spacing:-0.04em;line-height:1}
+
+/* steps */
+.a-steps{background:var(--black);color:#ffffff;padding-top:7rem;padding-bottom:7rem}
+.a-steps_head{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;margin-bottom:3rem}
+.a-steps_list{display:grid;grid-template-columns:5fr 4fr 3fr;gap:0}
+.a-step{padding:2rem 1.75rem 2.5rem;color:var(--ink);min-height:340px;display:flex;flex-direction:column}
+.a-step:nth-child(1){background:var(--orange)}
+.a-step:nth-child(2){background:var(--sky)}
+.a-step:nth-child(3){background:var(--lime)}
+.a-step .a-h3{font-size:clamp(1.5rem,2.2vw,2.125rem);margin-top:auto;margin-bottom:0.75rem}
+.a-step_when{font-weight:600}
+
+/* projects index */
+.a-projects{background:var(--orange);padding-top:7rem;padding-bottom:7rem}
+.a-projects_grid{display:grid;grid-template-columns:1.25fr 1fr;gap:3rem;align-items:start}
+.a-projects_list li{padding:1.25rem 0 1.5rem}
+.a-projects_list li + li{margin-top:0.5rem}
+.a-projects_name{font-family:var(--f-display);font-weight:800;text-transform:uppercase;font-size:clamp(2rem,4.6vw,4.5rem);line-height:0.95;letter-spacing:-0.04em}
+.a-projects_list li:not(.is-active) .a-projects_name{color:#4a1606}
+.a-projects_meta{display:flex;gap:1.5rem;margin-top:0.5rem;font-weight:500}
+.a-projects_frame{position:sticky;top:96px;aspect-ratio:1/1;transform:rotate(-3deg)}
+.a-projects_frame figcaption{position:absolute;left:0;bottom:0;padding:0.75rem 1.25rem;background:var(--black);color:#ffffff;font-weight:600;font-size:0.9375rem}
+
+/* about: highlighted words */
+.a-about{background:var(--paper);padding-top:7.5rem;padding-bottom:7.5rem}
+.a-about h2{margin-bottom:2.5rem}
+.a-about_text{columns:2;column-gap:2rem;font-size:clamp(1.375rem,2vw,1.875rem);line-height:1.22;color:var(--ink-soft)}
+.a-about_text b{color:var(--ink);font-weight:600}
+.a-hl{color:var(--ink);padding:0 0.1em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.a-hl.is-orange{background:#f7a07f}.a-hl.is-sky{background:#9fd6ff}.a-hl.is-lime{background:var(--lime)}
+.a-about_close{display:inline;background:var(--orange);color:var(--ink);font-weight:600;text-decoration:none;padding:0 0.15em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+
+/* testimonials: paper slips */
+.a-quotes{background:var(--sky);padding-top:7rem;padding-bottom:0;overflow:hidden}
+.a-slips{display:flex;justify-content:center;align-items:flex-start;margin-top:3.5rem;padding:0 4%}
+.a-slip{width:320px;flex:none;background:var(--paper);padding:2.5rem 2.25rem 3rem;clip-path:polygon(0 2%,5% 0,10% 2%,15% 0,20% 2%,25% 0,30% 2%,35% 0,40% 2%,45% 0,50% 2%,55% 0,60% 2%,65% 0,70% 2%,75% 0,80% 2%,85% 0,90% 2%,95% 0,100% 2%,100% 98%,95% 100%,90% 98%,85% 100%,80% 98%,75% 100%,70% 98%,65% 100%,60% 98%,55% 100%,50% 98%,45% 100%,40% 98%,35% 100%,30% 98%,25% 100%,20% 98%,15% 100%,10% 98%,5% 100%,0 98%)}
+.a-slip:nth-child(1){height:440px;transform:rotate(-4deg);margin-right:-20px}
+.a-slip:nth-child(2){height:520px;transform:rotate(2deg);margin-top:2rem;z-index:1}
+.a-slip:nth-child(3){height:600px;transform:rotate(5deg);margin-left:-20px;margin-bottom:-120px}
+.a-slip_name{text-align:center;font-weight:700;font-size:1.125rem}
+.a-slip_role{text-align:center;font-size:0.9375rem}
+.a-slip_photo{width:120px;height:120px;margin:1.25rem auto;background:#d9d9d6}
+.a-slip blockquote{margin:0;font-size:1rem}
+
+/* careers: one word is the button */
+.a-word{display:block;background:var(--lime);color:var(--ink);text-decoration:none;min-height:60vh;padding:2rem var(--m) 1.5rem;position:relative;transition:background-color 120ms linear,color 120ms linear}
+.a-word:hover,.a-word:focus-visible{background:var(--black);color:var(--lime);outline:none}
+.a-word_top{display:flex;justify-content:space-between;gap:2rem;font-size:1.25rem;font-weight:500;max-width:100%}
+.a-word_text{max-width:34ch}
+.a-word_top svg{width:48px;height:48px;flex:none}
+.a-word_big{position:absolute;left:var(--m);right:var(--m);bottom:1.5rem;font-family:var(--f-display);font-weight:800;text-transform:uppercase;font-size:clamp(3rem,15.4vw,15rem);line-height:0.8;letter-spacing:-0.05em;white-space:nowrap}
+
+/* faq: large plain list */
+.a-faq{background:var(--paper);padding-top:7rem;padding-bottom:7rem}
+.a-faq_grid{display:grid;grid-template-columns:1fr 2fr;gap:3rem}
+.a-faq_list details{background:#f1f1ee;margin-bottom:8px}
+.a-faq_list summary{list-style:none;display:flex;justify-content:space-between;gap:1.5rem;align-items:center;padding:1.375rem 1.5rem;cursor:pointer;font-family:var(--f-display);font-weight:700;font-size:1.125rem;text-transform:uppercase;letter-spacing:-0.01em}
+.a-faq_list summary::-webkit-details-marker{display:none}
+.a-faq_list summary::after{content:"+";font-size:1.75rem;line-height:1}
+.a-faq_list details[open] summary::after{content:"−"}
+.a-faq_list details p{padding:0 1.5rem 1.5rem;max-width:60ch}
+
+/* quote form: photo strip + bar */
+.a-form{background:var(--orange);padding-top:3rem;padding-bottom:6rem;overflow:hidden}
+.a-strip{display:flex;gap:8px;height:150px;margin:0 calc(var(--m) * -1) 4.5rem;transform:translateX(-60px)}
+.a-strip img{height:150px;width:auto;flex:none}
+.a-strip img:nth-child(3n+1){aspect-ratio:3/4}.a-strip img:nth-child(3n+2){aspect-ratio:1/1}.a-strip img:nth-child(3n){aspect-ratio:3/2}
+.a-form_head{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;margin-bottom:2.5rem}
+.a-form_head p{max-width:34ch;font-size:1.25rem}
+.a-bar{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:8px}
+.a-cell{display:flex;flex-direction:column;justify-content:center;min-height:96px;background:#f47a55;padding:0 1.25rem}
+.a-cell label{font-size:0.875rem;font-weight:600}
+.a-cell input,.a-cell select{width:100%;border:0;background:transparent;font:500 1.125rem var(--f-text);color:var(--ink);padding:0.25rem 0;outline:none}
+.a-cell:focus-within{background:#ffc4b0}
+.a-cell.is-submit{background:var(--ink);color:#ffffff;align-items:center;font-weight:600;font-size:1.125rem;border:0;cursor:pointer;font-family:var(--f-text)}
+.a-form_print{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:8px;margin-top:0.875rem;font-size:0.875rem}
+.a-form_print p:last-child{grid-column:4}
+
+/* footer: photo half, menu half */
+.a-footer{display:grid;grid-template-columns:1fr 1fr;min-height:720px;background:var(--black);color:#ffffff}
+.a-footer_photo{position:relative}
+.a-footer_menu{padding:4rem 3.5rem 2rem;display:flex;flex-direction:column}
+.a-footer_menu .a-logo{margin-bottom:3.5rem}
+.a-footer_links{display:grid;gap:1.5rem}
+.a-footer_links a{font-family:var(--f-display);font-weight:800;text-transform:uppercase;font-size:clamp(1.5rem,2.6vw,2.375rem);letter-spacing:-0.03em;line-height:1;text-decoration:none;transition:transform 200ms cubic-bezier(0.32,0.72,0,1)}
+.a-footer_links a:hover{transform:translateX(12px)}
+.a-footer_info{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:4rem;font-size:0.9375rem;color:#d4d4d0}
+.a-footer_legal{margin-top:auto;padding-top:3rem;font-size:0.8125rem;color:#bdbdb8;display:flex;flex-wrap:wrap;gap:1.5rem}
+
+@media (prefers-reduced-motion: reduce){.a-hero_title .a-line > span{animation:none}.a-btn,.a-footer_links a{transition:none}}
+
+@media (max-width:991px){
+  .a-nav_links{display:none}
+  .a-menu{display:block}
+  .a-nav .a-btn{display:none}
+  .a-hero{min-height:0;padding-bottom:0}
+  .a-hero_bottom{max-width:none;flex-direction:column;align-items:flex-start;gap:1.75rem;margin-top:3.5rem}
+  .a-hero_photo{position:relative;right:auto;bottom:auto;width:78%;max-width:none;margin:3rem 0 -6rem auto}
+  .a-services{padding-top:9rem}
+  .a-steps_list{grid-template-columns:1fr}
+  .a-step{min-height:220px}
+  .a-projects_grid{grid-template-columns:1fr}
+  .a-projects_frame{position:relative;top:0;max-width:440px}
+  .a-faq_grid{grid-template-columns:1fr}
+  .a-footer{grid-template-columns:1fr}
+  .a-footer_photo{height:50vh;min-height:320px}
+}
+@media (max-width:767px){
+  .a-root{--m:16px;font-size:17px}
+  .a-hero{padding-top:3.5rem}
+  .a-hero_title{font-size:10vw;line-height:1}
+  .a-hero_title .is-right{text-align:left}
+  .a-hero_action{width:100%}
+  .a-hero_action .a-btn{width:100%}
+  .a-mosaic{grid-template-columns:1fr 1fr;grid-auto-rows:auto;gap:6px;grid-template-areas:"h h" "p p" "a b" "f c" "q q"}
+  .a-tile.is-h{min-height:180px;gap:1.5rem}
+  .a-tile.is-p{height:260px}.a-tile.is-q{height:200px}
+  .a-tile{padding:16px}
+  .a-tile .a-h3{font-size:1rem}
+  .a-tile p{font-size:0.9375rem}
+  .a-figure{font-size:3rem}
+  .a-figure-screen{min-height:80svh;padding-top:4rem;padding-bottom:4rem}
+  .a-figure-screen_row{flex-direction:column;align-items:flex-start}
+  .a-big{font-size:36vw}
+  .a-facts{min-width:0;width:100%}
+  .a-facts li{grid-template-columns:5.5rem 1fr}
+  .a-facts b{font-size:2rem}
+  .a-steps_head{flex-direction:column;align-items:flex-start}
+  .a-about_text{columns:1;font-size:1.25rem;line-height:1.3}
+  .a-slips{flex-direction:column;align-items:stretch;padding:0}
+  .a-slip{width:78%;height:auto !important;margin:0 !important}
+  .a-slip:nth-child(1){transform:rotate(-2deg)}
+  .a-slip:nth-child(2){transform:rotate(3deg);align-self:flex-end;margin-top:-32px !important}
+  .a-slip:nth-child(3){transform:rotate(-3deg);margin-top:-32px !important;margin-bottom:-40px !important}
+  .a-word{min-height:46svh}
+  .a-word_top{font-size:1.0625rem}
+  .a-word_top svg{width:32px;height:32px}
+  .a-word_big{font-size:12.4vw}
+  .a-form_head{flex-direction:column;align-items:flex-start}
+  .a-strip{height:110px}.a-strip img{height:110px}
+  .a-bar,.a-form_print{grid-template-columns:1fr}
+  .a-form_print p:last-child{grid-column:auto}
+  .a-cell{min-height:64px}
+  .a-footer_menu{padding:2.5rem var(--m) 2rem}
+  .a-footer_links a{font-size:8vw}
+  .a-footer_info{grid-template-columns:1fr}
+}
 </style>
 </helmet>
-<div class="c-root theme-a page-wrapper">
+<div class="a-root page-wrapper">
 
-<header class="navbar1_component c-nav">
-<div class="padding-global">
-<div class="navbar1_container">
-<a href="#" class="c-logo" aria-label="Postline — uz sākumu"><svg class="c-logo-mark" viewBox="0 0 400 235" aria-hidden="true"><rect width="400" height="235" fill="#f05223"></rect><path d="M82 52 H312 V119 H88 V188" fill="none" stroke="#ffffff" stroke-width="13"></path></svg><span class="c-logo-word">Postline</span></a>
-<nav class="navbar1_menu" aria-label="Galvenā izvēlne">
-<a href="#" class="navbar1_link">Pakalpojumi <svg class="c-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2"></path></svg></a>
-<a href="#" class="navbar1_link">Par mums</a>
-<a href="#" class="navbar1_link">Darbs pie mums</a>
-<a href="#" class="navbar1_link">Kontakti</a>
-<div class="button-group">
-<a href="#" class="button is-secondary is-small">Sazināties</a>
-<a href="#" class="button is-small">Pieteikt pārvākšanos</a>
-</div>
-</nav>
-<button class="navbar1_menu-button" type="button" aria-label="Atvērt izvēlni"><svg class="c-ico-md" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-width="2"></path></svg></button>
-</div>
-</div>
+<header class="a-nav a-wrap navbar1_component">
+<a href="#" class="a-logo" aria-label="Postline, uz sākumu"><svg viewBox="0 0 400 235" aria-hidden="true"><rect width="400" height="235" fill="#f05223"></rect><path d="M82 52 H312 V119 H88 V188" fill="none" stroke="#ffffff" stroke-width="13"></path></svg><span>Postline</span></a>
+<nav class="a-nav_links" aria-label="Galvenā izvēlne"><a href="#">Pakalpojumi</a><a href="#">Par mums</a><a href="#">Darbs pie mums</a><a href="#">Kontakti</a></nav>
+<a href="#piedavajums" class="a-btn is-orange is-small">Saņemt piedāvājumu</a>
+<button class="a-menu" type="button">Izvēlne</button>
 </header>
 
 <main class="main-wrapper">
 
-<section class="section_header1">
-<div class="padding-global">
-<div class="container-large">
-<div class="padding-section-large">
-<div class="header1_component c-grid-2">
-<div class="header1_content">
-<p class="c-tagline">Kurjerpasts · Transports · Pārvākšanās</p>
-<h1 class="heading-style-h1" style="margin-bottom: 1.5rem">Kurjerpasts, transports un pārvākšanās kopš 2011. gada</h1>
-<p class="text-size-medium text-color-muted">SIA Postline ir Latvijas kurjerpasta un transporta uzņēmums. Strādājam ar uzņēmumiem ilgtermiņā un palīdzam pārcelties birojiem, arhīviem un mājām.</p>
-<div class="button-group" style="margin-top: 2.25rem">
-<a href="#" class="button">Pakalpojumi uzņēmumiem</a>
-<a href="#" class="button is-secondary">Pieteikt pārvākšanos</a>
+<section class="a-hero a-wrap section_header1">
+<h1 class="a-hero_title a-display"><span class="a-line"><span>Vedam,</span></span><span class="a-line is-right"><span>pārvācam.</span></span></h1>
+<div class="a-hero_bottom">
+<p class="a-hero_lead">Kurjerpasts uzņēmumiem un pārvākšana ar savu autoparku. Kopš 2011. gada, ~20 busiņi un sava komanda.</p>
+<div class="a-hero_action">
+<a href="#piedavajums" class="a-btn">Saņemt piedāvājumu</a>
+<p class="a-hero_meta">Meklējat šofera darbu? <a href="#" class="a-link">Vakances</a></p>
 </div>
-<ul class="c-hero-points">
-<li>Kopš 2011. gada</li>
-<li>~20 transportlīdzekļu</li>
-<li>Rīga un Mārupe</li>
+</div>
+<img class="a-hero_photo" src="/_blob/ce96ee8fea786550be4ea36b388d354c" alt="Balts kravas busiņš pie ķieģeļu ēkas" width="460" height="345">
+</section>
+
+<section class="a-services a-wrap section_layout251" aria-labelledby="a-services-h">
+<div class="a-mosaic">
+<div class="a-tile is-h">
+<h2 id="a-services-h" class="a-h2">Trīs darbi,<br>viens autoparks</h2>
+<p class="a-lead" style="max-width:30ch">Kurjerpasts ir mūsu pamatdarbs. Kad busiņi nav maršrutā, tie pārvāc un vadā kravas.</p>
+</div>
+<figure class="a-tile is-p"><img src="/_blob/c4c5874aa61767603375ad24004cb36b" alt="Kurjers nodod kartona kasti klientam" width="700" height="560"><figcaption class="a-tile_cap">Piegāde uzņēmumam</figcaption></figure>
+<div class="a-tile is-a"><h3 class="a-h3">Kurjerpasts uzņēmumiem</h3><p>Regulāras un specializētas piegādes ilgtermiņa partneriem.</p><a href="#" class="a-link">Pieprasīt piedāvājumu</a></div>
+<div class="a-tile is-b"><h3 class="a-h3">Pārvākšanās</h3><p>Biroji, arhīvi un mājas. Iekraujam, pārvedam, samontējam.</p><a href="#" class="a-link">Saņemt cenu</a></div>
+<div class="a-tile is-f"><p class="a-figure">~20</p><p>busiņu vienā autoparkā. Visi vadīti pašu šoferiem.</p></div>
+<div class="a-tile is-c"><h3 class="a-h3">Transports ar šoferi</h3><p>Busiņš ar šoferi jūsu kravai, kad tas vajadzīgs.</p><a href="#" class="a-link">Pieteikt transportu</a></div>
+<figure class="a-tile is-q"><img src="/_blob/fcaf8c42b901509cfc836bb25094f776" alt="Darbinieks ar ratiņiem ved kastes pa bruģētu ielu" width="700" height="200" style="object-position:50% 70%"></figure>
+</div>
+</section>
+
+<section class="a-figure-screen a-wrap section_stats13" aria-labelledby="a-fig-h">
+<h2 id="a-fig-h" class="a-figure-screen_claim">Lielākā pārvākšana līdz šim</h2>
+<div class="a-figure-screen_row">
+<div>
+<p class="a-big">300</p>
+<p class="a-big_cap">darbvietu birojs ar lielu arhīvu, pārvākts ar mūsu pašu busiņiem un komandu.</p>
+</div>
+<ul class="a-facts">
+<li><b>2011</b><span>gads, kurā sākām</span></li>
+<li><b>~20</b><span>cilvēku komandā</span></li>
+<li><b>~150</b><span>darbinieku birojs, otrs lielākais darbs</span></li>
 </ul>
 </div>
-<div class="c-hero-a_visual">
-<div class="c-hero-a_panel"><svg viewBox="0 0 400 235" aria-hidden="true"><path d="M82 52 H312 V119 H88 V188" fill="none" stroke="#ffffff" stroke-width="13"></path></svg></div>
-<img class="c-hero-a_image" src="/_blob/f6748b43c6d80b311f0e4f45dd2165c3" alt="Balti kravas busiņi stāvvietā rindā">
-</div>
-</div>
-</div>
-</div>
-</div>
 </section>
 
-<section class="section_stats13 c-alt">
-<div class="padding-global">
-<div class="container-large">
-<div class="padding-section-large">
-<div class="stats13_component c-grid-2">
+<section class="a-steps a-wrap section_layout231" aria-labelledby="a-steps-h">
+<div class="a-steps_head">
+<h2 id="a-steps-h" class="a-h2">Kā tas notiek</h2>
+<a href="#piedavajums" class="a-btn is-orange">Saņemt piedāvājumu</a>
+</div>
+<ol class="a-steps_list">
+<li class="a-step"><p class="a-step_when">Šodien</p><h3 class="a-h3">Pastāstiet, kas jāved</h3><p>Aizpildiet formu vai zvaniet. Pārvākšanai varat pievienot foto.</p></li>
+<li class="a-step"><p class="a-step_when">Pēc sarunas</p><h3 class="a-h3">Saņemiet cenu</h3><p>Precizējam apjomu un nosaucam cenu. Pieprasījums neuzliek saistības.</p></li>
+<li class="a-step"><p class="a-step_when">Norunātajā dienā</p><h3 class="a-h3">Mēs to izdarām</h3><p>Iekraujam, pārvedam, nogādājam.</p></li>
+</ol>
+</section>
+
+<section class="a-projects a-wrap section_portfolio11" aria-labelledby="a-proj-h">
+<div class="a-projects_grid">
 <div>
-<p class="c-tagline">Postline skaitļos</p>
-<h2 class="heading-style-h2" style="margin-bottom: 1.5rem">Stabils partneris jau vairāk nekā 15 gadus</h2>
-<p class="text-size-medium text-color-muted">Savs autoparks, sava komanda un pieredze ar lieliem projektiem — no ikdienas kurjerpasta līdz biroja pārvākšanai ar 300 darbvietām.</p>
-<div class="button-group" style="margin-top: 2.25rem">
-<a href="#" class="button is-secondary">Par mums</a>
-<a href="#" class="button is-link">Pakalpojumi <svg class="c-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"></path></svg></a>
-</div>
-</div>
-<div class="stats13_list">
-<div class="c-stat"><p class="c-stat_number">2011</p><h3 class="heading-style-h6">Darbojamies kopš</h3></div>
-<div class="c-stat"><p class="c-stat_number">~20</p><h3 class="heading-style-h6">Cilvēku komandā</h3></div>
-<div class="c-stat"><p class="c-stat_number">~20</p><h3 class="heading-style-h6">Transportlīdzekļu</h3></div>
-<div class="c-stat"><p class="c-stat_number">300</p><h3 class="heading-style-h6">Darbvietu lielākajā pārvākšanā</h3></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-
-<section class="section_layout251">
-<div class="padding-global">
-<div class="container-large">
-<div class="padding-section-large">
-<div class="layout251_component">
-<div class="c-head-split">
-<div>
-<p class="c-tagline">Pakalpojumi</p>
-<h2 class="heading-style-h2">Ko mēs darām</h2>
-</div>
-<p class="text-size-medium text-color-muted">Mūsu pamats ir kurjerpasts uzņēmumiem. Autoparku, kas vakaros un brīvdienās stāv, izmantojam pārvākšanai un transporta nomai.</p>
-</div>
-<div class="c-grid-3">
-<article class="c-service">
-<img class="c-service_image" src="/_blob/c4c5874aa61767603375ad24004cb36b" alt="Kurjers nodod kartona kasti klientam">
-<p class="c-service_index">01</p>
-<h3 class="heading-style-h4">Kurjerpakalpojumi uzņēmumiem</h3>
-<p class="text-color-muted">Regulāras un specializētas piegādes ilgtermiņa sadarbības partneriem.</p>
-<a href="#" class="button is-link">Uzzināt vairāk <svg class="c-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"></path></svg></a>
-</article>
-<article class="c-service">
-<img class="c-service_image" src="/_blob/fcaf8c42b901509cfc836bb25094f776" alt="Darbinieks ar ratiņiem ved kastes pa bruģētu ielu">
-<p class="c-service_index">02</p>
-<h3 class="heading-style-h4">Pārvākšanās</h3>
-<p class="text-color-muted">Birojiem, arhīviem, mazajiem uzņēmumiem un privātpersonām — no iekraušanas līdz mēbeļu montāžai.</p>
-<a href="#" class="button is-link">Pieteikt pārvākšanos <svg class="c-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"></path></svg></a>
-</article>
-<article class="c-service">
-<img class="c-service_image" src="/_blob/ce96ee8fea786550be4ea36b388d354c" alt="Balts kravas busiņš pie ķieģeļu ēkas">
-<p class="c-service_index">03</p>
-<h3 class="heading-style-h4">Transporta noma</h3>
-<p class="text-color-muted">Busiņš ar šoferi jūsu kravai, kad tas nepieciešams.</p>
-<a href="#" class="button is-link">Sazināties <svg class="c-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"></path></svg></a>
-</article>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-
-<section class="section_layout645 c-alt">
-<div class="padding-global">
-<div class="container-large">
-<div class="padding-section-large">
-<div class="layout645_component c-about">
-<div class="c-about_content">
-<p class="c-tagline">Par mums</p>
-<h2 class="heading-style-h2" style="margin-bottom: 1.5rem">Uzticamība, kas sākas ar cilvēkiem</h2>
-<p class="text-size-medium text-color-muted">Kopš 2011. gada nodarbojamies ar kurjerpastu, transporta nomu un pārvākšanos. Strādājam ar vadošajiem starptautiskajiem kurjeru uzņēmumiem, un klientu uzticību esam ieguvuši ar darbinieku personīgu ieinteresētību.</p>
-<ul class="c-features">
-<li><svg class="c-ico-md" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5" fill="none" stroke="currentColor" stroke-width="2.4"></path></svg><p><b>Precizitāte</b> — sūtījums laikā un neskarts.</p></li>
-<li><svg class="c-ico-md" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5" fill="none" stroke="currentColor" stroke-width="2.4"></path></svg><p><b>Atbildība</b> — viens kontakts no pieteikuma līdz piegādei.</p></li>
-<li><svg class="c-ico-md" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5" fill="none" stroke="currentColor" stroke-width="2.4"></path></svg><p><b>Personīga attieksme</b> — mūs var vienkārši sazvanīt.</p></li>
+<h2 id="a-proj-h" class="a-h2" style="margin-bottom:2rem">Paveiktie darbi</h2>
+<ul class="a-projects_list">
+<li class="is-active"><p class="a-projects_name">300 darbvietas</p><p class="a-projects_meta"><span>Birojs un arhīvs</span><span>[Gads]</span></p></li>
+<li><p class="a-projects_name">~150 darbinieki</p><p class="a-projects_meta"><span>Ražošanas uzņēmuma birojs</span><span>[Gads]</span></p></li>
+<li><p class="a-projects_name">[Projekts 3]</p><p class="a-projects_meta"><span>[Apraksts]</span><span>[Gads]</span></p></li>
 </ul>
-<div class="button-group" style="margin-top: 2.25rem">
-<a href="#" class="button is-secondary">Darbs pie mums</a>
-<a href="#" class="button is-link">Kontakti <svg class="c-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"></path></svg></a>
+<a href="#" class="a-btn" style="margin-top:2.5rem">Saņemt pārvākšanās cenu</a>
 </div>
+<figure class="a-projects_frame"><img src="/_blob/e1ea24c60a9af95bd0c5e21495a18eb3" alt="Atvērta biroja telpa ar darbvietām" width="560" height="560"><figcaption>Birojs ar 300 darbvietām</figcaption></figure>
 </div>
-<img class="c-about_image" src="/_blob/304b2b2903f8736fafa13c68c0f9d8f3" alt="Balts kravas auto brauc pa ielu krēslā">
+</section>
+
+<section id="par-mums" class="a-about a-wrap section_layout645" aria-labelledby="a-about-h">
+<h2 id="a-about-h" class="a-h2">Par mums</h2>
+<p class="a-about_text"><b>Postline</b> sāka darbu <mark class="a-hl is-orange">2011. gadā</mark> kā kurjerpasta uzņēmums. Šodien mums ir <mark class="a-hl is-sky">~20 cilvēku komanda</mark> un tikpat daudz transportlīdzekļu. Strādājam ar vadošajiem starptautiskajiem kurjeru uzņēmumiem un ar Latvijas firmām, kurām vajag regulāras piegādes. Kad busiņi <mark class="a-hl is-lime">vakaros un brīvdienās</mark> nav maršrutā, tie pārvāc birojus, arhīvus un mājas. Lielākais darbs bija birojs ar <mark class="a-hl is-orange">300 darbvietām</mark>. Klientu uzticību esam ieguvuši ar darbinieku personīgu ieinteresētību, un vairāki kolēģi ir ar mums <mark class="a-hl is-sky">kopš paša sākuma</mark>. <a href="#piedavajums" class="a-about_close">Vajag kaut ko aizvest? Saņemiet piedāvājumu.</a></p>
+</section>
+
+<section class="a-quotes a-wrap section_testimonial17" aria-labelledby="a-q-h">
+<h2 id="a-q-h" class="a-h2">Ko saka klienti</h2>
+<div class="a-slips">
+<article class="a-slip"><p class="a-slip_name">[Vārds Uzvārds]</p><p class="a-slip_role">[Amats], [Uzņēmums]</p><div class="a-slip_photo" role="img" aria-label="Foto vieta"></div><blockquote>[Klienta atsauksme par regulārām piegādēm, 1–2 teikumi. Atsauksmes ievāc GoHighLevel.]</blockquote></article>
+<article class="a-slip"><p class="a-slip_name">[Vārds Uzvārds]</p><p class="a-slip_role">[Privātpersona]</p><div class="a-slip_photo" role="img" aria-label="Foto vieta"></div><blockquote>[Pārvākšanās klienta atsauksme, 1–2 teikumi.]</blockquote></article>
+<article class="a-slip"><p class="a-slip_name">[Vārds Uzvārds]</p><p class="a-slip_role">[Amats], [Uzņēmums]</p><div class="a-slip_photo" role="img" aria-label="Foto vieta"></div><blockquote>[Biroja pārvākšanas atsauksme, 1–2 teikumi.]</blockquote></article>
 </div>
-</div>
+</section>
+
+<a href="#" class="a-word section_cta1" aria-label="Darbs pie mums: pieteikties">
+<span class="a-word_top"><span class="a-word_text">Meklējam kurjerus un šoferus. Stabils darbs kopš 2011. gada, CV nav obligāts.</span><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M12 36L36 12M16 12h20v20" fill="none" stroke="currentColor" stroke-width="4"></path></svg></span>
+<span class="a-word_big">Piesakies</span>
+</a>
+
+<section class="a-faq a-wrap section_faq3" aria-labelledby="a-faq-h">
+<div class="a-faq_grid">
+<div><h2 id="a-faq-h" class="a-h2">Jautājumi</h2><p style="margin-top:1.25rem">Neatradāt atbildi? Zvaniet <a href="#" class="a-link">+371 29 443 359</a>.</p></div>
+<div class="a-faq_list">
+<details open><summary>Vai vedat privātus sūtījumus?</summary><p>Nē. Kurjerpastu veicam uzņēmumiem ar regulārām piegādēm. Privātpersonām piedāvājam pārvākšanos.</p></details>
+<details><summary>Cik maksā jūsu pakalpojumi?</summary><p>[Atbilde]</p></details>
+<details><summary>Kādos reģionos strādājat?</summary><p>[Atbilde]</p></details>
+<details><summary>Vai strādājat brīvdienās?</summary><p>[Atbilde]</p></details>
+<details><summary>Cik ātri varat sākt?</summary><p>[Atbilde]</p></details>
 </div>
 </div>
 </section>
 
-<section class="section_portfolio11">
-<div class="padding-global">
-<div class="container-large">
-<div class="padding-section-large">
-<div class="portfolio11_component">
-<div class="c-head-center">
-<p class="c-tagline">Pieredze</p>
-<h2 class="heading-style-h2" style="margin-bottom: 1.25rem">Paveiktie projekti</h2>
-<p class="text-size-medium text-color-muted">Daži pārvākšanas projekti, kurus esam veikuši.</p>
+<section id="piedavajums" class="a-form a-wrap section_contact5" aria-labelledby="a-form-h">
+<div class="a-strip" aria-hidden="true">
+<img src="/_blob/fcaf8c42b901509cfc836bb25094f776" alt=""><img src="/_blob/f6748b43c6d80b311f0e4f45dd2165c3" alt=""><img src="/_blob/304b2b2903f8736fafa13c68c0f9d8f3" alt=""><img src="/_blob/5069553f3d750b6500fcf2b856567942" alt=""><img src="/_blob/05ca0f80e9e3523f6523f6ae69453edd" alt=""><img src="/_blob/0001053a25f4dad915e73885746e6c74" alt=""><img src="/_blob/a58c9cca10f7a375d691f9b996815462" alt=""><img src="/_blob/ce96ee8fea786550be4ea36b388d354c" alt=""><img src="/_blob/c4c5874aa61767603375ad24004cb36b" alt=""><img src="/_blob/e1ea24c60a9af95bd0c5e21495a18eb3" alt="">
 </div>
-<div class="c-grid-3">
-<article class="c-project">
-<img class="c-project_image" src="/_blob/e1ea24c60a9af95bd0c5e21495a18eb3" alt="Atvērta biroja telpa ar darbvietām">
-<h3 class="heading-style-h5">Biroja pārvākšana — 300 darbvietas</h3>
-<p class="text-color-muted">Liela biroja un arhīva pārvākšana ar mēbeļu demontāžu un montāžu.</p>
-<div class="c-tags"><span class="c-tag">Birojs</span><span class="c-tag">Arhīvs</span><span class="c-tag">Montāža</span></div>
-</article>
-<article class="c-project">
-<img class="c-project_image" src="/_blob/0001053a25f4dad915e73885746e6c74" alt="Biroja darbvietu rindas">
-<h3 class="heading-style-h5">Biroja pārvākšana — ~150 darbinieki</h3>
-<p class="text-color-muted">Ražošanas uzņēmuma biroja pārcelšana uz jaunām telpām.</p>
-<div class="c-tags"><span class="c-tag">Birojs</span><span class="c-tag">Demontāža</span></div>
-</article>
-<article class="c-project">
-<img class="c-project_image" src="/_blob/a58c9cca10f7a375d691f9b996815462" alt="Telpa ar sakrautām arhīva kastēm">
-<h3 class="heading-style-h5">Arhīvu pārvešana</h3>
-<p class="text-color-muted">Dokumentu arhīvu pārvešana un izvietošana jaunajās telpās.</p>
-<div class="c-tags"><span class="c-tag">Arhīvs</span><span class="c-tag">Birojs</span></div>
-</article>
+<div class="a-form_head">
+<h2 id="a-form-h" class="a-h2">Saņemt piedāvājumu</h2>
+<p>Pastāstiet, kas jāved. Mēs piezvanīsim un nosauksim cenu.</p>
 </div>
-<div class="button-group" style="justify-content: center; margin-top: 4rem">
-<a href="#" class="button is-secondary">Pārvākšanās pakalpojumi</a>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-
-<section class="section_testimonial17 c-alt">
-<div class="padding-global">
-<div class="container-large">
-<div class="padding-section-large">
-<div class="testimonial17_component">
-<div class="c-head-center">
-<p class="c-tagline">Atsauksmes</p>
-<h2 class="heading-style-h2" style="margin-bottom: 1.25rem">Ko saka klienti</h2>
-<p class="text-size-medium text-color-muted">Atsauksmes no uzņēmumiem un pārvākšanās klientiem.</p>
-</div>
-<div class="c-grid-3">
-<div class="c-quote">
-<div class="c-stars" aria-label="5 no 5"><svg class="c-ico-md" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z" fill="currentColor"></path></svg><svg class="c-ico-md" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z" fill="currentColor"></path></svg><svg class="c-ico-md" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z" fill="currentColor"></path></svg><svg class="c-ico-md" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z" fill="currentColor"></path></svg><svg class="c-ico-md" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z" fill="currentColor"></path></svg></div>
-<p class="text-size-medium">„Šeit būs reāla ilgtermiņa B2B klienta atsauksme — 1–2 teikumi par sadarbību.”</p>
-<div class="c-person"><div class="c-avatar"></div><div><p class="text-weight-bold">[Vārds Uzvārds]</p><p class="text-color-muted">[Amats, uzņēmums]</p></div></div>
-</div>
-<div class="c-quote">
-<div class="c-stars" aria-label="5 no 5"><svg class="c-ico-md" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z" fill="currentColor"></path></svg><svg class="c-ico-md" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z" fill="currentColor"></path></svg><svg class="c-ico-md" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z" fill="currentColor"></path></svg><svg class="c-ico-md" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z" fill="currentColor"></path></svg><svg class="c-ico-md" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z" fill="currentColor"></path></svg></div>
-<p class="text-size-medium">„Šeit būs pārvākšanās klienta atsauksme — 1–2 teikumi par pieredzi.”</p>
-<div class="c-person"><div class="c-avatar"></div><div><p class="text-weight-bold">[Vārds Uzvārds]</p><p class="text-color-muted">[Privātpersona vai uzņēmums]</p></div></div>
-</div>
-<div class="c-quote">
-<div class="c-stars" aria-label="5 no 5"><svg class="c-ico-md" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z" fill="currentColor"></path></svg><svg class="c-ico-md" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z" fill="currentColor"></path></svg><svg class="c-ico-md" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z" fill="currentColor"></path></svg><svg class="c-ico-md" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z" fill="currentColor"></path></svg><svg class="c-ico-md" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z" fill="currentColor"></path></svg></div>
-<p class="text-size-medium">„Šeit būs vēl viena klienta atsauksme, ko CRM ievāks pēc pasūtījuma.”</p>
-<div class="c-person"><div class="c-avatar"></div><div><p class="text-weight-bold">[Vārds Uzvārds]</p><p class="text-color-muted">[Amats, uzņēmums]</p></div></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-
-<section class="section_cta1 c-cta">
-<div class="padding-global">
-<div class="container-large">
-<div class="padding-section-large">
-<div class="cta1_component c-grid-2">
-<div>
-<p class="c-tagline">Darbs pie mums</p>
-<h2 class="heading-style-h2" style="margin-bottom: 1.5rem">Meklējam kurjerus un šoferus</h2>
-<p class="text-size-medium">Stabils darbs uzņēmumā, kas strādā kopš 2011. gada. Pievienojies komandai Rīgā un Mārupē.</p>
-<div class="button-group" style="margin-top: 2.25rem">
-<a href="#" class="button">Skatīt vakances</a>
-<a href="#" class="button is-secondary">Uzzināt vairāk</a>
-</div>
-</div>
-<img class="c-cta_image" src="/_blob/05ca0f80e9e3523f6523f6ae69453edd" alt="Smaidīgs šoferis kravas busiņa kabīnē">
-</div>
-</div>
-</div>
-</div>
-</section>
-
-<section class="section_contact5">
-<div class="padding-global">
-<div class="container-large">
-<div class="padding-section-large">
-<div class="contact5_component c-grid-2 is-top">
-<div>
-<p class="c-tagline">Kontakti</p>
-<h2 class="heading-style-h2" style="margin-bottom: 1.5rem">Sazinieties ar mums</h2>
-<p class="text-size-medium text-color-muted">Sadarbības jautājumi uzņēmumiem un pārvākšanās pieteikumi. Atsevišķus privātus sūtījumus nepieņemam.</p>
-<ul class="c-contact-list">
-<li><svg class="c-ico-md" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.5h18v13H3zM3.5 6l8.5 7 8.5-7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path></svg>info@postline.lv</li>
-<li><svg class="c-ico-md" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 3.5h3l1.5 4.5-2 1.5a11 11 0 0 0 5.5 5.5l1.5-2 4.5 1.5v3a2 2 0 0 1-2 2A15.5 15.5 0 0 1 4.5 5.5a2 2 0 0 1 2-2z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path></svg>+371 29 443 359</li>
-<li><svg class="c-ico-md" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.8-6.5-11.5a6.5 6.5 0 0 1 13 0C18.5 15.2 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="1.8"></path><circle cx="12" cy="9.5" r="2.3" fill="none" stroke="currentColor" stroke-width="1.8"></circle></svg>Mārupe un Rīga</li>
-</ul>
-</div>
-<form class="c-form" action="#">
-<div class="c-field"><label class="c-label" for="a-name">Vārds</label><input class="c-input" id="a-name" type="text"></div>
-<div class="c-field"><label class="c-label" for="a-email">E-pasts</label><input class="c-input" id="a-email" type="email"></div>
-<div class="c-field"><label class="c-label" for="a-msg">Ziņa</label><textarea class="c-input is-area" id="a-msg" placeholder="Jūsu jautājums…"></textarea></div>
-<label class="c-check"><input type="checkbox"> Piekrītu privātuma politikai</label>
-<div><button class="button" type="button">Nosūtīt ziņu</button></div>
+<form class="a-bar" action="#">
+<div class="a-cell"><label for="a-svc">Kas jums vajadzīgs?</label><select id="a-svc"><option>Kurjerpasts uzņēmumam</option><option>Pārvākšanās</option><option>Transports ar šoferi</option></select></div>
+<div class="a-cell"><label for="a-name">Vārds</label><input id="a-name" type="text" autocomplete="name"></div>
+<div class="a-cell"><label for="a-phone">Tālrunis</label><input id="a-phone" type="tel" autocomplete="tel"></div>
+<button class="a-cell is-submit" type="button">Saņemt piedāvājumu</button>
 </form>
-</div>
-</div>
-</div>
-</div>
+<div class="a-form_print"><p>Privātus sūtījumus nepieņemam.</p><p></p><p>Iesniedzot piekrītat <a href="#" class="a-link">privātuma politikai</a>.</p><p>Pieprasījums neuzliek saistības.</p></div>
 </section>
 
 </main>
 
-<footer class="footer3_component c-footer">
-<div class="padding-global">
-<div class="container-large">
-<div class="padding-section-medium">
-<div class="c-footer_top">
-<div class="c-stack-m">
-<a href="#" class="c-logo" aria-label="Postline — uz sākumu"><svg class="c-logo-mark" viewBox="0 0 400 235" aria-hidden="true"><rect width="400" height="235" fill="#f05223"></rect><path d="M82 52 H312 V119 H88 V188" fill="none" stroke="#ffffff" stroke-width="13"></path></svg><span class="c-logo-word">Postline</span></a>
-<div class="c-footer_meta"><b>Birojs</b><span>Mārupe, Latvija</span></div>
-<div class="c-footer_meta"><b>Kontakti</b><span>+371 29 443 359</span><span>info@postline.lv</span></div>
-</div>
-<div class="c-footer_links">
-<ul><li><a href="#" class="c-footer_link">Pakalpojumi uzņēmumiem</a></li><li><a href="#" class="c-footer_link">Pārvākšanās</a></li><li><a href="#" class="c-footer_link">Transporta noma</a></li><li><a href="#" class="c-footer_link">Par mums</a></li></ul>
-<ul><li><a href="#" class="c-footer_link">Darbs pie mums</a></li><li><a href="#" class="c-footer_link">Kontakti</a></li><li><a href="#" class="c-footer_link">Pieteikt pārvākšanos</a></li></ul>
-</div>
-</div>
-<div class="c-footer_bottom">
-<p>© 2026 SIA Postline · Reģ. nr. LV40103468518</p>
-<div class="button-group" style="gap: 1.5rem"><a href="#">Privātuma politika</a><a href="#">Sīkdatņu iestatījumi</a></div>
-</div>
-</div>
-</div>
+<footer class="a-footer footer3_component">
+<div class="a-footer_photo"><img src="/_blob/304b2b2903f8736fafa13c68c0f9d8f3" alt="Balts kravas auto brauc pa ielu krēslā" width="720" height="720" style="object-position:62% 50%"></div>
+<div class="a-footer_menu">
+<a href="#" class="a-logo" aria-label="Postline, uz sākumu"><svg viewBox="0 0 400 235" aria-hidden="true"><rect width="400" height="235" fill="#f05223"></rect><path d="M82 52 H312 V119 H88 V188" fill="none" stroke="#ffffff" stroke-width="13"></path></svg><span>Postline</span></a>
+<nav class="a-footer_links" aria-label="Kājenes izvēlne"><a href="#">Kurjerpasts uzņēmumiem</a><a href="#">Pārvākšanās</a><a href="#">Transporta noma</a><a href="#">Darbs pie mums</a><a href="#">Kontakti</a></nav>
+<div class="a-footer_info"><p>+371 29 443 359<br>info@postline.lv</p><p>SIA Postline<br>Reģ. nr. LV40103468518</p></div>
+<div class="a-footer_legal"><span>© 2026 SIA Postline</span><a href="#">Privātuma politika</a><a href="#">Sīkdatņu iestatījumi</a></div>
 </div>
 </footer>
 

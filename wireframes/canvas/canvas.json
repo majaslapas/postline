@@ -8,47 +8,47 @@
       "title": "/darbinieki — slēpta lapa",
       "w": 1440,
       "x": 6080,
-      "y": 10000
+      "y": 12900
     },
     "Darbs-pie-mums.dc.html": {
       "expand": "fill",
-      "h": 4743,
+      "h": 7167,
       "title": "Darbs pie mums — skelets",
       "w": 1440,
       "x": 3040,
-      "y": 10000
+      "y": 12900
     },
     "Koncepts-A.dc.html": {
       "expand": "fill",
-      "h": 6839,
-      "title": "Koncepts A — Signāllīnija",
+      "h": 8323,
+      "title": "Koncepts A — Plakāts (drosmīgs)",
       "w": 1440,
       "x": 1520,
       "y": 1780
     },
     "Koncepts-B.dc.html": {
       "expand": "fill",
-      "h": 6902,
-      "title": "Koncepts B — Grafīts",
+      "h": 10686,
+      "title": "Koncepts B — Gada pārskats (cēls)",
       "w": 1440,
       "x": 3040,
       "y": 1780
     },
     "Koncepts-C.dc.html": {
       "expand": "fill",
-      "h": 7073,
-      "title": "Koncepts C — Uzticības zils",
+      "h": 9081,
+      "title": "Koncepts C — Maršruts (mūsdienīgs)",
       "w": 1440,
       "x": 4560,
       "y": 1780
     },
     "Kontakti.dc.html": {
       "expand": "fill",
-      "h": 2571,
+      "h": 3165,
       "title": "Kontakti — skelets",
       "w": 1440,
       "x": 4560,
-      "y": 10000
+      "y": 12900
     },
     "Lapu-karte.dc.html": {
       "h": 1360,
@@ -59,7 +59,7 @@
     },
     "Main.dc.html": {
       "expand": "fill",
-      "h": 7182,
+      "h": 9344,
       "title": "Sākums — skelets",
       "w": 1440,
       "x": 0,
@@ -67,19 +67,19 @@
     },
     "Pakalpojumi-uznemumiem.dc.html": {
       "expand": "fill",
-      "h": 5191,
+      "h": 7166,
       "title": "Pakalpojumi uzņēmumiem — skelets",
       "w": 1440,
       "x": 0,
-      "y": 10000
+      "y": 12900
     },
     "Parvaksanas.dc.html": {
       "expand": "fill",
-      "h": 6684,
+      "h": 7204,
       "title": "Pārvākšanās — skelets",
       "w": 1440,
       "x": 1520,
-      "y": 10000
+      "y": 12900
     }
   },
   "createdOnFiles": {
@@ -105,7 +105,7 @@
       "text": "Apakšlapas — skelets",
       "w": 240,
       "x": 0,
-      "y": 9700
+      "y": 12600
     },
     "t-sitemap": {
       "kind": "title1",

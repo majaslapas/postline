@@ -215,6 +215,17 @@ a { color: inherit; }
 .footer3_legal { display: flex; flex-wrap: wrap; gap: 1.5rem; }
 
 /* ---------- Tablet ---------- */
+/* ---------- Conversion helpers (wireframe view) ---------- */
+.wf-proof { display: flex; align-items: center; gap: 0.625rem; margin-top: 1.5rem; font-size: 0.875rem; font-weight: 600; }
+.wf-alt-link { margin-top: 1rem; }
+.wf-statement { display: grid; gap: 0.25rem; margin-top: 1rem; text-align: center; }
+.wf-statement p { font-size: 4.5rem; line-height: 1.05; font-weight: 700; letter-spacing: -0.02em; }
+.wf-statement p + p { color: #b3b3b3; }
+.wf-sticky-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; margin: 1.5rem 5% 2rem; padding: 1rem 1.25rem; background: var(--wf-ink); color: #ffffff; max-width: 24.375rem; }
+.wf-sticky-bar .button { min-height: 2.5rem; }
+.wf-bg-section .wf-alt-link a { color: #ffffff; }
+.multi-form17_form .form_hint { margin-top: 1rem; }
+
 @media (max-width: 991px) {
   .heading-style-h1 { font-size: 3rem; }
   .heading-style-h2 { font-size: 2.5rem; }
@@ -228,6 +239,7 @@ a { color: inherit; }
 
 /* ---------- Phone ---------- */
 @media (max-width: 767px) {
+  .wf-statement p { font-size: 2.5rem; }
   .heading-style-h1 { font-size: 2.5rem; }
   .heading-style-h2 { font-size: 2.25rem; }
   .heading-style-h3 { font-size: 2rem; }

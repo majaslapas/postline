@@ -30,49 +30,90 @@ page-wrapper
 
 | Page | Slug | Sections (Relume) |
 | --- | --- | --- |
-| Sākums | `/` | Navbar 1 · Header 1 · Stats 13 · Layout 251 · Layout 645 (`#par-mums`) · Portfolio 11 · Testimonial 17 · CTA 1 · Contact 5 · Footer 3 |
-| Pakalpojumi uzņēmumiem | `/pakalpojumi-uznemumiem` | Navbar 1 · Header 50 · Layout 623 · Layout 647 · Stats 8 · FAQ 3 · Contact 6 (`#pieprasijums`) · Footer 3 |
-| Pārvākšanās | `/parvaksanas` | Navbar 1 · Header 1 · Layout 629 · Layout 671 · Timeline 17 · Layout 216 · Testimonial 17 · Multi Form 17 (`#pieteikums`) · FAQ 3 · Footer 3 |
-| Darbs pie mums | `/darbs` | Navbar 1 · Header 5 · Layout 620 · Layout 645 · Career 12 (`#vakances`) · Contact 9 (`#pieteikties`) · Footer 3 |
-| Kontakti | `/kontakti` | Navbar 1 · Contact 14 · Contact 5 · Footer 3 |
+| Sākums | `/` | Navbar 1 · Header 1 · Layout 251 · Stats 13 · Layout 231 · Portfolio 11 · Layout 424 · Layout 645 (`#par-mums`) · Testimonial 17 · CTA 1 · FAQ 3 · Contact 5 (`#piedavajums`) · Footer 3 |
+| Pakalpojumi uzņēmumiem | `/pakalpojumi-uznemumiem` | Navbar 1 · Header 50 · Stats 8 · Layout 42 · Layout 623 · Layout 231 · Layout 647 · Testimonial 17 · FAQ 3 · Contact 6 (`#pieprasijums`) · Footer 3 |
+| Pārvākšanās | `/parvaksanas` | Navbar 1 · Header 1 · Layout 216 · Layout 629 · Layout 671 · Timeline 17 · Testimonial 17 · FAQ 3 · Multi Form 17 (`#pieteikums`) · Banner 3 · Footer 3 |
+| Darbs pie mums | `/darbs` | Navbar 1 · Header 5 · Layout 620 · Layout 645 · Career 12 (`#vakances`) · Layout 231 · Testimonial 17 · FAQ 3 · Contact 9 (`#pieteikties`) · Banner 3 · Footer 3 |
+| Kontakti | `/kontakti` | Navbar 1 · Contact 14 · Layout 232 · Contact 5 · Footer 3 |
 | Darbinieku sadaļa (hidden) | `/darbinieki` | Links 1 only, with no Navbar or Footer: one button that opens the daily report. Set `noindex, nofollow` and leave it out of the menu and of `sitemap.xml` (see below). |
 
-Navbar: Pakalpojumi ▾ (Kurjerpakalpojumi uzņēmumiem · Pārvākšanās · Transporta noma) · Par mums · Darbs pie mums · Kontakti, plus the buttons "Sazināties" (secondary) and "Pieteikt pārvākšanos" (primary).
+Navbar: Pakalpojumi ▾ (Kurjerpasts uzņēmumiem · Pārvākšanās · Transporta noma) · Par mums · Darbs pie mums · Kontakti, plus one primary button. The button's text and link are component properties, so each page points it at its own form:
+
+| Page | Navbar button | Goes to |
+| --- | --- | --- |
+| Sākums, Kontakti | Saņemt piedāvājumu | `/#piedavajums` |
+| Pakalpojumi uzņēmumiem | Pieprasīt piedāvājumu | `#pieprasijums` |
+| Pārvākšanās | Saņemt cenu | `#pieteikums` |
+| Darbs pie mums | Pieteikties darbam | `#pieteikties` |
 
 Small deviations from the stock Relume components (all noted on the canvas):
 
-- Layout 251: a link at the bottom of each service card.
+- Layout 251: each service card has its own action link.
+- Layout 231: used for the 3-step "how it works", with "1. solis" as the tagline.
+- Layout 424: the scroll-pinned statement ("Kopš 2011. gada." / "Savi ~20 busiņi." / "Sava komanda." / "Darbs izdarīts.").
 - Timeline 17: step numbers instead of dates, 4 items.
+- Banner 3: fixed to the bottom of the screen on phones only (under 768px), shown after the hero.
+- Contact 5 on `/`: a service radio (Kurjerpasts uzņēmumam / Pārvākšanās / Transports ar šoferi) in place of a plain contact form.
 - Contact 5 on `/kontakti`: an added radio "Uzņēmums / Privātpersona" and a topic select.
 - Multi Form 17: Postline's 4 steps (below) replace the stock fields.
+
+## Conversion logic
+
+The pages follow the landing-page-design skill (github.com/elayadesign/ai-design-skills), Part A: one offer, one audience and one primary action per page.
+
+| Page | Audience | One primary action | Proof next to it | Objection handling |
+| --- | --- | --- | --- | --- |
+| Sākums | All three: companies, movers, drivers | Saņemt piedāvājumu (form with a service choice). Drivers get a text link to vacancies, not a competing button. | 300-workplace move under the button; Stats 13 with 2011 / ~20 / ~20 / 300 right after the services | 6-question FAQ, "Pieprasījums neuzliek saistības" under the form |
+| Pakalpojumi uzņēmumiem | Companies with regular shipments, tender organisers | Pieprasīt piedāvājumu | Stats 8 straight after the hero, company testimonials just before the form | Problem → solution section (Layout 42), 7-question FAQ, private parcels filtered out |
+| Pārvākšanās | Offices, archives, small businesses, homes | Saņemt pārvākšanās cenu (4-step form) | The 300-workplace project moved up to second place | FAQ moved above the form (high-friction offer), "no obligation" next to the button, sticky mobile button |
+| Darbs pie mums | Drivers arriving from agency job ads on a phone | Pieteikties darbam | Team since 2011, team quotes | Shorter form (one name field, experience optional, CV optional), 6 driver questions, sticky mobile button |
+| Kontakti | Anyone | Call or write | Company details | Three shortcuts to the right form (Layout 232) |
+
+Rules applied everywhere:
+
+- The last section of every page repeats the first action with the same words.
+- Button labels say what happens ("Saņemt pārvākšanās cenu", "Nosūtīt pieteikumu"), never "Uzzināt vairāk" or "Nosūtīt".
+- Every page has a 3- or 4-step "how it works".
+- Every figure on the page is a real one from the brief or the calls. Testimonials stay as placeholders until GoHighLevel collects real ones.
+- The "Pieprasījums neuzliek saistības" line is the risk reversal. It only says that a request is not an order, so it needs no extra promise from Artis.
 
 ## Forms → GoHighLevel
 
 | Form | Where | Fields |
 | --- | --- | --- |
+| Pieprasījums (Contact 5) | `/#piedavajums` | pakalpojums (radio: Kurjerpasts uzņēmumam / Pārvākšanās / Transports ar šoferi), vārds, tālrunis, e-pasts, īsi par darbu. The service choice decides the GHL pipeline. |
 | Pārvākšanās pieteikums (Multi Form 17) | `/parvaksanas#pieteikums` | 1) Privātpersona / Uzņēmums · 2) no adreses, uz adresi, vēlamais datums · 3) apjoms un apraksts, stāvs un lifts abās vietās, foto augšupielāde · 4) vārds, tālrunis, e-pasts (+ uzņēmums). After sending: automatic confirmation to the client. |
 | B2B pieprasījums (Contact 6) | `/pakalpojumi-uznemumiem#pieprasijums` | uzņēmums, kontaktpersona, e-pasts, tālrunis, pakalpojums (select), aptuvenais apjoms (radio), papildu informācija |
-| Kontaktforma (Contact 5) | `/`, `/kontakti` | vārds, e-pasts, (Kontakti: Uzņēmums / Privātpersona, tēma), ziņa |
-| Darba pieteikums (Contact 9) | `/darbs#pieteikties` | vārds, uzvārds, tālrunis, vakance, autovadītāja apliecība, pieredze, CV (optional) |
+| Kontaktforma (Contact 5) | `/kontakti` | vārds, e-pasts, Uzņēmums / Privātpersona, tēma, ziņa |
+| Darba pieteikums (Contact 9) | `/darbs#pieteikties` | vārds un uzvārds, tālrunis, vakance, autovadītāja apliecība, pieredze (optional), CV (optional) |
 
 There is no price calculator (removed on 29.09.). Testimonial 17 reads from a CMS collection fed by GHL review requests and stays hidden until the first reviews come in.
 
 ## Design concepts (homepage)
 
-All three keep the existing orange "P" logo (#F05223, white line-drawn P) from postline.lv and the same section structure. Only the hero component, colours and type change.
+Three different directions for the same homepage argument. Each one keeps the orange "P" logo (#F05223 with the white line-drawn P) as it is and takes one more thing from the current postline.lv.
 
-| | A — Signāllīnija | B — Grafīts | C — Uzticības zils |
+How they were made:
+
+- **taste-skill** (github.com/leonxlnx/taste-skill) dealt the composition: `draw.mjs` directions *Loud and flat* (seed 11), *The printed annual* (seed 37) and *One motif* (seed 23). Its house rules apply: no eyebrow chips, no gradients, no monospace and two typefaces at most.
+- **tastemaker** (github.com/codeswithroh/tastemaker) set the hero rules: one promise, one action, one visual. It also checked the copy against its template bank and ruled out em dashes in the copy.
+- **ui-ux-pro-max** (github.com/nextlevelbuilder/ui-ux-pro-max-skill) supplied the "Trust & Authority + Conversion" pattern, a quote CTA in the nav, and the logistics colour hint: tracking blue + delivery orange.
+- **frontend-design** (github.com/anthropics/skills) supplied the plan-then-critique pass and the list of default looks to avoid.
+
+| | A — Plakāts (bold) | B — Gada pārskats (elevated) | C — Maršruts (modern) |
 | --- | --- | --- | --- |
-| Idea | Evolution of the current site: white, signal orange, the big orange "P" panel from the old homepage | Dark, industrial, night-shift logistics | Calm, corporate, rounded; built from the old site's slate and coral |
-| Hero | Header 1 | Header 5 (full-bleed photo) | Header 15 (image below heading) |
-| Background | #FFFFFF / #F5F4F2 | #111315 / #191C1F | #F2F4F5 / #FFFFFF |
-| Text | #161616, muted #555555 | #F2F1EE, muted #A7ADB2 | #1F2B31, muted #4F5D65 |
-| Primary button | #F05223 with #161616 text | #F05223 with #111315 text | #263238 with white text |
-| Accent | #F05223 (stats on light grey: #C43C12) | #F05223 | #FF8A65 (decorative only, never for text) |
-| Fonts | Raleway 800 headings (the current site's font) + Lato | Archivo (expanded, uppercase headings) + IBM Plex Mono labels | Manrope |
-| Corners | square | 2px | 20px cards, pill buttons |
+| Idea | A street poster: flat fields of colour, the heaviest type, short things said at full volume | A printed annual report: one column line at 42%, greyscale photos, black ink and one spot colour | The line of the Postline "P" becomes the route: it connects the 3 steps and returns huge in the footer |
+| Taken from postline.lv | Signal orange #F05223 as the whole hero field | Raleway, the current site's typeface | Blue grey #263238 and coral #FF8A65 from the old site; a livelier take on the earlier concept C |
+| Hero | "Vedam, / pārvācam." stepped across the full width, one tilted photo stuck on the seam | Two-by-two board: the name, two greyscale photos, a black statement tile and an orange action tile | "Mēs to aizvedīsim." over a stack of service folders; clicking a tab opens that service with its own button |
+| Colours | #F05223, sky #4DB3FF, lime #C5F53D, near-black #161615, text #111111 | white, tone #F1F1EE, ink #121212, Postline orange as the only colour | #263238, #37474F, #CFD8DC, #ECEFF1, coral #FF8A65, pale coral #FFE0D6 |
+| Type | Unbounded 800 (uppercase display) + Onest | Raleway 500 + Source Serif 4 | Geist |
+| Shapes | Square everything, panels edge to edge | Square tiles, 8px gaps | 16px radius, pill buttons |
+| Signature sections | Mosaic of unlike tiles, one figure owning the screen (300), steps on unequal coloured panels, quotes on torn paper slips, "Piesakies" as one giant button | A ledger of figures aligned on one column, project photo strips with a sticky rail, a photo used as a drop cap, a closing page inverted to black | Stepped figure tiles, the P-shaped route map, a paragraph with photos inside the words, a clip-out coupon form, the P mark built large in the footer |
+| Form | 3 cells in one bar: service, name, phone | On the black closing page, with service tiles | A coupon with a stub and a body |
 
-Contrast note: white text on #F05223 is only 3.5:1, so the orange buttons use dark text.
+Contrast note: white text on #F05223 is only 3.5:1, so every orange or coral button uses dark text.
+
+Motion is described rather than built into the canvas. A: the headline lines rise from behind their baselines on load. B: the hero photo opens like a shutter. C: tab changes and hover lifts. All three respect `prefers-reduced-motion`.
 
 ## Images
 
@@ -115,35 +156,33 @@ Text in square brackets on the canvas is a placeholder for these:
 
 ## Text tasks for Artis
 
-What each block needs, in the order the sections appear on the page.
+What each block needs, in the order the sections appear on the page. Square brackets on the canvas mark the same gaps.
 
 **Sākums**
-- Header 1: 1 sentence on what Postline does and for whom (up to 25 words). We can propose the heading.
-- Stats 13: 1–2 sentences on why Postline can be trusted.
+- Header 1: check the headline and the one-line description (we can propose alternatives).
 - Layout 251: 1–2 sentences per service, saying who it is for and what is included.
-- Layout 645 (`#par-mums`): 2–3 sentences on the company's story (founding, what it does, experience) and 3 values. Courier partners are mentioned only neutrally.
 - Portfolio 11: 3 projects (what, when, how big; 1–2 sentences each) and photos from them.
-- CTA 1: 1 sentence on why to work at Postline (stability, vehicles, schedule, team).
+- Layout 645 (`#par-mums`): 3 values in one line each. Courier partners are mentioned only neutrally.
+- FAQ 3: answers to the 6 questions, 1–3 sentences each.
 
 **Pakalpojumi uzņēmumiem**
-- Header 50: 1–2 sentences on what Postline offers companies and at what volume.
-- Layout 623: the 3 services for companies, 1–2 sentences each on what is included and who it suits.
-- Layout 647: regions, volumes, vehicle types and form of cooperation, 1 line each.
 - Stats 8: 1–2 sentences on why companies choose Postline.
-- FAQ 3: answers to the 5 questions, 1–3 sentences each. The first one turns away private parcel requests.
+- Layout 42: 1–2 sentences on how the regular route and one contact work in practice.
+- Layout 623: the 3 services for companies, 1–2 sentences each.
+- Layout 647: regions, volumes, vehicle types and form of cooperation, 1 line each.
+- FAQ 3: answers to the 7 questions.
 
 **Pārvākšanās**
-- Header 1: 1–2 sentences on who Postline helps move and why to choose it.
-- Layout 629: 1 sentence per client group on what exactly is done and at what scale.
-- Layout 671: what is included in the price, what costs extra, and which vehicles are available (types, sizes).
-- Timeline 17: 1 sentence per step on what happens and who does it.
 - Layout 216: 2 sentences on the largest projects (what, when, how fast) and photos from them.
-- FAQ 3: answers to the 5 questions, 1–3 sentences each.
+- Layout 629: 1 sentence per client group.
+- Layout 671: what is included in the price, what costs extra, and which vehicles are available.
+- FAQ 3: answers to the 7 questions.
 
 **Darbs pie mums**
-- Header 5: 1–2 sentences on why Postline is a good place to work. Candidates open this page on their phones from a job ad.
-- Layout 620: 3 reasons to work at Postline, 1 sentence each.
-- Layout 645: concrete terms: pay, schedule, place of work, requirements (licence category, languages).
+- Layout 620: 1 sentence about working with the company vans.
+- Layout 645: pay, schedule, place of work, training.
 - Career 12: current vacancies with title, duties, requirements and workload.
+- Testimonial 17: two short quotes from drivers or couriers, with the year they joined.
+- FAQ 3: answers to the 6 driver questions.
 
-Testimonials on Sākums and Pārvākšanās need no text: GoHighLevel collects them automatically after each job.
+Testimonials on Sākums, Pakalpojumi uzņēmumiem and Pārvākšanās need no text: GoHighLevel collects them automatically after each job.
