@@ -10,333 +10,479 @@
 <helmet>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600&amp;family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500;600&amp;family=Source+Sans+3:wght@400;600&amp;display=swap" rel="stylesheet">
 <style>
-/* Koncepts B · Gada pārskats — elevated. Taste-skill direction "The printed annual" (seed 37); Raleway from the current postline.lv, Postline orange as the one spot colour. */
+/* Koncepts B · Gada pārskats — elevated. Taste-skill direction "The printed annual" (seed 37). Raleway from the current postline.lv,
+   Source Sans 3 body (UI/UX Pro Max "Corporate Trust" pairing), Postline orange as the one accent. */
 body{margin:0;background:#ffffff}
-.b-root{--paper:#ffffff;--tone:#f1f1ee;--ink:#121212;--muted:#5c5c5a;--orange:#f05223;--m:40px;--axis:42%;
-  --f-display:"Raleway","Segoe UI",system-ui,sans-serif;--f-text:"Source Serif 4",Georgia,serif;
-  font-family:var(--f-text);font-size:1.1875rem;line-height:1.55;color:var(--ink);background:var(--paper);overflow-x:clip;font-variant-numeric:lining-nums}
+.b-root{--paper:#ffffff;--tone:#f1f1ee;--tone-2:#e3e3de;--ink:#121212;--ink-2:#1f1f1e;--muted:#5c5c5a;--muted-ink:#bdbdba;--orange:#f05223;--axis:42%;--pad:40px;--sec:88px;
+  --f-display:"Raleway","Segoe UI",system-ui,sans-serif;--f-text:"Source Sans 3","Segoe UI",system-ui,sans-serif;--ease:cubic-bezier(0.32,0.72,0,1);
+  font-family:var(--f-text);font-size:1.125rem;line-height:1.6;color:var(--ink);background:var(--paper);overflow-x:clip;font-variant-numeric:lining-nums}
 .b-root *{box-sizing:border-box}
-.b-root :where(h1,h2,h3,p,ul,ol,figure,blockquote){margin:0}
+.b-root :where(h1,h2,h3,p,ul,ol,dl,dd,figure,blockquote){margin:0}
 .b-root :where(ul,ol){padding:0;list-style:none}
 .b-root :where(a){color:inherit}
 .b-root :where(img){display:block;width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.06)}
-.b-display{font-family:var(--f-display);font-weight:500;letter-spacing:-0.035em;line-height:1;font-variant-numeric:lining-nums}
-.b-h2{font-family:var(--f-display);font-weight:500;letter-spacing:-0.03em;line-height:1.05;font-size:clamp(2.125rem,3.9vw,3.75rem);text-wrap:balance}
-.b-h3{font-family:var(--f-display);font-weight:600;letter-spacing:-0.02em;line-height:1.15;font-size:1.75rem}
-.b-note{font-family:var(--f-display);font-weight:600;font-size:0.9375rem}
-.b-wrap{padding-left:var(--m);padding-right:var(--m)}
-.b-axis{display:grid;grid-template-columns:var(--axis) 1fr}
-.b-axis > .b-side{padding-right:3rem}
-.b-standfirst{font-size:1.375rem;line-height:1.5;max-width:38ch}
+.b-root :where(a,button,summary,input,textarea):focus-visible{outline:2px solid currentColor;outline-offset:3px}
+.b-skip{position:absolute;left:16px;top:-80px;z-index:10;background:var(--ink);color:#ffffff;padding:12px 16px;font-family:var(--f-display);font-weight:600;text-decoration:none}
+.b-skip:focus{top:16px}
 
-.b-btn{display:inline-flex;align-items:center;justify-content:center;min-height:3.5rem;padding:0 1.75rem;background:var(--orange);color:var(--ink) !important;font-family:var(--f-display);font-weight:600;font-size:1rem;text-decoration:none;border:0;cursor:pointer;transition:background-color 180ms cubic-bezier(0.32,0.72,0,1),transform 180ms cubic-bezier(0.32,0.72,0,1)}
+/* type */
+.b-h2{font-family:var(--f-display);font-weight:500;letter-spacing:-0.03em;line-height:1.08;font-size:3.25rem;text-wrap:balance}
+.b-h3{font-family:var(--f-display);font-weight:600;letter-spacing:-0.015em;line-height:1.2;font-size:1.625rem}
+.b-label{display:flex;align-items:center;gap:10px;font-family:var(--f-display);font-weight:600;font-size:0.9375rem;line-height:1.3}
+.b-label::before{content:"";width:10px;height:10px;background:var(--orange);flex:none}
+.b-intro{margin-top:20px;max-width:52ch;font-size:1.25rem;line-height:1.5;color:var(--muted)}
+.b-lead{font-family:var(--f-display);font-weight:500;font-size:1.625rem;line-height:1.35;letter-spacing:-0.01em}
+.b-mini{display:block;margin-bottom:6px;font-family:var(--f-display);font-weight:600;font-size:0.875rem;color:var(--muted)}
+
+/* layout */
+.b-container{max-width:1280px;margin-inline:auto;padding-inline:var(--pad)}
+.b-root .b-container{box-sizing:content-box}
+.b-section{padding-block:var(--sec)}
+.b-section.is-tone{background:var(--tone)}
+.b-section.is-ink{background:var(--ink);color:#ffffff}
+.b-section.is-ink .b-intro{color:var(--muted-ink)}
+.b-head{display:grid;grid-template-columns:var(--axis) 1fr;align-items:start;margin-bottom:56px}
+.b-head > .b-label{padding-top:18px}
+
+/* actions */
+.b-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 28px;background:var(--orange);color:var(--ink) !important;font-family:var(--f-display);font-weight:600;font-size:1rem;text-decoration:none;border:0;cursor:pointer;transition:background-color 240ms var(--ease)}
 .b-btn:hover{background:#ff6a3c}
-.b-btn:active{transform:translateY(1px)}
-.b-btn:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
-.b-btn.is-ink{background:var(--ink);color:#ffffff !important}
-.b-btn.is-ink:hover{background:#333333}
-.b-link{font-family:var(--f-display);font-weight:600;text-decoration:underline;text-underline-offset:0.25em;text-decoration-thickness:1.5px}
+.b-btn:active{background:#d8481c}
+.is-ink .b-btn:focus-visible{outline-color:#ffffff}
+.b-arrow-link{display:inline-flex;align-items:center;gap:10px;min-height:44px;font-family:var(--f-display);font-weight:600;font-size:1rem;text-decoration:underline;text-underline-offset:0.3em;text-decoration-thickness:1.5px}
+.b-arrow-link svg{width:18px;height:18px;flex:none;transition:transform 240ms var(--ease)}
+.b-arrow-link:hover svg{transform:translateX(4px)}
+.b-note{font-size:1rem;color:var(--muted)}
 
-/* hero: two-by-two board */
-.b-board{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:60px minmax(380px,1fr) minmax(380px,1fr);gap:8px;padding:8px;height:920px}
+/* 1 · hero board */
+.b-board{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:60px 1fr 1fr;gap:8px;padding:8px;height:860px}
 .b-tile{position:relative;overflow:hidden}
 .b-topbar{grid-column:1 / -1;display:grid;grid-template-columns:60px 1fr auto;gap:8px}
 .b-logo-tile{background:var(--ink);display:flex;align-items:center;justify-content:center}
-.b-logo-tile svg{width:44px;height:26px;display:block}
-.b-links-tile{background:var(--tone);display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:0 1.5rem}
-.b-links-tile .b-word{font-family:var(--f-display);font-weight:600;font-size:1.0625rem;letter-spacing:-0.01em}
-.b-links-tile nav{display:flex;gap:1.75rem;font-family:var(--f-display);font-weight:500;font-size:0.9375rem}
-.b-links-tile nav a{text-decoration:none}
+.b-logo-tile svg{width:42px;height:25px;display:block}
+.b-links-tile{background:var(--tone);display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:0 24px}
+.b-word{font-family:var(--f-display);font-weight:600;font-size:1.0625rem}
+.b-links-tile nav{display:flex;gap:28px;font-family:var(--f-display);font-weight:500;font-size:0.9375rem}
+.b-links-tile nav a{display:inline-flex;align-items:center;min-height:44px;text-decoration:none}
 .b-links-tile nav a:hover{text-decoration:underline;text-underline-offset:0.3em}
-.b-menu{display:none}
-.b-cta-tile{background:var(--ink);color:#ffffff;display:flex;align-items:center;padding:0 1.5rem;font-family:var(--f-display);font-weight:600;font-size:0.9375rem;text-decoration:none}
+.b-menu{display:none;justify-self:end;align-items:center;min-height:44px;padding:0 4px;background:none;border:0;font:600 0.9375rem var(--f-display);color:var(--ink);cursor:pointer}
+.b-cta-tile{background:var(--ink);color:#ffffff;display:flex;align-items:center;padding:0 24px;font-family:var(--f-display);font-weight:600;font-size:0.9375rem;text-decoration:none;transition:background-color 240ms var(--ease)}
 .b-cta-tile:hover{background:#2a2a2a}
-.b-name{background:var(--tone);display:flex;flex-direction:column;justify-content:flex-end;padding:24px}
-.b-name h1{font-size:clamp(4.5rem,12.2vw,11.5rem)}
-.b-name h1 small{display:block;font-size:1.375rem;letter-spacing:0;line-height:1.3;font-weight:500;margin-top:1rem;font-family:var(--f-text);max-width:30ch}
+.b-name{background:var(--tone);display:flex;flex-direction:column;justify-content:space-between;padding:28px 32px 32px}
+.b-name h1{font-family:var(--f-display);font-weight:500;font-size:9.5rem;line-height:0.95;letter-spacing:-0.045em}
+.b-name h1 span{display:block;margin-top:18px;max-width:30ch;font-family:var(--f-text);font-weight:600;font-size:1.375rem;line-height:1.35;letter-spacing:0}
+.b-name_actions{display:flex;flex-wrap:wrap;align-items:center;gap:24px}
 .b-photo-1 img{animation:b-shutter 1100ms cubic-bezier(0.16,1,0.3,1) both}
 @keyframes b-shutter{from{clip-path:inset(0 0 0 100%);transform:scale(1.12)}to{clip-path:inset(0 0 0 0);transform:scale(1)}}
-.b-split{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.b-dark{background:var(--ink);color:#ffffff;padding:24px;font-size:1.5rem;line-height:1.3}
-.b-accent{background:var(--orange);color:var(--ink);padding:24px;display:flex;flex-direction:column;justify-content:space-between;font-size:1.5rem;line-height:1.3}
-.b-accent .b-link{font-size:1.125rem}
+.b-index{display:grid;grid-template-rows:repeat(3,1fr);gap:8px}
+.b-index a{display:grid;grid-template-columns:1fr auto;align-items:center;gap:16px;padding:0 28px;text-decoration:none;transition:background-color 240ms var(--ease)}
+.b-index_name{display:block;font-family:var(--f-display);font-weight:600;font-size:1.625rem;line-height:1.15;letter-spacing:-0.02em}
+.b-index_line{display:block;margin-top:4px;font-size:1rem}
+.b-index svg{width:32px;height:32px;flex:none;transition:transform 240ms var(--ease)}
+.b-index a:hover svg{transform:translateX(6px)}
+.b-index .is-ink{background:var(--ink);color:#ffffff}
+.b-index .is-ink .b-index_line{color:var(--muted-ink)}
+.b-index .is-ink:hover{background:#262626}
+.b-index .is-tone{background:var(--tone)}
+.b-index .is-tone .b-index_line{color:var(--muted)}
+.b-index .is-tone:hover{background:var(--tone-2)}
+.b-index .is-orange{background:var(--orange);color:var(--ink)}
+.b-index .is-orange:hover{background:#ff6a3c}
 
-/* text pages */
-.b-page{padding-top:9rem;padding-bottom:9rem}
-.b-page.is-tone{background:var(--tone)}
-.b-services{display:grid;gap:4.5rem;margin-top:5rem}
-.b-service{display:grid;grid-template-columns:var(--axis) 1fr;align-items:start}
-.b-service figure{margin-right:3rem;aspect-ratio:4/3}
-.b-service .b-h3{margin-bottom:0.75rem}
-.b-service p{max-width:40ch}
-.b-service .b-link{display:inline-block;margin-top:1.25rem}
+/* 2 · services */
+.b-svc-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(5,auto);column-gap:8px}
+.b-svc{display:grid;grid-row:span 5;grid-template-rows:subgrid;row-gap:0;background:var(--tone)}
+.b-svc_img{aspect-ratio:2 / 1;overflow:hidden}
+.b-svc .b-h3{padding:28px 28px 0}
+.b-svc_for{padding:12px 28px 0;font-size:1.0625rem}
+.b-svc_inc{padding:24px 28px 0}
+.b-svc .b-arrow-link{align-self:end;justify-self:start;margin:20px 28px 24px}
+.b-bullets{display:grid;gap:8px}
+.b-bullets li{display:grid;grid-template-columns:20px 1fr;align-items:start}
+.b-bullets li::before{content:"";width:8px;height:8px;margin-top:11px;background:var(--orange)}
 
-/* ledger */
-.b-ledger{display:grid;grid-template-columns:5fr 1fr 6fr;align-items:center}
-.b-ledger_head{grid-column:1}
-.b-ledger_head .is-soft{color:var(--muted);display:block}
-.b-ledger_rows{grid-column:3;display:grid;gap:1.25rem}
-.b-ledger_row{display:grid;grid-template-columns:minmax(0,15rem) 1fr;align-items:baseline;gap:2rem}
-.b-ledger_row b{font-family:var(--f-display);font-weight:500;font-size:clamp(3.5rem,7vw,7rem);line-height:1;letter-spacing:-0.04em;text-align:right;font-variant-numeric:lining-nums tabular-nums}
-.b-ledger_row span{font-size:1rem;max-width:24ch}
+/* 3 · numbers */
+.b-stats_grid{display:grid;grid-template-columns:5fr 7fr;column-gap:64px;align-items:start}
+.b-stats_text .b-h2{margin-top:20px}
+.b-stats_text .b-arrow-link{margin-top:24px}
+.b-stat-tiles{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.b-stat{display:flex;flex-direction:column;min-height:228px;padding:28px 28px 30px;background:var(--ink-2)}
+.b-stat_num{display:block;font-family:var(--f-display);font-weight:500;font-size:5rem;line-height:1;letter-spacing:-0.045em;font-variant-numeric:lining-nums tabular-nums}
+.b-stat_label{display:block;margin-top:auto;padding-top:24px;font-family:var(--f-display);font-weight:600;font-size:1.125rem}
+.b-stat_desc{display:block;margin-top:4px;font-size:0.9375rem;color:var(--muted-ink)}
+.b-stat.is-orange{background:var(--orange);color:var(--ink)}
+.b-stat.is-orange .b-stat_desc{color:var(--ink)}
 
-/* steps */
-.b-steps{display:grid;gap:3rem;margin-top:3.5rem;counter-reset:b-step}
-.b-steps li{display:grid;grid-template-columns:4rem 1fr;counter-increment:b-step}
-.b-steps li::before{content:counter(b-step);font-family:var(--f-display);font-weight:500;font-size:2.5rem;line-height:1;color:var(--orange)}
-.b-steps .b-h3{font-size:1.5rem;margin-bottom:0.5rem}
-.b-steps p{max-width:42ch}
+/* 4 · steps */
+.b-stepper{display:grid;grid-template-columns:repeat(3,1fr);column-gap:48px}
+.b-step{position:relative}
+.b-step:not(:last-child)::after{content:"";position:absolute;top:27px;left:56px;right:-48px;height:2px;background:var(--ink)}
+.b-step_num{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:50%;background:var(--orange);color:var(--ink);font-family:var(--f-display);font-weight:600;font-size:1.375rem}
+.b-step .b-h3{margin-top:28px}
+.b-step p{margin-top:10px;max-width:32ch;color:var(--muted)}
+.b-steps_cta{display:flex;flex-wrap:wrap;align-items:center;gap:24px;margin-top:56px}
 
-/* project strips */
-.b-projects{display:grid;grid-template-columns:13% 1fr;gap:2rem;padding-top:9rem;padding-bottom:9rem}
-.b-rail{position:sticky;top:2rem;align-self:start}
-.b-rail h2{font-family:var(--f-display);font-weight:500;font-size:1.75rem;letter-spacing:-0.02em;margin-bottom:1rem}
-.b-rail p{font-family:var(--f-display);font-size:0.9375rem;color:var(--muted)}
-.b-rail p.is-on{color:var(--ink);font-weight:600}
-.b-strips{display:grid;gap:45px;min-width:0}
-.b-strip{min-width:0}
-.b-strip_imgs{display:flex;gap:8px;height:190px;overflow:hidden}
-.b-strip_imgs img{width:auto;height:190px;flex:none}
-.b-strip_imgs img.is-wide{aspect-ratio:3/2}.b-strip_imgs img.is-tall{aspect-ratio:3/4}.b-strip_imgs img.is-sq{aspect-ratio:1/1}
-.b-strip_cap{display:grid;grid-template-columns:1fr auto 1fr;gap:1rem;margin-top:0.75rem;font-family:var(--f-display);font-size:0.875rem}
-.b-strip_cap span:nth-child(2){text-align:center;color:var(--muted)}
-.b-strip_cap span:last-child{text-align:right}
+/* 5 · about */
+.b-about_grid{display:grid;grid-template-columns:var(--axis) 1fr;align-items:center}
+.b-about_photo{position:relative;width:calc(100% - 96px);aspect-ratio:4 / 5}
+.b-about_photo img{position:absolute;inset:0}
+.b-about_badge{position:absolute;right:-56px;bottom:40px;padding:18px 24px;background:var(--orange);color:var(--ink);font-family:var(--f-display);font-weight:600;font-size:1.5rem;line-height:1.2}
+.b-about_text .b-h2{margin-top:20px}
+.b-about_text .b-lead{margin-top:24px;max-width:32ch}
+.b-about_body{margin-top:16px;max-width:54ch}
+.b-facts{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:40px}
+.b-facts > div{padding:18px 20px;background:var(--paper)}
+.b-facts dt{font-family:var(--f-display);font-weight:600;font-size:0.875rem;color:var(--muted)}
+.b-facts dd{margin-top:4px;font-family:var(--f-display);font-weight:600;font-size:1.25rem;line-height:1.3}
 
-/* about drop cap */
-.b-about{display:grid;grid-template-columns:2fr 10fr;gap:2.5rem;padding-top:8.75rem;padding-bottom:8.75rem;background:var(--tone)}
-.b-about_facts{display:grid;gap:1.25rem;align-content:start;font-family:var(--f-display);font-size:0.875rem}
-.b-about_facts h2{font-size:1.75rem;font-weight:500;letter-spacing:-0.02em;margin-bottom:0.5rem}
-.b-about_facts b{display:block;font-weight:600}
-.b-about_text p{font-size:clamp(1.5rem,2.5vw,2.375rem);line-height:1.2;max-width:44ch}
-.b-about_text p + p{margin-top:1.2em;color:var(--muted)}
-.b-dropcap{float:left;width:3.6em !important;height:3.6em !important;margin:0.15em 0.5em 0 0}
+/* 6 · testimonials */
+.b-quotes{display:grid;grid-template-columns:7fr 5fr;gap:8px}
+.b-quote{display:flex;flex-direction:column;padding:28px 32px}
+.b-quote.is-featured{position:relative;min-height:380px;padding:40px 48px;background:var(--tone)}
+.b-quote_mark{display:block;height:68px;font-family:var(--f-display);font-weight:600;font-size:8.5rem;line-height:0.85;color:var(--orange)}
+.b-stars{display:flex;gap:4px;color:var(--orange)}
+.b-stars svg{width:18px;height:18px}
+.b-quote blockquote{margin-top:16px;font-size:1.125rem;line-height:1.55}
+.b-quote.is-featured blockquote{margin-top:24px;max-width:30ch;font-family:var(--f-display);font-weight:500;font-size:1.875rem;line-height:1.3;letter-spacing:-0.015em}
+.b-person{display:flex;align-items:center;gap:14px;margin-top:auto;padding-top:20px}
+.b-avatar{width:48px;height:48px;flex:none;border-radius:50%;background:var(--tone-2)}
+.b-person b{display:block;font-family:var(--f-display);font-weight:600;font-size:1rem}
+.b-person span{display:block;font-size:0.9375rem;color:var(--muted)}
+.b-quotes_side{display:grid;grid-template-rows:1fr 1fr;gap:8px}
+.b-quote.is-ink{background:var(--ink);color:#ffffff}
+.b-quote.is-ink .b-person span{color:var(--muted-ink)}
+.b-quote.is-ink .b-avatar{background:#3a3a38}
+.b-quote.is-tone{background:var(--tone)}
 
-/* letter */
-.b-letter{display:grid;grid-template-columns:4fr 8fr;padding-top:8.75rem;padding-bottom:8.75rem}
-.b-letter_body{max-width:38ch}
-.b-letter_open{font-family:var(--f-display);font-weight:500;font-size:1.875rem;line-height:1.2;letter-spacing:-0.02em;margin-bottom:1.5rem}
-.b-letter_body p + p{margin-top:1.25rem}
-.b-letter_sign{margin-top:2.5rem;font-family:var(--f-display);font-size:1rem}
-.b-letter_sign b{display:block;font-weight:600}
+/* 7 · careers */
+.b-jobs_grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.b-jobs_photo{aspect-ratio:1 / 1;overflow:hidden}
+.b-jobs_tile{display:flex;flex-direction:column;padding:32px;background:var(--ink-2)}
+.b-jobs_tile .b-h3{margin-bottom:24px}
+.b-jobs_steps{display:grid;gap:16px}
+.b-jobs_steps li{display:grid;grid-template-columns:36px 1fr;column-gap:14px;align-items:center}
+.b-jobs_steps span{display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:var(--orange);color:var(--ink);font-family:var(--f-display);font-weight:600;font-size:1rem}
+.b-jobs_actions{display:flex;flex-wrap:wrap;align-items:center;gap:8px 24px;margin-top:auto;padding-top:28px}
 
-/* careers */
-.b-careers{display:grid;grid-template-columns:var(--axis) 1fr;min-height:620px;background:var(--tone)}
-.b-careers_text{padding:5rem var(--m) 5rem 4rem;display:flex;flex-direction:column;justify-content:center;gap:1.5rem}
-.b-careers_text p{max-width:40ch}
+/* 8 · faq */
+.b-faq_layout{display:grid;grid-template-columns:var(--axis) 1fr;align-items:start}
+.b-faq_head{padding-right:48px}
+.b-faq_head .b-h2{margin-top:20px}
+.b-faq_head .b-arrow-link{margin-top:16px}
+.b-faq_list{display:grid;gap:8px}
+.b-faq_list details{background:var(--tone)}
+.b-faq_list summary{display:flex;justify-content:space-between;align-items:center;gap:24px;min-height:64px;padding:16px 24px;list-style:none;cursor:pointer;font-weight:600;font-size:1.1875rem}
+.b-faq_list summary::-webkit-details-marker{display:none}
+.b-faq_list summary::after{content:"+";flex:none;font-family:var(--f-display);font-weight:500;font-size:1.75rem;line-height:1;color:var(--orange)}
+.b-faq_list details[open] summary::after{content:"−"}
+.b-faq_list details p{max-width:56ch;padding:0 24px 22px;color:var(--muted)}
 
-/* faq */
-.b-faq_list details{background:var(--tone);padding:1.5rem 1.75rem}
-.b-faq_list details + details{margin-top:8px}
-.b-faq summary{list-style:none;display:flex;justify-content:space-between;gap:2rem;font-size:1.375rem;cursor:pointer}
-.b-faq summary::-webkit-details-marker{display:none}
-.b-faq summary::after{content:"+";font-family:var(--f-display);font-size:1.75rem;line-height:1;color:var(--orange)}
-.b-faq details[open] summary::after{content:"−"}
-.b-faq details p{margin-top:0.75rem;max-width:52ch;color:var(--muted)}
-
-/* close: inverted */
-.b-close{background:var(--ink);color:#ffffff;padding-top:7rem;padding-bottom:6rem}
-.b-close_title{font-size:clamp(3.25rem,9.6vw,9.5rem);margin-bottom:5rem}
+/* 9 · close + form */
+.b-close{padding-top:96px;padding-bottom:88px}
+.b-close_title{margin-top:20px;margin-bottom:28px;font-family:var(--f-display);font-weight:500;font-size:5.5rem;line-height:1;letter-spacing:-0.04em}
 .b-close_grid{display:grid;grid-template-columns:5fr 1fr 6fr;align-items:start}
-.b-close_side{grid-column:1;display:grid;gap:1.5rem;font-size:1.25rem}
-.b-close_side .b-link{font-size:1.125rem}
-.b-form{grid-column:3;display:grid;gap:1rem}
-.b-form .b-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-.b-field{display:grid;gap:0.375rem}
-.b-field label,.b-form legend{font-family:var(--f-display);font-weight:600;font-size:0.875rem}
-.b-field input,.b-field textarea{width:100%;background:#1f1f1e;border:0;color:#ffffff;font:400 1.0625rem var(--f-text);padding:0.875rem 1rem;outline:none}
-.b-field textarea{min-height:7rem;resize:vertical}
+.b-close_side{grid-column:1}
+.b-close_text{max-width:30ch;font-size:1.25rem;color:#e6e6e3}
+.b-close_contacts{margin-top:20px}
+.b-close_contacts .b-arrow-link{font-size:1.125rem}
+.b-form{grid-column:3;display:grid;gap:16px}
+.b-form fieldset{margin:0;padding:0;border:0}
+.b-form legend,.b-field label{font-family:var(--f-display);font-weight:600;font-size:0.875rem}
+.b-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.b-field{display:grid;gap:6px}
+.b-field input,.b-field textarea{width:100%;min-height:52px;padding:12px 16px;border:0;background:var(--ink-2);color:#ffffff;font:400 1.0625rem var(--f-text);outline:none}
+.b-field textarea{min-height:112px;resize:vertical}
 .b-field input:focus,.b-field textarea:focus{box-shadow:inset 0 0 0 2px var(--orange)}
-.b-choices{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:0.5rem}
+.b-choices{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:8px}
 .b-choice{position:relative}
 .b-choice input{position:absolute;opacity:0}
-.b-choice span{display:flex;align-items:center;min-height:3.5rem;padding:0 1rem;background:#1f1f1e;font-family:var(--f-display);font-weight:500;font-size:0.9375rem;cursor:pointer}
+.b-choice span{display:flex;align-items:center;min-height:56px;padding:0 14px;background:var(--ink-2);font-family:var(--f-display);font-weight:500;font-size:0.9375rem;cursor:pointer}
 .b-choice input:checked + span{background:#ffffff;color:var(--ink)}
 .b-choice input:focus-visible + span{outline:2px solid var(--orange);outline-offset:2px}
-.b-form fieldset{border:0;padding:0;margin:0}
-.b-form_foot{display:flex;flex-wrap:wrap;align-items:center;gap:1.5rem;margin-top:0.5rem}
-.b-form_foot p{font-size:0.9375rem;color:#bdbdba}
-.b-consent{display:flex;gap:0.625rem;align-items:center;font-size:0.9375rem;color:#d7d7d4}
+.b-consent{display:flex;align-items:center;gap:10px;min-height:44px;font-size:1rem;color:#e6e6e3}
+.b-consent input{width:20px;height:20px;accent-color:var(--orange)}
+.b-form_foot{display:flex;flex-wrap:wrap;align-items:center;gap:16px 24px}
+.b-form_foot p{font-size:0.9375rem;color:var(--muted-ink)}
 
-/* footer: contact as the headline */
-.b-footer{background:var(--orange);color:var(--ink);min-height:760px;display:flex;flex-direction:column;padding-top:40px;padding-bottom:32px}
-.b-footer_top{display:grid;grid-template-columns:7fr 5fr;gap:2rem;font-family:var(--f-display);font-size:0.9375rem}
-.b-footer_notes{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
-.b-footer_top a.is-top{justify-self:end;font-weight:600}
-.b-footer_big{margin-top:auto;font-size:clamp(3rem,11.4vw,11rem);text-decoration:none;display:block;white-space:nowrap}
+/* 10 · footer */
+.b-footer{background:var(--orange);color:var(--ink)}
+.b-footer_inner{display:flex;flex-direction:column;min-height:400px;padding-top:40px;padding-bottom:32px}
+.b-footer_top{display:grid;grid-template-columns:7fr 5fr;gap:32px;font-family:var(--f-display);font-size:0.9375rem}
+.b-footer_notes{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.b-footer_top .is-top{justify-self:end;align-self:start;font-weight:600}
+.b-footer_big{display:block;margin-top:auto;font-family:var(--f-display);font-weight:500;font-size:8.75rem;line-height:1;letter-spacing:-0.04em;text-decoration:none;white-space:nowrap}
 .b-footer_big:hover{text-decoration:underline;text-decoration-thickness:4px;text-underline-offset:0.12em}
-.b-footer_meta{display:grid;grid-template-columns:1fr auto 1fr;gap:1rem;margin-top:2rem;font-family:var(--f-display);font-size:0.875rem}
-.b-footer_meta div{display:flex;flex-wrap:wrap;gap:1.25rem}
+.b-footer_meta{display:grid;grid-template-columns:1fr auto 1fr;gap:16px;margin-top:28px;font-family:var(--f-display);font-size:0.875rem}
+.b-footer_meta div{display:flex;flex-wrap:wrap;gap:20px}
 .b-footer_meta span:last-child{text-align:right}
 
-@media (prefers-reduced-motion: reduce){.b-photo-1 img{animation:none}.b-btn{transition:none}}
+@media (prefers-reduced-motion: reduce){
+  .b-photo-1 img{animation:none}
+  .b-btn,.b-index a,.b-index svg,.b-arrow-link svg,.b-cta-tile{transition:none}
+}
 
 @media (max-width:991px){
-  .b-root{--m:24px}
+  .b-root{--pad:24px;--sec:72px}
   .b-board{height:auto;grid-template-columns:1fr;grid-template-rows:auto}
   .b-topbar{grid-template-columns:60px 1fr;grid-template-rows:60px}
-  .b-links-tile{grid-template-columns:1fr auto;padding:0 1rem}
+  .b-links-tile{grid-template-columns:1fr auto;padding:0 16px}
   .b-links-tile nav{display:none}
-  .b-menu{display:block}
+  .b-menu{display:inline-flex}
   .b-cta-tile{display:none}
-  .b-name{min-height:280px}
-  .b-photo-1{aspect-ratio:4/3}
+  .b-name{min-height:340px;gap:40px}
+  .b-photo-1{aspect-ratio:4 / 3}
   .b-photo-2{display:none}
-  .b-dark,.b-accent{font-size:1.125rem;min-height:220px}
-  .b-axis,.b-service,.b-ledger,.b-letter,.b-careers,.b-close_grid{grid-template-columns:1fr}
-  .b-axis > .b-side{padding-right:0;margin-bottom:1rem}
-  .b-service figure{margin:0 0 1.5rem}
-  .b-ledger_rows,.b-form,.b-close_side{grid-column:auto}
-  .b-ledger_head{margin-bottom:2.5rem}
-  .b-projects{grid-template-columns:1fr}
-  .b-rail{position:relative;top:0;display:flex;justify-content:space-between;align-items:baseline}
-  .b-rail div{display:flex;gap:1rem}
-  .b-about{grid-template-columns:1fr}
-  .b-about_facts{order:2;grid-template-columns:repeat(3,1fr)}
-  .b-about_facts h2{grid-column:1 / -1}
-  .b-letter_head{margin-bottom:2rem}
-  .b-careers figure{height:340px}
-  .b-close_side{margin-bottom:3rem}
+  .b-index a{min-height:104px;padding:20px 24px}
+  .b-head,.b-faq_layout,.b-about_grid,.b-stats_grid,.b-close_grid{grid-template-columns:1fr}
+  .b-head > .b-label{padding-top:0;margin-bottom:16px}
+  .b-faq_head{padding-right:0;margin-bottom:32px}
+  .b-head{margin-bottom:40px}
+  .b-svc-grid{grid-template-columns:1fr;grid-template-rows:none;row-gap:8px}
+  .b-svc{display:flex;flex-direction:column;grid-row:auto;grid-template-rows:none}
+  .b-svc .b-arrow-link{align-self:flex-start}
+  .b-stats_grid{row-gap:40px}
+  .b-stepper{grid-template-columns:1fr;row-gap:36px}
+  .b-step{display:grid;grid-template-columns:56px 1fr;column-gap:20px;align-items:start}
+  .b-step_num{grid-row:1 / span 2}
+  .b-step .b-h3{margin-top:12px}
+  .b-step .b-h3,.b-step p{grid-column:2}
+  .b-step:not(:last-child)::after{top:56px;left:27px;right:auto;bottom:-36px;width:2px;height:auto}
+  .b-about_photo{width:calc(100% - 24px);aspect-ratio:4 / 3}
+  .b-about_badge{right:-24px;bottom:-24px;font-size:1.25rem}
+  .b-about_text{margin-top:56px}
+  .b-quotes{grid-template-columns:1fr}
+  .b-quotes_side{grid-template-rows:auto}
+  .b-jobs_grid{grid-template-columns:1fr}
+  .b-jobs_photo{aspect-ratio:4 / 3}
+  .b-close_side{grid-column:auto;margin-bottom:40px}
+  .b-close_title{font-size:4.5rem}
+  .b-form{grid-column:auto}
   .b-footer_top{grid-template-columns:1fr}
-  .b-footer_top a.is-top{justify-self:start}
+  .b-footer_top .is-top{justify-self:start}
+  .b-footer_top{margin-bottom:40px}
 }
 @media (max-width:767px){
-  .b-root{--m:20px;font-size:1.0625rem}
-  .b-page,.b-projects,.b-about,.b-letter{padding-top:5.5rem;padding-bottom:5.5rem}
-  .b-name h1{font-size:20vw}
-  .b-name h1 small{font-size:1.0625rem}
-  .b-dark,.b-accent{padding:16px;font-size:1rem}
-  .b-ledger_row{grid-template-columns:48% 1fr;gap:1rem}
-  .b-ledger_row b{font-size:14vw}
-  .b-ledger_row span{font-size:0.9375rem}
-  .b-strip_imgs{height:120px;overflow-x:auto}
-  .b-strip_imgs img{height:120px}
-  .b-strip_cap{grid-template-columns:1fr auto}
-  .b-strip_cap span:nth-child(2){display:none}
-  .b-about_text p{font-size:1.375rem;line-height:1.25}
-  .b-dropcap{width:4.2em !important;height:4.2em !important}
-  .b-about_facts{font-size:0.8125rem}
-  .b-letter_open{font-size:1.5rem}
-  .b-careers_text{padding:3.5rem var(--m)}
-  .b-close_title{font-size:14vw;margin-bottom:3rem}
-  .b-form .b-row,.b-choices{grid-template-columns:1fr}
-  .b-footer{min-height:560px}
+  .b-root{--pad:20px;font-size:1.0625rem}
+  .b-name{padding:24px 20px 24px}
+  .b-name h1{font-size:5.25rem}
+  .b-name h1 span{font-size:1.125rem}
+  .b-name_actions .b-btn{width:100%}
+  .b-index_name{font-size:1.375rem}
+  .b-h2{font-size:2.125rem}
+  .b-h3{font-size:1.375rem}
+  .b-intro{font-size:1.125rem}
+  .b-lead{font-size:1.375rem}
+  .b-svc .b-h3{padding:24px 20px 0}
+  .b-svc_for{padding:10px 20px 0}
+  .b-svc_inc{padding:20px 20px 0}
+  .b-svc .b-arrow-link{margin:16px 20px 20px}
+  .b-stat{min-height:0;padding:20px}
+  .b-stat_num{font-size:2.75rem}
+  .b-stat_label{font-size:1rem;padding-top:16px}
+  .b-stat_desc{font-size:0.875rem}
+  .b-facts{grid-template-columns:1fr}
+  .b-quote,.b-quote.is-featured{min-height:0;padding:28px 24px}
+  .b-quote.is-featured blockquote{font-size:1.375rem}
+  .b-quote_mark{height:48px;font-size:6rem}
+  .b-jobs_tile{padding:24px 20px}
+  .b-close_title{font-size:3.5rem;margin-bottom:40px}
+  .b-row,.b-choices{grid-template-columns:1fr}
+  .b-form_foot .b-btn{width:100%}
+  .b-steps_cta{flex-direction:column;align-items:stretch}
+  .b-footer_inner{min-height:440px}
   .b-footer_notes{grid-template-columns:1fr}
-  .b-footer_big{font-size:10.6vw}
+  .b-footer_big{font-size:10vw}
   .b-footer_meta{grid-template-columns:1fr}
   .b-footer_meta span:last-child{text-align:left}
 }
 </style>
 </helmet>
 <div class="b-root page-wrapper">
+<a href="#b-main" class="b-skip">Pāriet uz saturu</a>
 
 <header class="b-board section_header1">
 <div class="b-topbar navbar1_component">
 <a href="#" class="b-tile b-logo-tile" aria-label="Postline, uz sākumu"><svg viewBox="0 0 400 235" aria-hidden="true"><rect width="400" height="235" fill="#f05223"></rect><path d="M82 52 H312 V119 H88 V188" fill="none" stroke="#ffffff" stroke-width="13"></path></svg></a>
-<div class="b-tile b-links-tile"><span class="b-word">Postline</span><nav aria-label="Galvenā izvēlne"><a href="#">Pakalpojumi</a><a href="#">Par mums</a><a href="#">Darbs pie mums</a><a href="#">Kontakti</a></nav><span class="b-menu b-note">Izvēlne</span></div>
+<div class="b-tile b-links-tile"><span class="b-word">Postline</span><nav aria-label="Galvenā izvēlne"><a href="#">Pakalpojumi</a><a href="#par-mums">Par mums</a><a href="#">Darbs pie mums</a><a href="#">Kontakti</a></nav><button class="b-menu" type="button">Izvēlne</button></div>
 <a href="#piedavajums" class="b-tile b-cta-tile">Saņemt piedāvājumu</a>
 </div>
-<div class="b-tile b-name"><h1 class="b-display">Postline<small>Kurjerpasts uzņēmumiem un pārvākšana ar savu autoparku</small></h1></div>
-<figure class="b-tile b-photo-1"><img src="/_blob/f6748b43c6d80b311f0e4f45dd2165c3" alt="Balti kravas busiņi stāvvietā rindā" width="716" height="430"></figure>
-<figure class="b-tile b-photo-2"><img src="/_blob/5069553f3d750b6500fcf2b856567942" alt="Darbinieks nes kartona kasti pa ielu" width="716" height="430" style="object-position:50% 38%"></figure>
-<div class="b-split">
-<p class="b-tile b-dark">Kopš 2011. gada vedam uzņēmumu sūtījumus un pārvācam birojus, arhīvus un mājas.</p>
-<div class="b-tile b-accent"><p>Lielākais darbs: birojs ar 300 darbvietām un arhīvu.</p><a href="#piedavajums" class="b-link">Saņemt piedāvājumu</a></div>
+<div class="b-tile b-name">
+<h1>Postline<span>Kurjerpasts uzņēmumiem, pārvākšana un transports ar šoferi</span></h1>
+<div class="b-name_actions"><a href="#piedavajums" class="b-btn">Saņemt piedāvājumu</a><p class="b-note">Pieprasījums neuzliek saistības.</p></div>
 </div>
+<figure class="b-tile b-photo-1"><img src="/_blob/f6748b43c6d80b311f0e4f45dd2165c3" alt="Balti kravas busiņi stāvvietā rindā" width="716" height="384"></figure>
+<figure class="b-tile b-photo-2"><img src="/_blob/a58c9cca10f7a375d691f9b996815462" alt="Arhīva telpa ar kartona kastēm plauktos" width="716" height="384" style="object-position:50% 45%"></figure>
+<nav class="b-index" aria-label="Pakalpojumi">
+<a href="#" class="is-ink"><span><span class="b-index_name">Kurjerpasts uzņēmumiem</span><span class="b-index_line">Regulāras un specializētas piegādes</span></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6"></path></svg></a>
+<a href="#" class="is-tone"><span><span class="b-index_name">Pārvākšanās</span><span class="b-index_line">Biroji, arhīvi un mājas</span></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6"></path></svg></a>
+<a href="#" class="is-orange"><span><span class="b-index_name">Transports ar šoferi</span><span class="b-index_line">Busiņš ar šoferi, kad vajag</span></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6"></path></svg></a>
+</nav>
 </header>
 
-<main class="main-wrapper">
+<main id="b-main" class="main-wrapper">
 
-<section class="b-page b-wrap section_layout251" aria-labelledby="b-svc-h">
-<div class="b-axis">
-<p class="b-side b-note">Pakalpojumi</p>
+<section class="b-section section_layout251" aria-labelledby="b-svc-h">
+<div class="b-container">
+<div class="b-head">
+<p class="b-label">Pakalpojumi</p>
 <div>
-<h2 id="b-svc-h" class="b-h2" style="margin-bottom:1.75rem">Trīs pakalpojumi,<br>viens autoparks</h2>
-<p class="b-standfirst">Kurjerpasts uzņēmumiem ir mūsu pamatdarbs. Kad busiņi nav maršrutā, tie strādā pārvākšanā un transporta nomā.</p>
+<h2 id="b-svc-h" class="b-h2">Trīs pakalpojumi, viens autoparks</h2>
+<p class="b-intro">Kurjerpasts uzņēmumiem ir mūsu pamatdarbs. Kad busiņi nav maršrutā, tie strādā pārvākšanā un transporta nomā.</p>
 </div>
 </div>
-<div class="b-services">
-<article class="b-service"><figure><img src="/_blob/c4c5874aa61767603375ad24004cb36b" alt="Kurjers nodod kartona kasti klientam" width="520" height="390"></figure><div><h3 class="b-h3">Kurjerpasts uzņēmumiem</h3><p>Regulāras un specializētas piegādes ilgtermiņa partneriem. Piedalāmies arī iepirkumos.</p><a href="#" class="b-link">Pieprasīt piedāvājumu uzņēmumam</a></div></article>
-<article class="b-service"><figure><img src="/_blob/fcaf8c42b901509cfc836bb25094f776" alt="Darbinieks ar ratiņiem ved kastes pa bruģētu ielu" width="520" height="390" style="object-position:50% 72%"></figure><div><h3 class="b-h3">Pārvākšanās</h3><p>Birojiem, arhīviem, mazajiem uzņēmumiem un mājām. Iekraujam, pārvedam, demontējam un samontējam mēbeles.</p><a href="#" class="b-link">Saņemt pārvākšanās cenu</a></div></article>
-<article class="b-service"><figure><img src="/_blob/ce96ee8fea786550be4ea36b388d354c" alt="Balts kravas busiņš pie ķieģeļu ēkas" width="520" height="390"></figure><div><h3 class="b-h3">Transports ar šoferi</h3><p>Busiņš ar šoferi jūsu kravai, kad tas vajadzīgs.</p><a href="#" class="b-link">Pieteikt transportu</a></div></article>
+<div class="b-svc-grid">
+<article class="b-svc">
+<figure class="b-svc_img"><img src="/_blob/c4c5874aa61767603375ad24004cb36b" alt="Kurjers nodod kartona kasti klientam" width="420" height="262" style="object-position:50% 55%"></figure>
+<h3 class="b-h3">Kurjerpasts uzņēmumiem</h3>
+<p class="b-svc_for"><span class="b-mini">Kam</span>Uzņēmumiem ar regulāru sūtījumu plūsmu un iepirkumu organizētājiem</p>
+<div class="b-svc_inc"><p class="b-mini">Iekļauts</p><ul class="b-bullets"><li>Regulāras piegādes pēc grafika</li><li>Specializētas piegādes</li><li>Dalība iepirkumos</li></ul></div>
+<a href="#" class="b-arrow-link">Pieprasīt piedāvājumu <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"></path></svg></a>
+</article>
+<article class="b-svc">
+<figure class="b-svc_img"><img src="/_blob/fcaf8c42b901509cfc836bb25094f776" alt="Darbinieks ar ratiņiem ved kastes pa bruģētu ielu" width="420" height="262" style="object-position:50% 72%"></figure>
+<h3 class="b-h3">Pārvākšanās</h3>
+<p class="b-svc_for"><span class="b-mini">Kam</span>Birojiem, arhīviem, mazajiem uzņēmumiem un mājām</p>
+<div class="b-svc_inc"><p class="b-mini">Iekļauts</p><ul class="b-bullets"><li>Iekraušana un pārvešana</li><li>Mēbeļu demontāža un montāža</li><li>Arhīvu pārvešana</li></ul></div>
+<a href="#" class="b-arrow-link">Saņemt pārvākšanās cenu <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"></path></svg></a>
+</article>
+<article class="b-svc">
+<figure class="b-svc_img"><img src="/_blob/ce96ee8fea786550be4ea36b388d354c" alt="Balts kravas busiņš pie ķieģeļu ēkas" width="420" height="262"></figure>
+<h3 class="b-h3">Transports ar šoferi</h3>
+<p class="b-svc_for"><span class="b-mini">Kam</span>Kad kravai vajag busiņu un šoferi</p>
+<div class="b-svc_inc"><p class="b-mini">Iekļauts</p><ul class="b-bullets"><li>Busiņš ar šoferi</li><li>Jūsu maršruts un laiks</li><li>Vienreizēji vai regulāri</li></ul></div>
+<a href="#" class="b-arrow-link">Pieteikt transportu <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"></path></svg></a>
+</article>
+</div>
 </div>
 </section>
 
-<section class="b-page is-tone b-wrap section_stats13" aria-labelledby="b-led-h">
-<div class="b-ledger">
-<h2 id="b-led-h" class="b-h2 b-ledger_head"><span class="is-soft">15 gadi,</span>viens uzņēmums</h2>
-<div class="b-ledger_rows">
-<p class="b-ledger_row"><b>2011</b><span>gads, kurā Postline sāka darbu</span></p>
-<p class="b-ledger_row"><b>~20</b><span>cilvēku komandā, vairāki kopš paša sākuma</span></p>
-<p class="b-ledger_row"><b>~20</b><span>transportlīdzekļu savā autoparkā</span></p>
-<p class="b-ledger_row"><b>300</b><span>darbvietu lielākajā biroja pārvākšanā</span></p>
-<p class="b-ledger_row"><b>~150</b><span>darbinieku otrajā lielākajā</span></p>
+<section class="b-section is-ink section_stats13" aria-labelledby="b-num-h">
+<div class="b-container b-stats_grid">
+<div class="b-stats_text">
+<p class="b-label">Postline skaitļos</p>
+<h2 id="b-num-h" class="b-h2">15 gadi uz Latvijas ceļiem</h2>
+<p class="b-intro">Kopš 2011. gada vedam uzņēmumu sūtījumus un pārvācam birojus ar saviem busiņiem un savu komandu.</p>
+<a href="#par-mums" class="b-arrow-link">Par mums <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"></path></svg></a>
 </div>
+<ul class="b-stat-tiles">
+<li class="b-stat"><span class="b-stat_num">2011</span><span class="b-stat_label">Sākām darbu</span><span class="b-stat_desc">Vairāki kolēģi ir kopā kopš pirmās dienas</span></li>
+<li class="b-stat"><span class="b-stat_num">~20</span><span class="b-stat_label">Cilvēku komanda</span><span class="b-stat_desc">Šoferi un kurjeri</span></li>
+<li class="b-stat"><span class="b-stat_num">~20</span><span class="b-stat_label">Transportlīdzekļi</span><span class="b-stat_desc">Savs autoparks</span></li>
+<li class="b-stat is-orange"><span class="b-stat_num">300</span><span class="b-stat_label">Darbvietu birojs</span><span class="b-stat_desc">Mūsu lielākā pārvākšana, ar arhīvu</span></li>
+</ul>
 </div>
 </section>
 
-<section class="b-page b-wrap section_layout231" aria-labelledby="b-how-h">
-<div class="b-axis">
-<p class="b-side b-note">Kā tas notiek</p>
+<section class="b-section section_layout231" aria-labelledby="b-how-h">
+<div class="b-container">
+<div class="b-head">
+<p class="b-label">Process</p>
 <div>
-<h2 id="b-how-h" class="b-h2">No pieprasījuma<br>līdz paveiktam darbam</h2>
-<ol class="b-steps">
-<li><div><h3 class="b-h3">Pastāstiet, kas jāved</h3><p>Aizpildiet formu vai zvaniet. Pārvākšanai varat pievienot foto, lai apjomu redzam uzreiz.</p></div></li>
-<li><div><h3 class="b-h3">Saņemiet piedāvājumu</h3><p>Precizējam apjomu un nosaucam cenu. Pieprasījums neuzliek saistības.</p></div></li>
-<li><div><h3 class="b-h3">Mēs to izdarām</h3><p>Mūsu komanda iekrauj, pārved un nogādā līdz galam.</p></div></li>
+<h2 id="b-how-h" class="b-h2">Kā tas notiek</h2>
+<p class="b-intro">Trīs soļi no pieprasījuma līdz paveiktam darbam.</p>
+</div>
+</div>
+<ol class="b-stepper">
+<li class="b-step"><span class="b-step_num" aria-hidden="true">1</span><h3 class="b-h3">Pastāstiet, kas jāved</h3><p>Aizpildiet formu vai zvaniet. Pārvākšanai varat pievienot foto.</p></li>
+<li class="b-step"><span class="b-step_num" aria-hidden="true">2</span><h3 class="b-h3">Saņemiet piedāvājumu</h3><p>Precizējam apjomu un nosaucam cenu.</p></li>
+<li class="b-step"><span class="b-step_num" aria-hidden="true">3</span><h3 class="b-h3">Mēs to izdarām</h3><p>Komanda iekrauj, pārved un nogādā līdz galam.</p></li>
 </ol>
-<a href="#piedavajums" class="b-btn" style="margin-top:3.5rem">Saņemt piedāvājumu</a>
-</div>
-</div>
-</section>
-
-<section class="b-projects b-wrap section_portfolio11" aria-labelledby="b-proj-h">
-<div class="b-rail"><h2 id="b-proj-h">Projekti</h2><div><p class="is-on">Visi</p><p>Biroji</p><p>Arhīvi</p></div></div>
-<div class="b-strips">
-<article class="b-strip"><div class="b-strip_imgs"><img class="is-wide" src="/_blob/e1ea24c60a9af95bd0c5e21495a18eb3" alt="Atvērta biroja telpa"><img class="is-tall" src="/_blob/a58c9cca10f7a375d691f9b996815462" alt="Arhīva kastes plauktos"><img class="is-wide" src="/_blob/0001053a25f4dad915e73885746e6c74" alt="Biroja darbvietu rindas"><img class="is-tall" src="/_blob/5069553f3d750b6500fcf2b856567942" alt="Darbinieks nes kasti"><img class="is-wide" src="/_blob/f6748b43c6d80b311f0e4f45dd2165c3" alt="Busiņi stāvvietā"></div><p class="b-strip_cap"><span>Birojs ar 300 darbvietām</span><span>birojs un arhīvs</span><span>[Gads]</span></p></article>
-<article class="b-strip"><div class="b-strip_imgs"><img class="is-wide" src="/_blob/0001053a25f4dad915e73885746e6c74" alt="Biroja darbvietas" style="object-position:30% 50%"><img class="is-sq" src="/_blob/c4c5874aa61767603375ad24004cb36b" alt="Kastes nodošana"><img class="is-tall" src="/_blob/fcaf8c42b901509cfc836bb25094f776" alt="Kastes uz ratiņiem"><img class="is-wide" src="/_blob/e1ea24c60a9af95bd0c5e21495a18eb3" alt="Biroja telpa" style="object-position:80% 50%"></div><p class="b-strip_cap"><span>Birojs ~150 darbiniekiem</span><span>ražošanas uzņēmums</span><span>[Gads]</span></p></article>
-<article class="b-strip"><div class="b-strip_imgs"><img class="is-tall" src="/_blob/a58c9cca10f7a375d691f9b996815462" alt="Arhīva kastes" style="object-position:50% 70%"><img class="is-wide" src="/_blob/ce96ee8fea786550be4ea36b388d354c" alt="Busiņš pie ēkas"><img class="is-sq" src="/_blob/5069553f3d750b6500fcf2b856567942" alt="Kaste rokās" style="object-position:50% 70%"><img class="is-wide" src="/_blob/304b2b2903f8736fafa13c68c0f9d8f3" alt="Kravas auto uz ielas"></div><p class="b-strip_cap"><span>[Projekts 3]</span><span>[apraksts]</span><span>[Gads]</span></p></article>
+<div class="b-steps_cta"><a href="#piedavajums" class="b-btn">Saņemt piedāvājumu</a><p class="b-note">Pieprasījums neuzliek saistības.</p></div>
 </div>
 </section>
 
-<section id="par-mums" class="b-about b-wrap section_layout645">
-<div class="b-about_facts">
-<h2>Par mums</h2>
-<p><b>Kopš</b>2011. gada</p>
-<p><b>Darba vieta</b>Rīga un Mārupe</p>
-<p><b>Tālrunis</b>+371 29 443 359</p>
-</div>
+<section id="par-mums" class="b-section is-tone section_layout645" aria-labelledby="b-about-h">
+<div class="b-container b-about_grid">
+<figure class="b-about_photo"><img src="/_blob/5069553f3d750b6500fcf2b856567942" alt="Darbinieks nes kartona kasti pa ielu" width="440" height="550" style="object-position:50% 40%"><figcaption class="b-about_badge">Kopš 2011. gada</figcaption></figure>
 <div class="b-about_text">
-<p><img class="b-dropcap" src="/_blob/05ca0f80e9e3523f6523f6ae69453edd" alt="Smaidīgs šoferis busiņa kabīnē" width="140" height="140" style="object-position:72% 40%"><b style="font-weight:600">Postline</b> ir kurjerpasta un transporta uzņēmums, kas strādā kopš 2011. gada. Mūsu ~20 cilvēku komanda ar saviem busiņiem ved uzņēmumu sūtījumus un pārvāc birojus, arhīvus un mājas. Vairāki kolēģi ir kopā ar mums kopš paša sākuma.</p>
-<p>Strādājam ar vadošajiem starptautiskajiem kurjeru uzņēmumiem, un klientu uzticību esam ieguvuši ar darbinieku personīgu ieinteresētību.</p>
+<p class="b-label">Par mums</p>
+<h2 id="b-about-h" class="b-h2">Komanda, kas pazīst savus klientus</h2>
+<p class="b-lead">Postline ir kurjerpasta un transporta uzņēmums ar ~20 cilvēku komandu un saviem busiņiem.</p>
+<p class="b-about_body">Strādājam ar vadošajiem starptautiskajiem kurjeru uzņēmumiem, un klientu uzticību esam ieguvuši ar darbinieku personīgu ieinteresētību. Vairāki kolēģi ir ar mums kopš paša sākuma.</p>
+<dl class="b-facts">
+<div><dt>Autoparks</dt><dd>~20 busiņi</dd></div>
+<div><dt>Komanda</dt><dd>~20 cilvēki</dd></div>
+<div><dt>Darba vieta</dt><dd>Rīga un Mārupe</dd></div>
+</dl>
+</div>
 </div>
 </section>
 
-<section class="b-letter b-wrap section_testimonial17" aria-labelledby="b-let-h">
-<h2 id="b-let-h" class="b-note b-letter_head">Ko saka klienti</h2>
-<div class="b-letter_body">
-<p class="b-letter_open">[Atsauksmes pirmais teikums, kas pasaka galveno.]</p>
-<p>[Atsauksmes turpinājums: kā notika sadarbība, kas izdevās, ko klients ieteiktu citiem. Divas vai trīs rindkopas no īstas atsauksmes, ko ievāc GoHighLevel.]</p>
-<p>[Noslēguma teikums.]</p>
-<p class="b-letter_sign"><b>[Vārds Uzvārds]</b>[Amats], [Uzņēmums]</p>
+<section class="b-section section_testimonial17" aria-labelledby="b-q-h">
+<div class="b-container">
+<div class="b-head">
+<p class="b-label">Atsauksmes</p>
+<div>
+<h2 id="b-q-h" class="b-h2">Ko saka klienti</h2>
+<p class="b-intro">Atsauksmes pēc paveiktiem darbiem.</p>
+</div>
+</div>
+<div class="b-quotes">
+<figure class="b-quote is-featured">
+<span class="b-quote_mark" aria-hidden="true">“</span>
+<div class="b-stars" role="img" aria-label="5 no 5"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z" fill="currentColor"></path></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z" fill="currentColor"></path></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z" fill="currentColor"></path></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z" fill="currentColor"></path></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z" fill="currentColor"></path></svg></div>
+<blockquote>[Klienta atsauksme, 2–3 teikumi par sadarbību ar Postline.]</blockquote>
+<figcaption class="b-person"><span class="b-avatar" aria-hidden="true"></span><span><b>[Vārds Uzvārds]</b><span>[Amats], [Uzņēmums]</span></span></figcaption>
+</figure>
+<div class="b-quotes_side">
+<figure class="b-quote is-ink">
+<div class="b-stars" role="img" aria-label="5 no 5"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z" fill="currentColor"></path></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z" fill="currentColor"></path></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z" fill="currentColor"></path></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z" fill="currentColor"></path></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z" fill="currentColor"></path></svg></div>
+<blockquote>[Atsauksme par regulārām piegādēm, 1–2 teikumi.]</blockquote>
+<figcaption class="b-person"><span class="b-avatar" aria-hidden="true"></span><span><b>[Vārds Uzvārds]</b><span>[Uzņēmums]</span></span></figcaption>
+</figure>
+<figure class="b-quote is-tone">
+<div class="b-stars" role="img" aria-label="5 no 5"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z" fill="currentColor"></path></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z" fill="currentColor"></path></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z" fill="currentColor"></path></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z" fill="currentColor"></path></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z" fill="currentColor"></path></svg></div>
+<blockquote>[Pārvākšanās klienta atsauksme, 1–2 teikumi.]</blockquote>
+<figcaption class="b-person"><span class="b-avatar" aria-hidden="true"></span><span><b>[Vārds Uzvārds]</b><span>[Privātpersona]</span></span></figcaption>
+</figure>
+</div>
+</div>
 </div>
 </section>
 
-<section class="b-careers section_cta1" aria-labelledby="b-job-h">
-<figure><img src="/_blob/05ca0f80e9e3523f6523f6ae69453edd" alt="Šoferis busiņa kabīnē" width="600" height="620" style="object-position:75% 40%"></figure>
-<div class="b-careers_text">
-<h2 id="b-job-h" class="b-h2">Meklējam kurjerus<br>un šoferus</h2>
-<p>Stabils darbs uzņēmumā, kas strādā kopš 2011. gada. Pieteikšanās aizņem dažas minūtes, CV nav obligāts.</p>
-<div><a href="#" class="b-btn is-ink">Skatīt vakances</a></div>
+<section class="b-section is-ink section_cta1" aria-labelledby="b-job-h">
+<div class="b-container">
+<div class="b-head">
+<p class="b-label">Darbs pie mums</p>
+<div>
+<h2 id="b-job-h" class="b-h2">Meklējam kurjerus un šoferus</h2>
+<p class="b-intro">Stabils darbs uzņēmumā, kas strādā kopš 2011. gada.</p>
+</div>
+</div>
+<div class="b-jobs_grid">
+<figure class="b-jobs_photo"><img src="/_blob/05ca0f80e9e3523f6523f6ae69453edd" alt="Smaidīgs šoferis busiņa kabīnē" width="421" height="421" style="object-position:76% 40%"></figure>
+<div class="b-jobs_tile">
+<h3 class="b-h3">Ko piedāvājam</h3>
+<ul class="b-bullets">
+<li>Darbs ar uzņēmuma busiņiem</li>
+<li>Darba vieta Rīgā un Mārupē</li>
+<li>Dažāds darbs: kurjerpasts, pārvākšana, pārvadājumi</li>
+<li>[Atalgojums un grafiks]</li>
+</ul>
+</div>
+<div class="b-jobs_tile">
+<h3 class="b-h3">Kā pieteikties</h3>
+<ol class="b-jobs_steps">
+<li><span aria-hidden="true">1</span>Īss pieteikums, CV nav obligāts</li>
+<li><span aria-hidden="true">2</span>Mēs piezvanām</li>
+<li><span aria-hidden="true">3</span>Iepazīstamies klātienē</li>
+</ol>
+<div class="b-jobs_actions"><a href="#" class="b-btn">Skatīt vakances</a><a href="#" class="b-arrow-link">Pieteikties darbam <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"></path></svg></a></div>
+</div>
+</div>
 </div>
 </section>
 
-<section class="b-page b-wrap section_faq3" aria-labelledby="b-faq-h">
-<div class="b-axis">
-<p class="b-side b-note">Jautājumi</p>
-<div class="b-faq">
-<h2 id="b-faq-h" class="b-h2" style="margin-bottom:2.5rem">Biežāk jautātais</h2>
+<section class="b-section section_faq3" aria-labelledby="b-faq-h">
+<div class="b-container b-faq_layout">
+<div class="b-faq_head">
+<p class="b-label">Jautājumi</p>
+<h2 id="b-faq-h" class="b-h2">Biežāk jautātais</h2>
+<p class="b-intro">Neatradāt atbildi? Zvaniet vai rakstiet.</p>
+<a href="#" class="b-arrow-link">+371 29 443 359 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"></path></svg></a>
+</div>
 <div class="b-faq_list">
 <details open><summary>Vai vedat atsevišķus privātus sūtījumus?</summary><p>Nē. Kurjerpastu veicam uzņēmumiem ar regulārām piegādēm. Privātpersonām piedāvājam pārvākšanos.</p></details>
 <details><summary>Cik maksā jūsu pakalpojumi?</summary><p>[Atbilde]</p></details>
@@ -346,15 +492,15 @@ body{margin:0;background:#ffffff}
 <details><summary>Kā pieteikties darbā par šoferi?</summary><p>[Atbilde]</p></details>
 </div>
 </div>
-</div>
 </section>
 
-<section id="piedavajums" class="b-close b-wrap section_contact5" aria-labelledby="b-close-h">
-<h2 id="b-close-h" class="b-display b-close_title">Pastāstiet,<br>kas jāved.</h2>
-<div class="b-close_grid">
+<section id="piedavajums" class="b-section is-ink b-close section_contact5" aria-labelledby="b-close-h">
+<div class="b-container b-close_grid">
 <div class="b-close_side">
-<p>Mēs sazināsimies, precizēsim apjomu un nosauksim cenu.</p>
-<p><a href="#" class="b-link">+371 29 443 359</a><br><a href="#" class="b-link">info@postline.lv</a></p>
+<p class="b-label">Pieprasījums</p>
+<h2 id="b-close-h" class="b-close_title">Pastāstiet,<br>kas jāved.</h2>
+<p class="b-close_text">Mēs sazināsimies, precizēsim apjomu un nosauksim cenu.</p>
+<p class="b-close_contacts"><a href="#" class="b-arrow-link">+371 29 443 359</a><br><a href="#" class="b-arrow-link">info@postline.lv</a></p>
 </div>
 <form class="b-form" action="#">
 <fieldset><legend>Kas jums vajadzīgs?</legend>
@@ -367,7 +513,7 @@ body{margin:0;background:#ffffff}
 <div class="b-row"><div class="b-field"><label for="b-name">Vārds</label><input id="b-name" type="text" autocomplete="name"></div><div class="b-field"><label for="b-phone">Tālrunis</label><input id="b-phone" type="tel" autocomplete="tel"></div></div>
 <div class="b-field"><label for="b-email">E-pasts</label><input id="b-email" type="email" autocomplete="email"></div>
 <div class="b-field"><label for="b-msg">Īsi par darbu</label><textarea id="b-msg" placeholder="Kas, no kurienes, uz kurieni un kad"></textarea></div>
-<label class="b-consent"><input type="checkbox"> Piekrītu <a href="#" class="b-link">privātuma politikai</a></label>
+<label class="b-consent"><input type="checkbox"> Piekrītu <a href="#" class="b-arrow-link">privātuma politikai</a></label>
 <div class="b-form_foot"><button class="b-btn" type="button">Saņemt piedāvājumu</button><p>Pieprasījums neuzliek saistības. Privātus sūtījumus nepieņemam.</p></div>
 </form>
 </div>
@@ -375,18 +521,20 @@ body{margin:0;background:#ffffff}
 
 </main>
 
-<footer class="b-footer b-wrap footer3_component">
+<footer class="b-footer footer3_component">
+<div class="b-container b-footer_inner">
 <div class="b-footer_top">
 <div class="b-footer_notes"><p>SIA Postline<br>Reģ. nr. LV40103468518</p><p>[Biroja adrese]</p><p>Kurjerpasts, pārvākšana un transports ar šoferi kopš 2011. gada.</p></div>
 <a href="#" class="is-top">Uz augšu</a>
 </div>
-<a href="#" class="b-display b-footer_big">+371 29 443 359</a>
+<a href="#" class="b-footer_big">+371 29 443 359</a>
 <div class="b-footer_meta"><div><a href="#">Pakalpojumi</a><a href="#">Darbs pie mums</a><a href="#">Privātuma politika</a><a href="#">Sīkdatnes</a></div><span>info@postline.lv</span><span>© 2026 SIA Postline</span></div>
+</div>
 </footer>
 
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":7400}}'>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":7316}}'>
 class Component extends DCLogic {
   renderVals() { return {}; }
 }

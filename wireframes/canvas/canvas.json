@@ -8,7 +8,7 @@
       "title": "/darbinieki — slēpta lapa",
       "w": 1440,
       "x": 6080,
-      "y": 12900
+      "y": 9900
     },
     "Darbs-pie-mums.dc.html": {
       "expand": "fill",
@@ -16,11 +16,11 @@
       "title": "Darbs pie mums — skelets",
       "w": 1440,
       "x": 3040,
-      "y": 12900
+      "y": 9900
     },
     "Koncepts-A.dc.html": {
       "expand": "fill",
-      "h": 8323,
+      "h": 7201,
       "title": "Koncepts A — Plakāts (drosmīgs)",
       "w": 1440,
       "x": 1520,
@@ -28,7 +28,7 @@
     },
     "Koncepts-B.dc.html": {
       "expand": "fill",
-      "h": 10686,
+      "h": 7316,
       "title": "Koncepts B — Gada pārskats (cēls)",
       "w": 1440,
       "x": 3040,
@@ -36,7 +36,7 @@
     },
     "Koncepts-C.dc.html": {
       "expand": "fill",
-      "h": 9081,
+      "h": 6718,
       "title": "Koncepts C — Maršruts (mūsdienīgs)",
       "w": 1440,
       "x": 4560,
@@ -48,7 +48,7 @@
       "title": "Kontakti — skelets",
       "w": 1440,
       "x": 4560,
-      "y": 12900
+      "y": 9900
     },
     "Lapu-karte.dc.html": {
       "h": 1360,
@@ -59,7 +59,7 @@
     },
     "Main.dc.html": {
       "expand": "fill",
-      "h": 9344,
+      "h": 7662,
       "title": "Sākums — skelets",
       "w": 1440,
       "x": 0,
@@ -71,15 +71,15 @@
       "title": "Pakalpojumi uzņēmumiem — skelets",
       "w": 1440,
       "x": 0,
-      "y": 12900
+      "y": 9900
     },
     "Parvaksanas.dc.html": {
       "expand": "fill",
-      "h": 7204,
+      "h": 7220,
       "title": "Pārvākšanās — skelets",
       "w": 1440,
       "x": 1520,
-      "y": 12900
+      "y": 9900
     }
   },
   "createdOnFiles": {
@@ -105,7 +105,7 @@
       "text": "Apakšlapas — skelets",
       "w": 240,
       "x": 0,
-      "y": 12600
+      "y": 9600
     },
     "t-sitemap": {
       "kind": "title1",

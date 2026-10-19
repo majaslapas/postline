@@ -92,29 +92,53 @@ There is no price calculator (removed on 29.09.). Testimonial 17 reads from a CM
 
 ## Design concepts (homepage)
 
-Three different directions for the same homepage argument. Each one keeps the orange "P" logo (#F05223 with the white line-drawn P) as it is and takes one more thing from the current postline.lv.
+Three different directions for the same homepage. Each keeps the orange "P" logo (#F05223 with the white line-drawn P) as it is, takes one more thing from the current postline.lv, and follows the homepage order without the projects section:
+
+1. Nav and hero
+2. Services
+3. Numbers
+4. How it works
+5. About
+6. Testimonials
+7. Careers
+8. FAQ
+9. Quote form
+10. Footer
 
 How they were made:
 
-- **taste-skill** (github.com/leonxlnx/taste-skill) dealt the composition: `draw.mjs` directions *Loud and flat* (seed 11), *The printed annual* (seed 37) and *One motif* (seed 23). Its house rules apply: no eyebrow chips, no gradients, no monospace and two typefaces at most.
-- **tastemaker** (github.com/codeswithroh/tastemaker) set the hero rules: one promise, one action, one visual. It also checked the copy against its template bank and ruled out em dashes in the copy.
-- **ui-ux-pro-max** (github.com/nextlevelbuilder/ui-ux-pro-max-skill) supplied the "Trust & Authority + Conversion" pattern, a quote CTA in the nav, and the logistics colour hint: tracking blue + delivery orange.
-- **frontend-design** (github.com/anthropics/skills) supplied the plan-then-critique pass and the list of default looks to avoid.
+- **taste-skill** (github.com/leonxlnx/taste-skill) dealt the directions: *Loud and flat* (seed 11), *The printed annual* (seed 37) and *One motif* (seed 23).
+- **tastemaker** (github.com/codeswithroh/tastemaker) set the hero rules (one promise, one action, one visual) and the copy rules (no template headlines, no em dashes).
+- **frontend-design** (github.com/anthropics/skills) supplied the plan-then-critique pass.
+- **UI/UX Pro Max** (github.com/nextlevelbuilder/ui-ux-pro-max-skill) drove the 19.10 restructure:
+  - Hierarchy through size, weight, spacing and contrast.
+  - One header pattern per section (label, H2, short intro) and one 1280 px container.
+  - Equal cards with the same internal order.
+  - Numbered step indicators for the process.
+  - One primary button per screen.
+  - Text contrast of at least 4.5:1 and touch targets of at least 44 px.
+  - Its "Corporate Trust" pairing (body font Source Sans 3) replaced the serif in B.
 
 | | A — Plakāts (bold) | B — Gada pārskats (elevated) | C — Maršruts (modern) |
 | --- | --- | --- | --- |
-| Idea | A street poster: flat fields of colour, the heaviest type, short things said at full volume | A printed annual report: one column line at 42%, greyscale photos, black ink and one spot colour | The line of the Postline "P" becomes the route: it connects the 3 steps and returns huge in the footer |
-| Taken from postline.lv | Signal orange #F05223 as the whole hero field | Raleway, the current site's typeface | Blue grey #263238 and coral #FF8A65 from the old site; a livelier take on the earlier concept C |
-| Hero | "Vedam, / pārvācam." stepped across the full width, one tilted photo stuck on the seam | Two-by-two board: the name, two greyscale photos, a black statement tile and an orange action tile | "Mēs to aizvedīsim." over a stack of service folders; clicking a tab opens that service with its own button |
-| Colours | #F05223, sky #4DB3FF, lime #C5F53D, near-black #161615, text #111111 | white, tone #F1F1EE, ink #121212, Postline orange as the only colour | #263238, #37474F, #CFD8DC, #ECEFF1, coral #FF8A65, pale coral #FFE0D6 |
-| Type | Unbounded 800 (uppercase display) + Onest | Raleway 500 + Source Serif 4 | Geist |
-| Shapes | Square everything, panels edge to edge | Square tiles, 8px gaps | 16px radius, pill buttons |
-| Signature sections | Mosaic of unlike tiles, one figure owning the screen (300), steps on unequal coloured panels, quotes on torn paper slips, "Piesakies" as one giant button | A ledger of figures aligned on one column, project photo strips with a sticky rail, a photo used as a drop cap, a closing page inverted to black | Stepped figure tiles, the P-shaped route map, a paragraph with photos inside the words, a clip-out coupon form, the P mark built large in the footer |
-| Form | 3 cells in one bar: service, name, phone | On the black closing page, with service tiles | A coupon with a stub and a body |
+| Idea | A street poster: flat fields of colour, heavy uppercase type, tilted photo stickers | A printed annual report: greyscale photos, black ink, Postline orange as the only colour, square tiles with 8 px gaps | Clean and modern; the line of the Postline "P" returns as the footer mark |
+| Taken from postline.lv | Signal orange #F05223 as the whole hero field | Raleway, the current site's typeface | Blue grey #263238 and coral #FF8A65 from the old site |
+| Hero | Three service chips, "Kurjerpasts un pārvākšana", subhead, black button, 300-workplace proof line, van photo as a sticker | Tile board: "Postline" with what it does and the button, two photos, and an index of the three services as link tiles | "Mēs to aizvedīsim." over four equal tabs (three services + jobs); every tab opens a panel with the same structure |
+| Services | Three equal cards (lime, orange, white): photo, title, "Kam", three bullets, link | Three aligned columns: photo, title, "Kam", "Iekļauts" list, link | Inside the hero tabs |
+| Numbers | Giant "300" with a "Ko tas nozīmē" panel and four stats below | Ink section: intro on the left, 2×2 stat tiles on the right, 300 in orange | Four equal stat cards, 300 in coral |
+| How it works | Three coloured panels with step numbers and time labels | Horizontal stepper with orange numbered circles | Horizontal stepper with numbered circles on a coral line |
+| About | Paragraph with highlighted facts | Photo with a "Kopš 2011. gada" badge, lead text and three fact tiles | Paragraph with small photos inside the words, three fact cards |
+| Testimonials | Three torn paper slips | One featured quote and two smaller ones | Three equal cards, the middle one dark |
+| Careers | Benefits checklist and driver photo sticker | Photo, "Ko piedāvājam" and "Kā pieteikties" in three columns | Pale coral panel with photo and three benefit cards |
+| Quote form | White form panel on orange | Inverted black closing page | Clip-out coupon |
+| Colours | #F05223, sky #4DB3FF, lime #C5F53D, near-black #161615, text #111111 | white, tone #F1F1EE, ink #121212, Postline orange | #263238, #37474F, #CFD8DC, #ECEFF1, coral #FF8A65, pale coral #FFE0D6 |
+| Type | Unbounded 800 (uppercase display) + Onest | Raleway 500/600 + Source Sans 3 | Geist |
+| Shapes | Square, panels edge to edge | Square tiles, 8 px gaps | 16 px radius, pill buttons |
+| Height at 1440 | 7,201 px | 7,316 px | 6,718 px |
 
 Contrast note: white text on #F05223 is only 3.5:1, so every orange or coral button uses dark text.
 
-Motion is described rather than built into the canvas. A: the headline lines rise from behind their baselines on load. B: the hero photo opens like a shutter. C: tab changes and hover lifts. All three respect `prefers-reduced-motion`.
+Motion is described rather than built into the canvas: hover lifts, tab changes and accordion openings, all respecting `prefers-reduced-motion`.
 
 ## Images
 
