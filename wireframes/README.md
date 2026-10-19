@@ -128,7 +128,7 @@ How they were made:
 | Hero | Two service chips, "Kurjerpasts un pārvākšana", subhead, black button, 300-workplace proof line, van photo as a sticker | Tile board: "Postline" with what it does and the button, two photos, and link tiles for the two services and the jobs page | "Mēs aizvedīsim!" over three equal tabs (two services + jobs); every tab opens a panel with the same structure |
 | Services | Two equal cards (lime, orange): photo, title, "Kam", three bullets, link | Two aligned columns: photo, title, "Kam", "Iekļauts" list, link | Inside the hero tabs |
 | Numbers | Giant "300" with a "Ko tas nozīmē" panel and four stats below | Ink section: intro on the left, 2×2 stat tiles on the right, 300 in orange | Four equal stat cards, 300 in coral |
-| How it works | Three coloured panels with step numbers and time labels | Horizontal stepper with orange numbered circles | Horizontal stepper with numbered circles on a coral line |
+| How it works | Three coloured panels with step numbers and time labels | Heading and button on the left; three numbered steps on a vertical line on the right | Horizontal stepper with numbered circles on a coral line |
 | About | Paragraph with highlighted facts | Photo with a "Kopš 2011. gada" badge, lead text and three fact tiles | Paragraph with small photos inside the words, three fact cards |
 | Testimonials | Three torn paper slips | One featured quote and two smaller ones | Three equal cards, the middle one dark |
 | Careers | Benefits checklist and driver photo sticker | Photo, "Ko piedāvājam" and "Kā pieteikties" in three columns | Pale coral panel with photo and three benefit cards |
@@ -136,7 +136,7 @@ How they were made:
 | Colours | #F05223, sky #4DB3FF, lime #C5F53D, near-black #161615, text #111111 | white, tone #F1F1EE, ink #121212, Postline orange | #263238, #37474F, #CFD8DC, #ECEFF1, coral #FF8A65, pale coral #FFE0D6 |
 | Type | Unbounded 800 (uppercase display) + Onest | Raleway 500/600 + Source Sans 3 | Geist |
 | Shapes | Square, panels edge to edge | Square tiles, 8 px gaps | 16 px radius, pill buttons |
-| Height at 1440 | 7,309 px | 7,397 px | 6,718 px |
+| Height at 1440 | 7,309 px | 7,330 px | 6,718 px |
 
 Contrast note: white text on #F05223 is only 3.5:1, so every orange or coral button uses dark text.
 

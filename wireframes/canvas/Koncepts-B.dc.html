@@ -43,8 +43,8 @@ body{margin:0;background:#ffffff}
 .b-section.is-tone{background:var(--tone)}
 .b-section.is-ink{background:var(--ink);color:#ffffff}
 .b-section.is-ink .b-intro{color:var(--muted-ink)}
-.b-head{display:grid;grid-template-columns:var(--axis) 1fr;align-items:start;margin-bottom:56px}
-.b-head > .b-label{padding-top:18px}
+.b-head{max-width:760px;margin-bottom:56px}
+.b-head .b-h2{margin-top:20px}
 
 /* actions */
 .b-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 28px;background:var(--orange);color:var(--ink) !important;font-family:var(--f-display);font-weight:600;font-size:1rem;text-decoration:none;border:0;cursor:pointer;transition:background-color 240ms var(--ease)}
@@ -104,7 +104,8 @@ body{margin:0;background:#ffffff}
 .b-bullets li::before{content:"";width:8px;height:8px;margin-top:11px;background:var(--orange)}
 
 /* 3 · numbers */
-.b-stats_grid{display:grid;grid-template-columns:5fr 7fr;column-gap:64px;align-items:start}
+.b-stats_grid{display:grid;grid-template-columns:var(--axis) 1fr;align-items:start}
+.b-stats_text{padding-right:48px}
 .b-stats_text .b-h2{margin-top:20px}
 .b-stats_text .b-arrow-link{margin-top:24px}
 .b-stat-tiles{display:grid;grid-template-columns:1fr 1fr;gap:8px}
@@ -116,13 +117,17 @@ body{margin:0;background:#ffffff}
 .b-stat.is-orange .b-stat_desc{color:var(--ink)}
 
 /* 4 · steps */
-.b-stepper{display:grid;grid-template-columns:repeat(3,1fr);column-gap:48px}
-.b-step{position:relative}
-.b-step:not(:last-child)::after{content:"";position:absolute;top:27px;left:56px;right:-48px;height:2px;background:var(--ink)}
-.b-step_num{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:50%;background:var(--orange);color:var(--ink);font-family:var(--f-display);font-weight:600;font-size:1.375rem}
-.b-step .b-h3{margin-top:28px}
-.b-step p{margin-top:10px;max-width:32ch;color:var(--muted)}
-.b-steps_cta{display:flex;flex-wrap:wrap;align-items:center;gap:24px;margin-top:56px}
+.b-how{display:grid;grid-template-columns:var(--axis) 1fr;grid-template-rows:auto 1fr;grid-template-areas:"head steps" "cta steps";align-items:start}
+.b-how_head{grid-area:head;padding-right:48px}
+.b-how_head .b-h2{margin-top:20px}
+.b-how_cta{grid-area:cta;display:flex;flex-wrap:wrap;align-items:center;gap:16px 24px;margin-top:40px;padding-right:48px}
+.b-steps{grid-area:steps;display:grid}
+.b-step{position:relative;display:grid;grid-template-columns:56px 1fr;column-gap:28px;padding-bottom:44px}
+.b-step:last-child{padding-bottom:0}
+.b-step:not(:last-child)::after{content:"";position:absolute;left:27px;top:56px;bottom:0;width:2px;background:var(--ink)}
+.b-step_num{display:flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:50%;background:var(--orange);color:var(--ink);font-family:var(--f-display);font-weight:600;font-size:1.375rem}
+.b-step .b-h3{margin-top:12px}
+.b-step p{margin-top:8px;color:var(--muted)}
 
 /* 5 · about */
 .b-about_grid{display:grid;grid-template-columns:var(--axis) 1fr;align-items:center}
@@ -235,20 +240,17 @@ body{margin:0;background:#ffffff}
   .b-photo-1{aspect-ratio:4 / 3}
   .b-photo-2{display:none}
   .b-index a{min-height:104px;padding:20px 24px}
-  .b-head,.b-faq_layout,.b-about_grid,.b-stats_grid,.b-close_grid{grid-template-columns:1fr}
-  .b-head > .b-label{padding-top:0;margin-bottom:16px}
+  .b-faq_layout,.b-about_grid,.b-stats_grid,.b-close_grid{grid-template-columns:1fr}
+  .b-stats_text{padding-right:0}
+  .b-how{grid-template-columns:1fr;grid-template-rows:auto;grid-template-areas:"head" "steps" "cta"}
+  .b-how_head{padding-right:0;margin-bottom:40px}
+  .b-how_cta{padding-right:0}
   .b-faq_head{padding-right:0;margin-bottom:32px}
   .b-head{margin-bottom:40px}
   .b-svc-grid{grid-template-columns:1fr;grid-template-rows:none;row-gap:8px}
   .b-svc{display:flex;flex-direction:column;grid-row:auto;grid-template-rows:none}
   .b-svc .b-arrow-link{align-self:flex-start}
   .b-stats_grid{row-gap:40px}
-  .b-stepper{grid-template-columns:1fr;row-gap:36px}
-  .b-step{display:grid;grid-template-columns:56px 1fr;column-gap:20px;align-items:start}
-  .b-step_num{grid-row:1 / span 2}
-  .b-step .b-h3{margin-top:12px}
-  .b-step .b-h3,.b-step p{grid-column:2}
-  .b-step:not(:last-child)::after{top:56px;left:27px;right:auto;bottom:-36px;width:2px;height:auto}
   .b-about_photo{width:calc(100% - 24px);aspect-ratio:4 / 3}
   .b-about_badge{right:-24px;bottom:-24px;font-size:1.25rem}
   .b-about_text{margin-top:56px}
@@ -290,7 +292,8 @@ body{margin:0;background:#ffffff}
   .b-close_title{font-size:3.5rem;margin-bottom:40px}
   .b-row,.b-choices{grid-template-columns:1fr}
   .b-form_foot .b-btn{width:100%}
-  .b-steps_cta{flex-direction:column;align-items:stretch}
+  .b-how_cta{flex-direction:column;align-items:stretch}
+  .b-step{column-gap:20px;padding-bottom:36px}
   .b-footer_inner{min-height:440px}
   .b-footer_notes{grid-template-columns:1fr}
   .b-footer_big{font-size:10vw}
@@ -327,10 +330,8 @@ body{margin:0;background:#ffffff}
 <div class="b-container">
 <div class="b-head">
 <p class="b-label">Pakalpojumi</p>
-<div>
 <h2 id="b-svc-h" class="b-h2">Divi pakalpojumi, viens autoparks</h2>
 <p class="b-intro">Kurjerpasts uzņēmumiem ir mūsu pamatdarbs. Kad busiņi nav maršrutā, tie strādā pārvākšanā.</p>
-</div>
 </div>
 <div class="b-svc-grid">
 <article class="b-svc">
@@ -369,20 +370,18 @@ body{margin:0;background:#ffffff}
 </section>
 
 <section class="b-section section_layout231" aria-labelledby="b-how-h">
-<div class="b-container">
-<div class="b-head">
+<div class="b-container b-how">
+<div class="b-how_head">
 <p class="b-label">Process</p>
-<div>
 <h2 id="b-how-h" class="b-h2">Kā tas notiek</h2>
 <p class="b-intro">Trīs soļi no pieprasījuma līdz paveiktam darbam.</p>
 </div>
-</div>
-<ol class="b-stepper">
-<li class="b-step"><span class="b-step_num" aria-hidden="true">1</span><h3 class="b-h3">Pastāstiet, kas jāved</h3><p>Aizpildiet formu vai zvaniet. Pārvākšanai varat pievienot foto.</p></li>
-<li class="b-step"><span class="b-step_num" aria-hidden="true">2</span><h3 class="b-h3">Saņemiet piedāvājumu</h3><p>Precizējam apjomu un nosaucam cenu.</p></li>
-<li class="b-step"><span class="b-step_num" aria-hidden="true">3</span><h3 class="b-h3">Mēs to izdarām</h3><p>Komanda iekrauj, pārved un nogādā līdz galam.</p></li>
+<ol class="b-steps">
+<li class="b-step"><span class="b-step_num" aria-hidden="true">1</span><div><h3 class="b-h3">Pastāstiet, kas jāved</h3><p>Aizpildiet formu vai zvaniet. Pārvākšanai varat pievienot foto.</p></div></li>
+<li class="b-step"><span class="b-step_num" aria-hidden="true">2</span><div><h3 class="b-h3">Saņemiet piedāvājumu</h3><p>Precizējam apjomu un nosaucam cenu.</p></div></li>
+<li class="b-step"><span class="b-step_num" aria-hidden="true">3</span><div><h3 class="b-h3">Mēs to izdarām</h3><p>Komanda iekrauj, pārved un nogādā līdz galam.</p></div></li>
 </ol>
-<div class="b-steps_cta"><a href="#piedavajums" class="b-btn">Saņemt piedāvājumu</a><p class="b-note">Pieprasījums neuzliek saistības.</p></div>
+<div class="b-how_cta"><a href="#piedavajums" class="b-btn">Saņemt piedāvājumu</a><p class="b-note">Pieprasījums neuzliek saistības.</p></div>
 </div>
 </section>
 
@@ -407,10 +406,8 @@ body{margin:0;background:#ffffff}
 <div class="b-container">
 <div class="b-head">
 <p class="b-label">Atsauksmes</p>
-<div>
 <h2 id="b-q-h" class="b-h2">Ko saka klienti</h2>
 <p class="b-intro">Atsauksmes pēc paveiktiem darbiem.</p>
-</div>
 </div>
 <div class="b-quotes">
 <figure class="b-quote is-featured">
@@ -439,10 +436,8 @@ body{margin:0;background:#ffffff}
 <div class="b-container">
 <div class="b-head">
 <p class="b-label">Darbs pie mums</p>
-<div>
 <h2 id="b-job-h" class="b-h2">Meklējam kurjerus un šoferus</h2>
 <p class="b-intro">Stabils darbs uzņēmumā, kas strādā kopš 2011. gada.</p>
-</div>
 </div>
 <div class="b-jobs_grid">
 <figure class="b-jobs_photo"><img src="/_blob/05ca0f80e9e3523f6523f6ae69453edd" alt="Smaidīgs šoferis busiņa kabīnē" width="421" height="421" style="object-position:76% 40%"></figure>
@@ -451,7 +446,7 @@ body{margin:0;background:#ffffff}
 <ul class="b-bullets">
 <li>Darbs ar uzņēmuma busiņiem</li>
 <li>Darba vieta Rīgā un Mārupē</li>
-<li>Dažāds darbs: kurjerpasts, pārvākšana, pārvadājumi</li>
+<li>Dažāds darbs: kurjerpasts un pārvākšana</li>
 <li>[Atalgojums un grafiks]</li>
 </ul>
 </div>
@@ -526,7 +521,7 @@ body{margin:0;background:#ffffff}
 
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":7397}}'>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":7330}}'>
 class Component extends DCLogic {
   renderVals() { return {}; }
 }
