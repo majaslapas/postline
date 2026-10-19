@@ -1,0 +1,37 @@
+{
+  "v": 3,
+  "createdOnFiles": {"v": 1, "at": "2026-10-19T10:10:00Z"},
+  "title": "Postline — mājaslapas skelets un dizaina koncepti",
+  "launch": {"view": "canvas"},
+  "pages": [],
+  "boards": {
+    "Lapu-karte.dc.html": {"x": 0, "y": 0, "w": 2400, "h": 1360, "title": "Lapu karte (sitemap)"},
+    "Main.dc.html": {"x": 0, "y": 1780, "w": 1440, "h": 7800, "title": "Sākums — skelets", "expand": "fill"},
+    "Koncepts-A.dc.html": {"x": 1520, "y": 1780, "w": 1440, "h": 7400, "title": "Koncepts A — Signāllīnija", "expand": "fill"},
+    "Koncepts-B.dc.html": {"x": 3040, "y": 1780, "w": 1440, "h": 7400, "title": "Koncepts B — Grafīts", "expand": "fill"},
+    "Koncepts-C.dc.html": {"x": 4560, "y": 1780, "w": 1440, "h": 7400, "title": "Koncepts C — Uzticības zils", "expand": "fill"},
+    "Pakalpojumi-uznemumiem.dc.html": {"x": 0, "y": 10000, "w": 1440, "h": 5800, "title": "Pakalpojumi uzņēmumiem — skelets", "expand": "fill"},
+    "Parvaksanas.dc.html": {"x": 1520, "y": 10000, "w": 1440, "h": 8500, "title": "Pārvākšanās — skelets", "expand": "fill"},
+    "Darbs-pie-mums.dc.html": {"x": 3040, "y": 10000, "w": 1440, "h": 5300, "title": "Darbs pie mums — skelets", "expand": "fill"},
+    "Kontakti.dc.html": {"x": 4560, "y": 10000, "w": 1440, "h": 2800, "title": "Kontakti — skelets", "expand": "fill"},
+    "Darbinieki.dc.html": {"x": 6080, "y": 10000, "w": 1440, "h": 1200, "title": "/darbinieki — slēpta lapa", "expand": "fill"}
+  },
+  "order": [
+    "Main.dc.html",
+    "Lapu-karte.dc.html",
+    "Koncepts-A.dc.html",
+    "Koncepts-B.dc.html",
+    "Koncepts-C.dc.html",
+    "Pakalpojumi-uznemumiem.dc.html",
+    "Parvaksanas.dc.html",
+    "Darbs-pie-mums.dc.html",
+    "Kontakti.dc.html",
+    "Darbinieki.dc.html"
+  ],
+  "notes": {
+    "t-sitemap": {"x": 0, "y": -300, "text": "Lapu karte", "kind": "title1", "maxW": 2400},
+    "t-home": {"x": 0, "y": 1480, "text": "Sākumlapa — skelets un 3 dizaina koncepti", "kind": "title1", "maxW": 6000},
+    "t-pages": {"x": 0, "y": 9700, "text": "Apakšlapas — skelets", "kind": "title1", "maxW": 7520}
+  },
+  "designSystems": []
+}
