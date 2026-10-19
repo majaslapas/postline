@@ -9,7 +9,7 @@
 <x-dc>
 <helmet>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&amp;display=swap" rel="stylesheet">
 <style>
 /* Koncepts C · Maršruts — modern. Old postline.lv colours (blue grey #263238, coral #FF8A65); the Postline P line is an accent only.
@@ -86,9 +86,6 @@ body{margin:0;background:#263238}
 .c-check{width:24px;height:24px;border-radius:50%;background:var(--coral);display:grid;place-items:center;flex:none}
 .c-check svg{width:14px;height:14px;fill:none;stroke:var(--ink);stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
 .c-panel figure{border-radius:var(--r);overflow:hidden;aspect-ratio:16/10}
-/* orange overlay, as on postline.lv */
-.c-tint{position:relative;isolation:isolate;background:#f05223}
-.c-tint img{filter:grayscale(1) contrast(1.1);mix-blend-mode:luminosity;opacity:.7}
 
 /* numbers */
 .c-numbers{background:var(--mist-2)}
@@ -286,7 +283,7 @@ body{margin:0;background:#263238}
 <p class="c-intro">Kurjerpasts uzņēmumiem un pārvākšana birojiem un mājām. Savs autoparks un sava komanda kopš 2011. gada.</p>
 </div>
 <div class="c-switch">
-<input type="radio" name="c-service" id="c-f1" checked><input type="radio" name="c-service" id="c-f2"><input type="radio" name="c-service" id="c-f3">
+<input type="radio" name="c-service" id="c-f1" checked=""><input type="radio" name="c-service" id="c-f2"><input type="radio" name="c-service" id="c-f3">
 <div class="c-tabs">
 <label class="c-tab t1" for="c-f1"><svg class="c-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l8.5 4.75v9.5L12 21.5l-8.5-4.75v-9.5L12 2.5z"></path><path d="M3.5 7.25L12 12l8.5-4.75M12 12v9.5"></path></svg><span>Kurjerpasts uzņēmumiem</span></label>
 <label class="c-tab t2" for="c-f2"><svg class="c-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 11L12 4.5l8.5 6.5"></path><path d="M5.5 9.5v10h13v-10"></path><path d="M9.5 19.5v-5h5v5"></path></svg><span>Pārvākšanās</span></label>
@@ -305,7 +302,7 @@ body{margin:0;background:#263238}
 </ul>
 <div class="c-actions"><a href="#piedavajums" class="c-btn">Saņemt piedāvājumu</a><a href="#" class="c-textlink">Zvanīt +371 29 443 359</a></div>
 </div>
-<figure class="c-tint"><img src="/_blob/c4c5874aa61767603375ad24004cb36b" alt="Kurjers nodod kartona kasti klientam" width="620" height="388" style="object-position:50% 45%"></figure>
+<figure><img src="/_blob/c4c5874aa61767603375ad24004cb36b" alt="Kurjers nodod kartona kasti klientam" width="620" height="388" style="object-position:50% 45%"></figure>
 </article>
 <article class="c-panel p2">
 <div class="c-panel_text">
@@ -319,7 +316,7 @@ body{margin:0;background:#263238}
 </ul>
 <div class="c-actions"><a href="#piedavajums" class="c-btn">Saņemt pārvākšanās cenu</a><a href="#" class="c-textlink">Zvanīt +371 29 443 359</a></div>
 </div>
-<figure class="c-tint"><img src="/_blob/fcaf8c42b901509cfc836bb25094f776" alt="Darbinieks ar ratiņiem ved kastes" width="620" height="388" style="object-position:50% 70%"></figure>
+<figure><img src="/_blob/fcaf8c42b901509cfc836bb25094f776" alt="Darbinieks ar ratiņiem ved kastes" width="620" height="388" style="object-position:50% 70%"></figure>
 </article>
 <article class="c-panel p3">
 <div class="c-panel_text">
@@ -436,7 +433,7 @@ body{margin:0;background:#263238}
 <p class="c-intro">Neatradāt atbildi? Zvaniet <a href="#" class="c-textlink" style="min-height:0">+371 29 443 359</a>.</p>
 </div>
 <div class="c-faq_list">
-<details open><summary>Vai vedat atsevišķus privātus sūtījumus?</summary><p>Nē. Kurjerpastu veicam uzņēmumiem ar regulārām piegādēm. Privātpersonām piedāvājam pārvākšanos.</p></details>
+<details open=""><summary>Vai vedat atsevišķus privātus sūtījumus?</summary><p>Nē. Kurjerpastu veicam uzņēmumiem ar regulārām piegādēm. Privātpersonām piedāvājam pārvākšanos.</p></details>
 <details><summary>Cik maksā jūsu pakalpojumi?</summary><p>[Atbilde]</p></details>
 <details><summary>Kādos reģionos strādājat?</summary><p>[Atbilde]</p></details>
 <details><summary>Vai strādājat vakaros un brīvdienās?</summary><p>[Atbilde]</p></details>
@@ -459,7 +456,7 @@ body{margin:0;background:#263238}
 <form class="c-coupon_form" action="#">
 <fieldset><legend>Kas jums vajadzīgs?</legend>
 <div class="c-pills">
-<label class="c-pill"><input type="radio" name="c-svc" checked><span>Kurjerpasts uzņēmumam</span></label>
+<label class="c-pill"><input type="radio" name="c-svc" checked=""><span>Kurjerpasts uzņēmumam</span></label>
 <label class="c-pill"><input type="radio" name="c-svc"><span>Pārvākšanās</span></label>
 </div>
 </fieldset>
