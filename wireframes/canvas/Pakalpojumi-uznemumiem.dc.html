@@ -47,7 +47,6 @@ a{color:#111111}a:hover{color:#555555}
 <div class="container-large">
 <div class="wf-meta">
 <div class="wf-specs"><span class="spec is-name">Relume · Header 50</span><span class="spec">section_header50 › header50_component</span><span class="spec">fona attēls + tumšs pārklājums</span></div>
-<p class="wf-task"><b>Teksts Artim:</b> 1–2 teikumi — ko piedāvājam uzņēmumiem un kādā apjomā.</p>
 </div>
 <div class="padding-section-large">
 <div class="header50_component max-width-large">
@@ -70,7 +69,6 @@ a{color:#111111}a:hover{color:#555555}
 <div class="container-large">
 <div class="wf-meta">
 <div class="wf-specs"><span class="spec is-name">Relume · Layout 623</span><span class="spec">section_layout623 › layout623_component</span></div>
-<p class="wf-task"><b>Teksts Artim:</b> 3 pakalpojumi uzņēmumiem — katram 1–2 teikumi: kas iekļauts, kam der.</p>
 </div>
 <div class="padding-section-large">
 <div class="layout623_component">
@@ -113,7 +111,6 @@ a{color:#111111}a:hover{color:#555555}
 <div class="container-large">
 <div class="wf-meta">
 <div class="wf-specs"><span class="spec is-name">Relume · Layout 647</span><span class="spec">section_layout647 › layout647_component</span></div>
-<p class="wf-task"><b>Teksts Artim:</b> reģioni, apjomi, transporta veidi un sadarbības forma — pa 1 rindai.</p>
 </div>
 <div class="padding-section-large">
 <div class="layout647_component wf-card wf-card-split">
@@ -143,7 +140,6 @@ a{color:#111111}a:hover{color:#555555}
 <div class="container-large">
 <div class="wf-meta">
 <div class="wf-specs"><span class="spec is-name">Relume · Stats 8</span><span class="spec">section_stats8 › stats8_component</span></div>
-<p class="wf-task"><b>Teksts Artim:</b> 1–2 teikumi — kāpēc uzņēmumi izvēlas Postline.</p>
 </div>
 <div class="padding-section-large">
 <div class="stats8_component">
@@ -167,7 +163,6 @@ a{color:#111111}a:hover{color:#555555}
 <div class="container-large">
 <div class="wf-meta">
 <div class="wf-specs"><span class="spec is-name">Relume · FAQ 3</span><span class="spec">section_faq3 › faq3_component</span></div>
-<p class="wf-task"><b>Teksts Artim:</b> atbildes uz 5 jautājumiem (1–3 teikumi katrai). Pirmais jautājums atsijā privātos sūtījumus.</p>
 </div>
 <div class="padding-section-large">
 <div class="faq3_component wf-grid-2 is-top is-narrow-left">
@@ -272,12 +267,11 @@ a{color:#111111}a:hover{color:#555555}
 
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"showSpecs":{"editor":"boolean","default":true,"section":"Anotācijas"},"showTasks":{"editor":"boolean","default":true,"section":"Anotācijas"},"$preview":{"width":1440,"height":5800}}'>
+<script type="text/x-dc" data-dc-script data-props='{"showSpecs":{"editor":"boolean","default":true,"section":"Anotācijas"},"$preview":{"width":1440,"height":5800}}'>
 class Component extends DCLogic {
   renderVals() {
     const specs = this.props.showSpecs ?? true;
-    const tasks = this.props.showTasks ?? true;
-    return { modeClass: (specs ? 'show-specs' : '') + (tasks ? ' show-tasks' : '') };
+    return { modeClass: specs ? 'show-specs' : '' };
   }
 }
 </script>

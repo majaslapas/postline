@@ -47,7 +47,6 @@ a{color:#111111}a:hover{color:#555555}
 <div class="container-large">
 <div class="wf-meta">
 <div class="wf-specs"><span class="spec is-name">Relume · Header 5</span><span class="spec">section_header5 › header5_component</span><span class="spec">mobilais skats — prioritāte</span></div>
-<p class="wf-task"><b>Teksts Artim:</b> 1–2 teikumi — kāpēc pie mums ir labi strādāt. Kandidāti šo lapu atvērs telefonā no sludinājuma.</p>
 </div>
 <div class="padding-section-large">
 <div class="header5_component max-width-large">
@@ -70,7 +69,6 @@ a{color:#111111}a:hover{color:#555555}
 <div class="container-large">
 <div class="wf-meta">
 <div class="wf-specs"><span class="spec is-name">Relume · Layout 620</span><span class="spec">section_layout620 › layout620_component</span></div>
-<p class="wf-task"><b>Teksts Artim:</b> 3 iemesli strādāt Postline — 1 teikums katram.</p>
 </div>
 <div class="padding-section-large">
 <div class="layout620_component">
@@ -99,7 +97,6 @@ a{color:#111111}a:hover{color:#555555}
 <div class="container-large">
 <div class="wf-meta">
 <div class="wf-specs"><span class="spec is-name">Relume · Layout 645</span><span class="spec">section_layout645 › layout645_component</span></div>
-<p class="wf-task"><b>Teksts Artim:</b> konkrēti nosacījumi — alga, grafiks, darba vieta, prasības (kategorija, valodas).</p>
 </div>
 <div class="padding-section-large">
 <div class="layout645_component wf-card wf-card-split">
@@ -126,7 +123,6 @@ a{color:#111111}a:hover{color:#555555}
 <div class="container-large">
 <div class="wf-meta">
 <div class="wf-specs"><span class="spec is-name">Relume · Career 12</span><span class="spec">section_career12 › career12_component</span><span class="spec">CMS: Vakances</span></div>
-<p class="wf-task"><b>Teksts Artim:</b> aktuālās vakances — nosaukums, pienākumi, prasības, slodze.</p>
 </div>
 <div class="padding-section-large">
 <div class="career12_component wf-grid-2 is-top is-narrow-left">
@@ -227,12 +223,11 @@ a{color:#111111}a:hover{color:#555555}
 
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"showSpecs":{"editor":"boolean","default":true,"section":"Anotācijas"},"showTasks":{"editor":"boolean","default":true,"section":"Anotācijas"},"$preview":{"width":1440,"height":5300}}'>
+<script type="text/x-dc" data-dc-script data-props='{"showSpecs":{"editor":"boolean","default":true,"section":"Anotācijas"},"$preview":{"width":1440,"height":5300}}'>
 class Component extends DCLogic {
   renderVals() {
     const specs = this.props.showSpecs ?? true;
-    const tasks = this.props.showTasks ?? true;
-    return { modeClass: (specs ? 'show-specs' : '') + (tasks ? ' show-tasks' : '') };
+    return { modeClass: specs ? 'show-specs' : '' };
   }
 }
 </script>

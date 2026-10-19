@@ -24,7 +24,7 @@ page-wrapper
 
 - Navbar 1 and Footer 3 become Webflow Components shared by all public pages.
 - Classes prefixed `wf-` in the canvas CSS exist only for the wireframe view. Do not recreate them in Webflow.
-- The wireframe artboards have two toggles (Tweaks → Anotācijas): `showSpecs` (blue component chips) and `showTasks` (yellow text tasks for Artis). Turn both off to present a clean skeleton.
+- The wireframe artboards have one toggle (Tweaks → Anotācijas): `showSpecs` shows the blue component chips. Turn it off to present a clean skeleton.
 
 ## Sitemap
 
@@ -105,10 +105,45 @@ How to build it: a Webflow page from Links 1 with one button that leads to the e
 Text in square brackets on the canvas is a placeholder for these:
 
 - logo vector file
-- text for each block (the yellow tasks on the canvas)
+- text for each block (see the list below)
 - B2B details: regions, volumes, vehicle types
 - photos and short descriptions of the largest projects
 - vacancies: title, duties, requirements, workload, pay
 - the link to the daily report system
 - the office address
 - domain, DNS and e-mail access at Starflix
+
+## Text tasks for Artis
+
+What each block needs, in the order the sections appear on the page.
+
+**Sākums**
+- Header 1: 1 sentence on what Postline does and for whom (up to 25 words). We can propose the heading.
+- Stats 13: 1–2 sentences on why Postline can be trusted.
+- Layout 251: 1–2 sentences per service, saying who it is for and what is included.
+- Layout 645 (`#par-mums`): 2–3 sentences on the company's story (founding, what it does, experience) and 3 values. Courier partners are mentioned only neutrally.
+- Portfolio 11: 3 projects (what, when, how big; 1–2 sentences each) and photos from them.
+- CTA 1: 1 sentence on why to work at Postline (stability, vehicles, schedule, team).
+
+**Pakalpojumi uzņēmumiem**
+- Header 50: 1–2 sentences on what Postline offers companies and at what volume.
+- Layout 623: the 3 services for companies, 1–2 sentences each on what is included and who it suits.
+- Layout 647: regions, volumes, vehicle types and form of cooperation, 1 line each.
+- Stats 8: 1–2 sentences on why companies choose Postline.
+- FAQ 3: answers to the 5 questions, 1–3 sentences each. The first one turns away private parcel requests.
+
+**Pārvākšanās**
+- Header 1: 1–2 sentences on who Postline helps move and why to choose it.
+- Layout 629: 1 sentence per client group on what exactly is done and at what scale.
+- Layout 671: what is included in the price, what costs extra, and which vehicles are available (types, sizes).
+- Timeline 17: 1 sentence per step on what happens and who does it.
+- Layout 216: 2 sentences on the largest projects (what, when, how fast) and photos from them.
+- FAQ 3: answers to the 5 questions, 1–3 sentences each.
+
+**Darbs pie mums**
+- Header 5: 1–2 sentences on why Postline is a good place to work. Candidates open this page on their phones from a job ad.
+- Layout 620: 3 reasons to work at Postline, 1 sentence each.
+- Layout 645: concrete terms: pay, schedule, place of work, requirements (licence category, languages).
+- Career 12: current vacancies with title, duties, requirements and workload.
+
+Testimonials on Sākums and Pārvākšanās need no text: GoHighLevel collects them automatically after each job.

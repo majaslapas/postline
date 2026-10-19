@@ -47,7 +47,6 @@ a{color:#111111}a:hover{color:#555555}
 <div class="container-large">
 <div class="wf-meta">
 <div class="wf-specs"><span class="spec is-name">Relume · Header 1</span><span class="spec">section_header1 › header1_component</span></div>
-<p class="wf-task"><b>Teksts Artim:</b> 1–2 teikumi — kam palīdzam pārcelties un kāpēc izvēlēties Postline.</p>
 </div>
 <div class="padding-section-large">
 <div class="header1_component wf-grid-2">
@@ -72,7 +71,6 @@ a{color:#111111}a:hover{color:#555555}
 <div class="container-large">
 <div class="wf-meta">
 <div class="wf-specs"><span class="spec is-name">Relume · Layout 629</span><span class="spec">section_layout629 › layout629_component</span></div>
-<p class="wf-task"><b>Teksts Artim:</b> katrai klientu grupai 1 teikums — ko tieši darām un kāds apjoms.</p>
 </div>
 <div class="padding-section-large">
 <div class="layout629_component">
@@ -104,7 +102,6 @@ a{color:#111111}a:hover{color:#555555}
 <div class="container-large">
 <div class="wf-meta">
 <div class="wf-specs"><span class="spec is-name">Relume · Layout 671</span><span class="spec">section_layout671 › layout671_component</span></div>
-<p class="wf-task"><b>Teksts Artim:</b> kas iekļauts cenā, kas par papildu maksu; kādi auto pieejami (tipi, izmēri).</p>
 </div>
 <div class="padding-section-large">
 <div class="layout671_component wf-card wf-card-split">
@@ -134,7 +131,6 @@ a{color:#111111}a:hover{color:#555555}
 <div class="container-large">
 <div class="wf-meta">
 <div class="wf-specs"><span class="spec is-name">Relume · Timeline 17</span><span class="spec">section_timeline17 › timeline17_component</span><span class="spec">datumu vietā — soļi</span></div>
-<p class="wf-task"><b>Teksts Artim:</b> katram solim 1 teikums — kas notiek un kurš to dara.</p>
 </div>
 <div class="padding-section-large">
 <div class="timeline17_component">
@@ -161,7 +157,6 @@ a{color:#111111}a:hover{color:#555555}
 <div class="container-large">
 <div class="wf-meta">
 <div class="wf-specs"><span class="spec is-name">Relume · Layout 216</span><span class="spec">section_layout216 › layout216_component</span></div>
-<p class="wf-task"><b>Teksts Artim:</b> 2 teikumi par lielākajiem projektiem — kas, kad, cik ātri + foto no šiem projektiem.</p>
 </div>
 <div class="padding-section-large">
 <div class="layout216_component wf-grid-2">
@@ -190,7 +185,6 @@ a{color:#111111}a:hover{color:#555555}
 <div class="container-large">
 <div class="wf-meta">
 <div class="wf-specs"><span class="spec is-name">Relume · Testimonial 17</span><span class="spec">CMS: Atsauksmes (filtrs: pārvākšanās)</span></div>
-<p class="wf-task"><b>Saturs:</b> atsauksmes automātiski ievāc GoHighLevel pēc katra pasūtījuma.</p>
 </div>
 <div class="padding-section-large">
 <div class="testimonial17_component">
@@ -214,7 +208,6 @@ a{color:#111111}a:hover{color:#555555}
 <div class="container-large">
 <div class="wf-meta">
 <div class="wf-specs"><span class="spec is-name">Relume · Multi Form 17</span><span class="spec">section_multi-form17 › multi-form17_component</span><span class="spec">4 soļi → GoHighLevel</span><span class="spec">foto augšupielāde 3. solī</span></div>
-<p class="wf-task"><b>Funkcija:</b> 1. solis atšķir privātpersonu no uzņēmuma (ideja no A-Vektors). Cenu kalkulatora nav — cenu nosaucam pēc pieteikuma.</p>
 </div>
 <div class="padding-section-large">
 <div class="multi-form17_component wf-grid-2 is-top">
@@ -250,7 +243,6 @@ a{color:#111111}a:hover{color:#555555}
 <div class="container-large">
 <div class="wf-meta">
 <div class="wf-specs"><span class="spec is-name">Relume · FAQ 3</span><span class="spec">section_faq3 › faq3_component</span></div>
-<p class="wf-task"><b>Teksts Artim:</b> atbildes uz 5 jautājumiem (1–3 teikumi katrai).</p>
 </div>
 <div class="padding-section-large">
 <div class="faq3_component wf-grid-2 is-top is-narrow-left">
@@ -306,12 +298,11 @@ a{color:#111111}a:hover{color:#555555}
 
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"showSpecs":{"editor":"boolean","default":true,"section":"Anotācijas"},"showTasks":{"editor":"boolean","default":true,"section":"Anotācijas"},"$preview":{"width":1440,"height":8500}}'>
+<script type="text/x-dc" data-dc-script data-props='{"showSpecs":{"editor":"boolean","default":true,"section":"Anotācijas"},"$preview":{"width":1440,"height":8500}}'>
 class Component extends DCLogic {
   renderVals() {
     const specs = this.props.showSpecs ?? true;
-    const tasks = this.props.showTasks ?? true;
-    return { modeClass: (specs ? 'show-specs' : '') + (tasks ? ' show-tasks' : '') };
+    return { modeClass: specs ? 'show-specs' : '' };
   }
 }
 </script>

@@ -142,12 +142,11 @@ a{color:#111111}a:hover{color:#555555}
 
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"showSpecs":{"editor":"boolean","default":true,"section":"Anotācijas"},"showTasks":{"editor":"boolean","default":true,"section":"Anotācijas"},"$preview":{"width":1440,"height":2800}}'>
+<script type="text/x-dc" data-dc-script data-props='{"showSpecs":{"editor":"boolean","default":true,"section":"Anotācijas"},"$preview":{"width":1440,"height":2800}}'>
 class Component extends DCLogic {
   renderVals() {
     const specs = this.props.showSpecs ?? true;
-    const tasks = this.props.showTasks ?? true;
-    return { modeClass: (specs ? 'show-specs' : '') + (tasks ? ' show-tasks' : '') };
+    return { modeClass: specs ? 'show-specs' : '' };
   }
 }
 </script>
