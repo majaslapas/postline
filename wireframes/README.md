@@ -35,7 +35,7 @@ page-wrapper
 | Pārvākšanās | `/parvaksanas` | Navbar 1 · Header 1 · Layout 629 · Layout 671 · Timeline 17 · Layout 216 · Testimonial 17 · Multi Form 17 (`#pieteikums`) · FAQ 3 · Footer 3 |
 | Darbs pie mums | `/darbs` | Navbar 1 · Header 5 · Layout 620 · Layout 645 · Career 12 (`#vakances`) · Contact 9 (`#pieteikties`) · Footer 3 |
 | Kontakti | `/kontakti` | Navbar 1 · Contact 14 · Contact 5 · Footer 3 |
-| Darbinieku sadaļa (hidden) | `/darbinieki` | Links 1 only, with no Navbar or Footer. Set `noindex, nofollow`, leave it out of the menu and of `sitemap.xml`, and add a password if needed. |
+| Darbinieku sadaļa (hidden) | `/darbinieki` | Links 1 only, with no Navbar or Footer: one button that opens the daily report. Set `noindex, nofollow` and leave it out of the menu and of `sitemap.xml` (see below). |
 
 Navbar: Pakalpojumi ▾ (Kurjerpakalpojumi uzņēmumiem · Pārvākšanās · Transporta noma) · Par mums · Darbs pie mums · Kontakti, plus the buttons "Sazināties" (secondary) and "Pieteikt pārvākšanos" (primary).
 
@@ -90,18 +90,25 @@ Stock photos in the concepts are from Unsplash (free licence) and are meant to b
 | Archive boxes | `photo-1757837593538-b4a8654132f1` |
 | Open-plan offices | `photo-1577412647305-991150c7d163`, `photo-1631193816258-28b44b21e78b` |
 
-## Open points for the meeting with Artis
+## The hidden staff page (`/darbinieki`)
 
-Placeholders in square brackets on the canvas mark the missing facts:
+Discussed on the 30.09 call (https://fathom.video/calls/843688534, near the end):
+
+- Artis runs the company's daily work in a tool built in Google Apps Script. Every driver fills in a daily report in Google Forms and opens it through a personal link.
+- Artis wants drivers to reach the report through postline.lv, so that they visit the company site every day and feel part of the company, not only of the job.
+- Clients must not see it. Jānis proposed a hidden address such as `postline.lv/darbinieki`, or, as an alternative, a small admin panel built by our developers. The call ended without a choice; the canvas shows the hidden page, which is the simpler of the two.
+
+How to build it: a Webflow page from Links 1 with one button that leads to the existing report. The Google system stays as it is. A hidden address keeps clients out but is not protection: anyone with the link can open it. If the report links must stay private, turn on Webflow page password protection, which is built in.
+
+## Content still to come from Artis
+
+Text in square brackets on the canvas is a placeholder for these:
 
 - logo vector file
-- whether "Transporta noma" stays
-- B2B regions, volumes and vehicle types
-- moving vehicles
-- whether "Latvijas Balzams" and the 300-workplace project can be named
-- vacancies and how to apply
-- the staff-report link
-- which phone and e-mail to show publicly
-- the Mārupe office address
-- whether to show the bank account
+- text for each block (the yellow tasks on the canvas)
+- B2B details: regions, volumes, vehicle types
+- photos and short descriptions of the largest projects
+- vacancies: title, duties, requirements, workload, pay
+- the link to the daily report system
+- the office address
 - domain, DNS and e-mail access at Starflix

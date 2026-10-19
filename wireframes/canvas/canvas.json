@@ -1,20 +1,120 @@
 {
   "v": 3,
-  "createdOnFiles": {"v": 1, "at": "2026-10-19T10:10:00Z"},
-  "title": "Postline — mājaslapas skelets un dizaina koncepti",
-  "launch": {"view": "canvas"},
-  "pages": [],
+  "attachments": {},
   "boards": {
-    "Lapu-karte.dc.html": {"x": 0, "y": 0, "w": 2400, "h": 1360, "title": "Lapu karte (sitemap)"},
-    "Main.dc.html": {"x": 0, "y": 1780, "w": 1440, "h": 7800, "title": "Sākums — skelets", "expand": "fill"},
-    "Koncepts-A.dc.html": {"x": 1520, "y": 1780, "w": 1440, "h": 7400, "title": "Koncepts A — Signāllīnija", "expand": "fill"},
-    "Koncepts-B.dc.html": {"x": 3040, "y": 1780, "w": 1440, "h": 7400, "title": "Koncepts B — Grafīts", "expand": "fill"},
-    "Koncepts-C.dc.html": {"x": 4560, "y": 1780, "w": 1440, "h": 7400, "title": "Koncepts C — Uzticības zils", "expand": "fill"},
-    "Pakalpojumi-uznemumiem.dc.html": {"x": 0, "y": 10000, "w": 1440, "h": 5800, "title": "Pakalpojumi uzņēmumiem — skelets", "expand": "fill"},
-    "Parvaksanas.dc.html": {"x": 1520, "y": 10000, "w": 1440, "h": 8500, "title": "Pārvākšanās — skelets", "expand": "fill"},
-    "Darbs-pie-mums.dc.html": {"x": 3040, "y": 10000, "w": 1440, "h": 5300, "title": "Darbs pie mums — skelets", "expand": "fill"},
-    "Kontakti.dc.html": {"x": 4560, "y": 10000, "w": 1440, "h": 2800, "title": "Kontakti — skelets", "expand": "fill"},
-    "Darbinieki.dc.html": {"x": 6080, "y": 10000, "w": 1440, "h": 1200, "title": "/darbinieki — slēpta lapa", "expand": "fill"}
+    "Darbinieki.dc.html": {
+      "expand": "fill",
+      "h": 900,
+      "title": "/darbinieki — slēpta lapa",
+      "w": 1440,
+      "x": 6080,
+      "y": 10000
+    },
+    "Darbs-pie-mums.dc.html": {
+      "expand": "fill",
+      "h": 4869,
+      "title": "Darbs pie mums — skelets",
+      "w": 1440,
+      "x": 3040,
+      "y": 10000
+    },
+    "Koncepts-A.dc.html": {
+      "expand": "fill",
+      "h": 6839,
+      "title": "Koncepts A — Signāllīnija",
+      "w": 1440,
+      "x": 1520,
+      "y": 1780
+    },
+    "Koncepts-B.dc.html": {
+      "expand": "fill",
+      "h": 6902,
+      "title": "Koncepts B — Grafīts",
+      "w": 1440,
+      "x": 3040,
+      "y": 1780
+    },
+    "Koncepts-C.dc.html": {
+      "expand": "fill",
+      "h": 7073,
+      "title": "Koncepts C — Uzticības zils",
+      "w": 1440,
+      "x": 4560,
+      "y": 1780
+    },
+    "Kontakti.dc.html": {
+      "expand": "fill",
+      "h": 2571,
+      "title": "Kontakti — skelets",
+      "w": 1440,
+      "x": 4560,
+      "y": 10000
+    },
+    "Lapu-karte.dc.html": {
+      "h": 1360,
+      "title": "Lapu karte (sitemap)",
+      "w": 2400,
+      "x": 0,
+      "y": 0
+    },
+    "Main.dc.html": {
+      "expand": "fill",
+      "h": 7417,
+      "title": "Sākums — skelets",
+      "w": 1440,
+      "x": 0,
+      "y": 1780
+    },
+    "Pakalpojumi-uznemumiem.dc.html": {
+      "expand": "fill",
+      "h": 5353,
+      "title": "Pakalpojumi uzņēmumiem — skelets",
+      "w": 1440,
+      "x": 0,
+      "y": 10000
+    },
+    "Parvaksanas.dc.html": {
+      "expand": "fill",
+      "h": 6973,
+      "title": "Pārvākšanās — skelets",
+      "w": 1440,
+      "x": 1520,
+      "y": 10000
+    }
+  },
+  "createdOnFiles": {
+    "at": "2026-10-19T10:10:00Z",
+    "v": 1
+  },
+  "designSystems": [],
+  "launch": {
+    "view": "canvas"
+  },
+  "notes": {
+    "t-home": {
+      "kind": "title1",
+      "maxW": 6000,
+      "text": "Sākumlapa — skelets un 3 dizaina koncepti",
+      "w": 240,
+      "x": 0,
+      "y": 1480
+    },
+    "t-pages": {
+      "kind": "title1",
+      "maxW": 7520,
+      "text": "Apakšlapas — skelets",
+      "w": 240,
+      "x": 0,
+      "y": 9700
+    },
+    "t-sitemap": {
+      "kind": "title1",
+      "maxW": 2400,
+      "text": "Lapu karte",
+      "w": 240,
+      "x": 0,
+      "y": -300
+    }
   },
   "order": [
     "Main.dc.html",
@@ -28,10 +128,6 @@
     "Kontakti.dc.html",
     "Darbinieki.dc.html"
   ],
-  "notes": {
-    "t-sitemap": {"x": 0, "y": -300, "text": "Lapu karte", "kind": "title1", "maxW": 2400},
-    "t-home": {"x": 0, "y": 1480, "text": "Sākumlapa — skelets un 3 dizaina koncepti", "kind": "title1", "maxW": 6000},
-    "t-pages": {"x": 0, "y": 9700, "text": "Apakšlapas — skelets", "kind": "title1", "maxW": 7520}
-  },
-  "designSystems": []
+  "pages": [],
+  "title": "Postline — mājaslapas skelets un dizaina koncepti"
 }
